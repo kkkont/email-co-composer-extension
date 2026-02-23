@@ -1,0 +1,45 @@
+{
+  "app": {
+    "title": "Email Co-Composer"
+  },
+  "form": {
+    "goal": {
+      "label": "Communication Goal",
+      "placeholder": "Select your goal...",
+      "options": {
+        "request": "Request",
+        "inform": "Inform",
+        "clarify": "Clarify",
+        "followUp": "Follow Up",
+        "apologize": "Apologize",
+        "thank": "Thank"
+      }
+    },
+    "mainMessage": {
+      "label": "Main Message",
+      "placeholder": "What do you want to communicate?"
+    },
+    "recipient": {
+      "label": "Recipient Context",
+      "placeholder": "e.g., professor, colleague, client"
+    },
+    "tone": {
+      "label": "Tone",
+      "options": {
+        "professional": "Professional",
+        "friendly": "Friendly",
+        "formal": "Formal",
+        "casual": "Casual"
+      }
+    },
+    "constraints": {
+      "label": "Additional Constraints",
+      "placeholder": "e.g., keep brief, include action steps"
+    }
+  },
+  "actions": {
+    "generate": "Generate Email",
+    "generating": "Generating...",
+    "insertToGmail": "Insert to Gmail"
+  }
+}
