@@ -7,12 +7,14 @@
       "label": "Communication Goal",
       "placeholder": "Select your goal...",
       "options": {
-        "request": "Request",
         "inform": "Inform",
+        "request": "Request",
         "clarify": "Clarify",
-        "followUp": "Follow Up",
-        "apologize": "Apologize",
-        "thank": "Thank"
+        "follow-up": "Follow-Up",
+        "thank": "Thank",
+        "feedback": "Give Feedback",
+        "propose": "Propose",
+        "apologize": "Apologize"
       }
     },
     "mainMessage": {
@@ -23,18 +25,36 @@
       "label": "Recipient Context",
       "placeholder": "e.g., professor, colleague, client"
     },
+    "advanced": {
+      "toggle": "Advanced Controls"
+    },
     "tone": {
       "label": "Tone",
       "options": {
-        "professional": "Professional",
-        "friendly": "Friendly",
         "formal": "Formal",
+        "neutral": "Neutral",
         "casual": "Casual"
       }
     },
-    "constraints": {
-      "label": "Additional Constraints",
-      "placeholder": "e.g., keep brief, include action steps"
+    "length": {
+      "label": "Length",
+      "options": {
+        "short": "Short",
+        "medium": "Medium",
+        "long": "Long"
+      }
+    },
+    "urgency": {
+      "label": "Urgency",
+      "options": {
+        "low": "Low",
+        "medium": "Medium",
+        "high": "High"
+      }
+    },
+    "extraNotes": {
+      "label": "Extra Notes",
+      "placeholder": "e.g., mention the deadline, keep it brief, include action steps"
     }
   },
   "actions": {

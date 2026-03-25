@@ -2,8 +2,10 @@ export interface EmailIntent {
   goal: string;
   mainMessage: string;
   recipientContext: string;
-  tone: string;
-  constraints: string;
+  tone: number;
+  length: string;
+  urgency: string;
+  extraNotes: string;
 }
 
 export interface GeneratedEmail {
@@ -12,15 +14,15 @@ export interface GeneratedEmail {
 }
 
 export type CommunicationGoal =
-  | "request"
   | "inform"
+  | "request"
   | "clarify"
   | "follow-up"
-  | "apologize"
-  | "thank";
+  | "thank"
+  | "feedback"
+  | "propose"
+  | "apologize";
 
-export type ToneType =
-  | "professional"
-  | "friendly"
-  | "formal"
-  | "casual";
+export type LengthType = "short" | "medium" | "long";
+
+export type UrgencyType = "low" | "medium" | "high";

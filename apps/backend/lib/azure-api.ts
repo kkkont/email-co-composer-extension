@@ -9,7 +9,9 @@ export interface EmailIntent {
   mainMessage: string;
   recipientContext: string;
   tone: string;
-  constraints: string;
+  length: string;
+  urgency: string;
+  extraNotes: string;
 }
 
 export async function generateEmail(intent: EmailIntent): Promise<string> {
@@ -20,7 +22,9 @@ export async function generateEmail(intent: EmailIntent): Promise<string> {
 - Main message: ${intent.mainMessage}
 - Recipient context: ${intent.recipientContext}
 - Tone: ${intent.tone}
-${intent.constraints ? `- Constraints: ${intent.constraints}` : ""}`;
+- Length: ${intent.length}
+- Urgency: ${intent.urgency}
+${intent.extraNotes ? `- Extra notes: ${intent.extraNotes}` : ""}`;
 
   const response = await client.chat.completions.create({
     model: "gpt-4o-mini",

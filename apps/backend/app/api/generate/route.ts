@@ -15,7 +15,7 @@ export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
 
-    const { goal, mainMessage, recipientContext, tone, constraints } = body;
+    const { goal, mainMessage, recipientContext, tone, length, urgency, extraNotes } = body;
 
     if (!mainMessage) {
       return NextResponse.json(
@@ -28,8 +28,10 @@ export async function POST(request: NextRequest) {
       goal: goal || "",
       mainMessage,
       recipientContext: recipientContext || "",
-      tone: tone || "professional",
-      constraints: constraints || "",
+      tone: tone || "Neutral",
+      length: length || "medium",
+      urgency: urgency || "medium",
+      extraNotes: extraNotes || "",
     });
 
     return NextResponse.json({ email }, { headers: corsHeaders });
