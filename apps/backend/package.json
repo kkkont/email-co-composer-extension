@@ -8,9 +8,9 @@
     "start": "next start --port 3000"
   },
   "dependencies": {
-    "@azure/openai": "^1.0.0-beta.12",
     "@next/swc-darwin-arm64": "^14.2.33",
     "next": "^16.1.6",
+    "openai": "^6.32.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },

@@ -2,6 +2,8 @@ import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import type { EmailIntent } from '../types';
 
+const API_URL = 'http://localhost:3000/api/generate';
+
 export default function App() {
     const { t } = useTranslation();
     const [intent, setIntent] = useState<EmailIntent>({
@@ -12,13 +14,25 @@ export default function App() {
         constraints: ''
     });
     const [generatedEmail, setGeneratedEmail] = useState('');
-    const [isLoading, _setIsLoading] = useState(false);
+    const [isLoading, setIsLoading] = useState(false);
 
     const handleGenerate = async () => {
-        // TODO: Replace with actual API call once Azure OpenAI is configured
-        // For now, just use the main message directly as the email content
-        setGeneratedEmail(intent.mainMessage);
-
+        setIsLoading(true);
+        try {
+            const response = await fetch(API_URL, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(intent),
+            });
+            const data = await response.json();
+            if (!response.ok) throw new Error(data.error || 'Generation failed');
+            setGeneratedEmail(data.email);
+        } catch (error) {
+            console.error('Failed to generate email:', error);
+            setGeneratedEmail('Error generating email. Is the backend running?');
+        } finally {
+            setIsLoading(false);
+        }
     };
 
     const handleInsertToGmail = () => {
