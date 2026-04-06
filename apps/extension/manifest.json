@@ -3,10 +3,12 @@
   "name": "Email Co-Composer",
   "version": "1.0.0",
   "description": "AI-powered email co-composer for Gmail",
-  "permissions": ["activeTab", "scripting"],
+  "permissions": ["activeTab", "scripting", "sidePanel"],
   "action": {
-    "default_popup": "popup.html",
     "default_title": "Email Co-Composer"
+  },
+  "side_panel": {
+    "default_path": "sidepanel.html"
   },
   "background": {
     "service_worker": "background.js",
