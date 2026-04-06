@@ -13,22 +13,20 @@ const GOALS = [
 ];
 
 // Helper functions for dynamic labels
-const getRelationalDistanceLabel = (value: number): string => {
-  if (value < 0.33) return "Colleague";
-  if (value < 0.66) return "Peer";
-  return "Manager";
-};
-
 const getToneLabel = (value: number): string => {
-  if (value < 0.33) return "Casual";
-  if (value < 0.66) return "Neutral";
-  return "Formal";
+  if (value < 0.2) return "Very Casual";
+  if (value < 0.4) return "Casual";
+  if (value < 0.6) return "Neutral";
+  if (value < 0.8) return "Formal";
+  return "Very Formal";
 };
 
 const getLengthLabel = (value: number): string => {
-  if (value < 0.33) return "Brief";
-  if (value < 0.66) return "Balanced";
-  return "Detailed";
+  if (value < 0.2) return "Very Brief";
+  if (value < 0.4) return "Brief";
+  if (value < 0.6) return "Balanced";
+  if (value < 0.8) return "Detailed";
+  return "Very Detailed";
 };
 
 export default function App() {
@@ -37,12 +35,12 @@ export default function App() {
     mainMessage: "",
     recipientContext: "",
     tone: 0.5,
-    relationalDistance: 0.5,
     length: 0.5,
     urgency: false,
     extraNotes: "",
   });
-  const [generatedEmail, setGeneratedEmail] = useState("");
+  const [drafts, setDrafts] = useState<string[]>([]);
+  const [activeDraftIndex, setActiveDraftIndex] = useState(0);
   const [isLoading, setIsLoading] = useState(false);
   const [activeTab, setActiveTab] = useState<"intent" | "draft">("intent");
   const [showAdvanced, setShowAdvanced] = useState(false);
@@ -63,17 +61,20 @@ export default function App() {
       });
       const data = await response.json();
       if (!response.ok) throw new Error(data.error || "Generation failed");
-      setGeneratedEmail(data.email);
+      setDrafts((prev) => [...prev, data.email]);
+      setActiveDraftIndex(drafts.length);
       setActiveTab("draft");
+      insertToGmail(data.email);
     } catch (error) {
       console.error("Failed to generate email:", error);
-      setGeneratedEmail("Error generating email. Is the backend running?");
+      setDrafts((prev) => [...prev, "Error generating email. Is the backend running?"]);
+      setActiveDraftIndex(drafts.length);
     } finally {
       setIsLoading(false);
     }
   };
 
-  const handleInsertToGmail = () => {
+  const insertToGmail = (email: string) => {
     chrome.tabs.query({ active: true, currentWindow: true }, async (tabs) => {
       const tabId = tabs[0]?.id;
       if (!tabId) return;
@@ -81,7 +82,7 @@ export default function App() {
       try {
         await chrome.tabs.sendMessage(tabId, {
           action: "insertEmail",
-          email: generatedEmail,
+          email,
         });
       } catch {
         await chrome.scripting.executeScript({
@@ -91,7 +92,7 @@ export default function App() {
         setTimeout(() => {
           chrome.tabs.sendMessage(tabId, {
             action: "insertEmail",
-            email: generatedEmail,
+            email,
           });
         }, 100);
       }
@@ -102,15 +103,7 @@ export default function App() {
     intent.goal && intent.mainMessage && intent.recipientContext;
 
   return (
-    <div className="h-screen flex flex-col bg-white">
-      {/* Header */}
-      <div className="flex justify-between items-center p-4 border-b">
-        <div className="flex items-center gap-2">
-          <span className="text-lg">✉️</span>
-          <h1 className="text-base font-semibold">E-Mail Co-Composer</h1>
-        </div>
-      </div>
-
+    <div className="flex flex-col bg-white">
       {/* Tabs */}
       <div className="flex border-b">
         {(["intent", "draft"] as const).map((tab) => (
@@ -142,9 +135,12 @@ export default function App() {
 
             {/* Communicative Goal */}
             <div>
-              <h3 className="text-xs font-semibold text-gray-700 mb-2">
-                COMMUNICATIVE GOAL
-              </h3>
+              <div className="flex justify-between items-center mb-2">
+                <h3 className="text-xs font-semibold text-gray-700">
+                  COMMUNICATIVE GOAL
+                </h3>
+                <span className="text-xs text-blue-600">MANDATORY</span>
+              </div>
               <div className="flex flex-wrap gap-2">
                 {GOALS.map((goal) => (
                   <button
@@ -183,9 +179,12 @@ export default function App() {
 
             {/* Recipient Context */}
             <div>
-              <h3 className="text-xs font-semibold text-gray-700 mb-1">
-                RECIPIENT CONTEXT
-              </h3>
+              <div className="flex justify-between items-center mb-1">
+                <h3 className="text-xs font-semibold text-gray-700">
+                  RECIPIENT CONTEXT
+                </h3>
+                <span className="text-xs text-blue-600">MANDATORY</span>
+              </div>
               <input
                 type="text"
                 className="w-full p-3 border rounded text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
@@ -215,38 +214,6 @@ export default function App() {
 
               {showAdvanced && (
                 <div className="space-y-4 pl-2 border-l-2 border-blue-200">
-                  {/* Relational Distance */}
-                  <div>
-                    <div className="flex justify-between items-center mb-2">
-                      <h3 className="text-xs font-semibold text-gray-700">
-                        RELATIONAL DISTANCE
-                      </h3>
-                      <span className="text-xs text-blue-600">
-                        {getRelationalDistanceLabel(intent.relationalDistance)}
-                      </span>
-                    </div>
-                    <div className="px-1">
-                      <input
-                        type="range"
-                        min="0"
-                        max="1"
-                        step="0.1"
-                        value={intent.relationalDistance}
-                        onChange={(e) =>
-                          setIntent({
-                            ...intent,
-                            relationalDistance: parseFloat(e.target.value),
-                          })
-                        }
-                        className="w-full h-2 bg-gray-300 rounded-lg appearance-none cursor-pointer slider"
-                      />
-                      <div className="flex justify-between text-xs text-gray-500 mt-1">
-                        <span>Colleague</span>
-                        <span>Manager</span>
-                      </div>
-                    </div>
-                  </div>
-
                   {/* Tone */}
                   <div>
                     <div className="flex justify-between items-center mb-2">
@@ -262,7 +229,7 @@ export default function App() {
                         type="range"
                         min="0"
                         max="1"
-                        step="0.1"
+                        step="0.01"
                         value={intent.tone}
                         onChange={(e) =>
                           setIntent({
@@ -296,7 +263,7 @@ export default function App() {
                         type="range"
                         min="0"
                         max="1"
-                        step="0.1"
+                        step="0.01"
                         value={intent.length}
                         onChange={(e) =>
                           setIntent({
@@ -360,33 +327,32 @@ export default function App() {
 
         {activeTab === "draft" && (
           <div className="p-4 flex flex-col h-full">
-            {generatedEmail ? (
-              <div className="space-y-3 flex-1 flex flex-col">
-                <h3 className="text-sm font-semibold">Generated Email</h3>
-                <div className="p-3 border rounded bg-gray-50 text-sm flex-1 overflow-y-auto whitespace-pre-wrap">
-                  {generatedEmail}
-                </div>
-                <div className="space-y-2">
-                  <button
-                    onClick={() => {
-                      navigator.clipboard.writeText(generatedEmail);
-                    }}
-                    className="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700 text-sm font-medium"
-                  >
-                    📋 Copy to Clipboard
-                  </button>
-                  <button
-                    onClick={handleInsertToGmail}
-                    className="w-full bg-green-600 text-white py-2 rounded hover:bg-green-700 text-sm font-medium"
-                  >
-                    ✉️ Insert to Gmail
-                  </button>
+            {drafts.length > 0 ? (
+              <div className="space-y-3">
+                {/* Draft history tabs */}
+                <div className="flex flex-wrap gap-2">
+                  {drafts.map((draft, i) => (
+                    <button
+                      key={i}
+                      onClick={() => {
+                        setActiveDraftIndex(i);
+                        insertToGmail(draft);
+                      }}
+                      className={`px-3 py-2 rounded text-xs font-medium whitespace-nowrap transition-colors ${
+                        activeDraftIndex === i
+                          ? "bg-blue-600 text-white"
+                          : "bg-gray-100 text-gray-700 hover:bg-gray-200"
+                      }`}
+                    >
+                      Draft {i + 1}
+                    </button>
+                  ))}
                 </div>
               </div>
             ) : (
               <div className="text-center py-8">
                 <p className="text-gray-500 text-sm">
-                  Generate a draft to see it here
+                  Generate a draft to see it here.
                 </p>
               </div>
             )}
@@ -402,7 +368,6 @@ export default function App() {
             disabled={isLoading || !isFormValid}
             className="w-full bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 disabled:bg-gray-400 text-sm font-medium flex items-center justify-center gap-2 transition-colors"
           >
-            <span>✨</span>
             {isLoading ? "Generating..." : "Generate Draft"}
           </button>
         </div>

@@ -20,7 +20,6 @@ export async function POST(request: NextRequest) {
       mainMessage,
       recipientContext,
       tone,
-      relationalDistance,
       length,
       urgency,
       extraNotes,
@@ -34,14 +33,13 @@ export async function POST(request: NextRequest) {
     }
 
     const email = await generateEmail({
-      goal: goal || "",
+      goal: goal ?? "",
       mainMessage,
-      recipientContext: recipientContext || "",
-      tone: tone || 0.5,
-      relationalDistance: relationalDistance || 0.5,
-      length: length || 0.5,
-      urgency: urgency || false,
-      extraNotes: extraNotes || "",
+      recipientContext: recipientContext ?? "",
+      tone: tone ?? 0.5,
+      length: length ?? 0.5,
+      urgency: urgency ?? false,
+      extraNotes: extraNotes ?? "",
     });
 
     return NextResponse.json({ email }, { headers: corsHeaders });
