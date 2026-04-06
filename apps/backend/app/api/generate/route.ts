@@ -15,12 +15,21 @@ export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
 
-    const { goal, mainMessage, recipientContext, tone, length, urgency, extraNotes } = body;
+    const {
+      goal,
+      mainMessage,
+      recipientContext,
+      tone,
+      relationalDistance,
+      length,
+      urgency,
+      extraNotes,
+    } = body;
 
     if (!mainMessage) {
       return NextResponse.json(
         { error: "mainMessage is required" },
-        { status: 400, headers: corsHeaders }
+        { status: 400, headers: corsHeaders },
       );
     }
 
@@ -28,9 +37,10 @@ export async function POST(request: NextRequest) {
       goal: goal || "",
       mainMessage,
       recipientContext: recipientContext || "",
-      tone: tone || "Neutral",
-      length: length || "medium",
-      urgency: urgency || "medium",
+      tone: tone || 0.5,
+      relationalDistance: relationalDistance || 0.5,
+      length: length || 0.5,
+      urgency: urgency || false,
       extraNotes: extraNotes || "",
     });
 
@@ -39,7 +49,7 @@ export async function POST(request: NextRequest) {
     console.error("Email generation error:", error);
     return NextResponse.json(
       { error: "Failed to generate email" },
-      { status: 500, headers: corsHeaders }
+      { status: 500, headers: corsHeaders },
     );
   }
 }
