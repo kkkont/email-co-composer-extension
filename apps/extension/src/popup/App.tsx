@@ -14,15 +14,19 @@ const GOALS = [
 
 // Helper functions for dynamic labels
 const getToneLabel = (value: number): string => {
-  if (value < 0.33) return "Casual";
-  if (value < 0.66) return "Neutral";
-  return "Formal";
+  if (value < 0.2) return "Very Casual";
+  if (value < 0.4) return "Casual";
+  if (value < 0.6) return "Neutral";
+  if (value < 0.8) return "Formal";
+  return "Very Formal";
 };
 
 const getLengthLabel = (value: number): string => {
-  if (value < 0.33) return "Brief";
-  if (value < 0.66) return "Balanced";
-  return "Detailed";
+  if (value < 0.2) return "Very Brief";
+  if (value < 0.4) return "Brief";
+  if (value < 0.6) return "Balanced";
+  if (value < 0.8) return "Detailed";
+  return "Very Detailed";
 };
 
 export default function App() {
@@ -225,7 +229,7 @@ export default function App() {
                         type="range"
                         min="0"
                         max="1"
-                        step="0.1"
+                        step="0.01"
                         value={intent.tone}
                         onChange={(e) =>
                           setIntent({
@@ -259,7 +263,7 @@ export default function App() {
                         type="range"
                         min="0"
                         max="1"
-                        step="0.1"
+                        step="0.01"
                         value={intent.length}
                         onChange={(e) =>
                           setIntent({

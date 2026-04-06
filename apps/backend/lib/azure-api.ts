@@ -17,18 +17,26 @@ export interface EmailIntent {
 export async function generateEmail(intent: EmailIntent): Promise<string> {
   // Map sliders to concrete constraints
   const toneInstruction =
-    intent.tone < 0.33
-      ? "Use a casual, friendly tone. Use contractions (I'm, we'll, don't). Keep greetings informal (e.g. 'Hi', 'Hey'). Avoid corporate jargon."
-      : intent.tone < 0.66
-        ? "Use a neutral, polite tone. Mix of contractions and full forms. Standard greetings (e.g. 'Hello', 'Hi'). Balanced professionalism."
-        : "Use a formal, professional tone. No contractions. Use formal greetings (e.g. 'Dear'). Use professional language throughout.";
+    intent.tone < 0.2
+      ? "Use a very casual, friendly tone. Heavy use of contractions. Informal greetings (e.g. 'Hey'). Conversational language, like texting a friend."
+      : intent.tone < 0.4
+        ? "Use a casual, relaxed tone. Use contractions freely. Informal greetings (e.g. 'Hi'). Avoid corporate jargon."
+        : intent.tone < 0.6
+          ? "Use a neutral, polite tone. Mix of contractions and full forms. Standard greetings (e.g. 'Hello'). Balanced professionalism."
+          : intent.tone < 0.8
+            ? "Use a formal, professional tone. Minimal contractions. Professional greetings (e.g. 'Dear'). Business-appropriate language."
+            : "Use a very formal, highly professional tone. No contractions at all. Formal greetings (e.g. 'Dear Mr./Ms.'). Polished, executive-level language.";
 
   const lengthInstruction =
-    intent.length < 0.33
-      ? "CRITICAL: Keep the email VERY SHORT — 2 to 4 sentences maximum. Get straight to the point. No filler, no pleasantries beyond a one-word greeting. Do NOT exceed 4 sentences."
-      : intent.length < 0.66
-        ? "Keep the email moderate length — around 5 to 8 sentences. Include a brief greeting, the main point, and a short closing."
-        : "Write a detailed email — 8 to 15 sentences. Include context, explanation, and a thorough closing. Elaborate where helpful.";
+    intent.length < 0.2
+      ? "CRITICAL: Keep the email EXTREMELY SHORT — 1 to 2 sentences only. Just the essential point. No greeting beyond a name. Do NOT exceed 2 sentences."
+      : intent.length < 0.4
+        ? "CRITICAL: Keep the email VERY SHORT — 2 to 4 sentences maximum. Get straight to the point. Minimal pleasantries. Do NOT exceed 4 sentences."
+        : intent.length < 0.6
+          ? "Keep the email moderate length — around 5 to 8 sentences. Include a brief greeting, the main point, and a short closing."
+          : intent.length < 0.8
+            ? "Write a detailed email — 8 to 12 sentences. Include context, explanation, and a thorough closing."
+            : "Write a comprehensive, detailed email — 12 to 18 sentences. Elaborate fully, provide background, reasoning, and a complete closing.";
 
   const urgencyInstruction = intent.urgency
     ? "Clearly convey urgency. Include phrases like 'time-sensitive', 'as soon as possible', or 'immediate attention needed'. Make the deadline/urgency explicit early in the email."
@@ -60,7 +68,7 @@ Remember: Output ONLY the email body. Follow the LENGTH constraint strictly.`;
 
   // Scale max_tokens to match length setting
   const maxTokens =
-    intent.length < 0.33 ? 200 : intent.length < 0.66 ? 512 : 1024;
+    intent.length < 0.2 ? 128 : intent.length < 0.4 ? 200 : intent.length < 0.6 ? 512 : intent.length < 0.8 ? 768 : 1024;
 
   const response = await client.chat.completions.create({
     model: "gpt-4o-mini",
