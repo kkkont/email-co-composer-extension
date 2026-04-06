@@ -3,7 +3,6 @@ export interface EmailIntent {
   mainMessage: string;
   recipientContext: string;
   tone: number;
-  relationalDistance: number;
   length: number;
   urgency: boolean;
   extraNotes: string;

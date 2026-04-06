@@ -13,12 +13,6 @@ const GOALS = [
 ];
 
 // Helper functions for dynamic labels
-const getRelationalDistanceLabel = (value: number): string => {
-  if (value < 0.33) return "Colleague";
-  if (value < 0.66) return "Peer";
-  return "Manager";
-};
-
 const getToneLabel = (value: number): string => {
   if (value < 0.33) return "Casual";
   if (value < 0.66) return "Neutral";
@@ -37,15 +31,17 @@ export default function App() {
     mainMessage: "",
     recipientContext: "",
     tone: 0.5,
-    relationalDistance: 0.5,
     length: 0.5,
     urgency: false,
     extraNotes: "",
   });
-  const [generatedEmail, setGeneratedEmail] = useState("");
+  const [drafts, setDrafts] = useState<string[]>([]);
+  const [activeDraftIndex, setActiveDraftIndex] = useState(0);
   const [isLoading, setIsLoading] = useState(false);
   const [activeTab, setActiveTab] = useState<"intent" | "draft">("intent");
   const [showAdvanced, setShowAdvanced] = useState(false);
+
+  const generatedEmail = drafts[activeDraftIndex] ?? "";
 
   const handleGenerate = async () => {
     if (!intent.goal || !intent.mainMessage || !intent.recipientContext) return;
@@ -63,11 +59,13 @@ export default function App() {
       });
       const data = await response.json();
       if (!response.ok) throw new Error(data.error || "Generation failed");
-      setGeneratedEmail(data.email);
+      setDrafts((prev) => [...prev, data.email]);
+      setActiveDraftIndex(drafts.length);
       setActiveTab("draft");
     } catch (error) {
       console.error("Failed to generate email:", error);
-      setGeneratedEmail("Error generating email. Is the backend running?");
+      setDrafts((prev) => [...prev, "Error generating email. Is the backend running?"]);
+      setActiveDraftIndex(drafts.length);
     } finally {
       setIsLoading(false);
     }
@@ -103,14 +101,6 @@ export default function App() {
 
   return (
     <div className="h-screen flex flex-col bg-white">
-      {/* Header */}
-      <div className="flex justify-between items-center p-4 border-b">
-        <div className="flex items-center gap-2">
-          <span className="text-lg">✉️</span>
-          <h1 className="text-base font-semibold">E-Mail Co-Composer</h1>
-        </div>
-      </div>
-
       {/* Tabs */}
       <div className="flex border-b">
         {(["intent", "draft"] as const).map((tab) => (
@@ -215,38 +205,6 @@ export default function App() {
 
               {showAdvanced && (
                 <div className="space-y-4 pl-2 border-l-2 border-blue-200">
-                  {/* Relational Distance */}
-                  <div>
-                    <div className="flex justify-between items-center mb-2">
-                      <h3 className="text-xs font-semibold text-gray-700">
-                        RELATIONAL DISTANCE
-                      </h3>
-                      <span className="text-xs text-blue-600">
-                        {getRelationalDistanceLabel(intent.relationalDistance)}
-                      </span>
-                    </div>
-                    <div className="px-1">
-                      <input
-                        type="range"
-                        min="0"
-                        max="1"
-                        step="0.1"
-                        value={intent.relationalDistance}
-                        onChange={(e) =>
-                          setIntent({
-                            ...intent,
-                            relationalDistance: parseFloat(e.target.value),
-                          })
-                        }
-                        className="w-full h-2 bg-gray-300 rounded-lg appearance-none cursor-pointer slider"
-                      />
-                      <div className="flex justify-between text-xs text-gray-500 mt-1">
-                        <span>Colleague</span>
-                        <span>Manager</span>
-                      </div>
-                    </div>
-                  </div>
-
                   {/* Tone */}
                   <div>
                     <div className="flex justify-between items-center mb-2">
@@ -360,33 +318,41 @@ export default function App() {
 
         {activeTab === "draft" && (
           <div className="p-4 flex flex-col h-full">
-            {generatedEmail ? (
+            {drafts.length > 0 ? (
               <div className="space-y-3 flex-1 flex flex-col">
-                <h3 className="text-sm font-semibold">Generated Email</h3>
+                {/* Draft history tabs */}
+                <div className="flex gap-1 overflow-x-auto pb-1">
+                  {drafts.map((_, i) => (
+                    <button
+                      key={i}
+                      onClick={() => setActiveDraftIndex(i)}
+                      className={`px-3 py-1 rounded text-xs font-medium whitespace-nowrap transition-colors ${
+                        activeDraftIndex === i
+                          ? "bg-blue-600 text-white"
+                          : "bg-gray-100 text-gray-700 hover:bg-gray-200"
+                      }`}
+                    >
+                      Draft {i + 1}
+                    </button>
+                  ))}
+                </div>
                 <div className="p-3 border rounded bg-gray-50 text-sm flex-1 overflow-y-auto whitespace-pre-wrap">
                   {generatedEmail}
                 </div>
                 <div className="space-y-2">
                   <button
-                    onClick={() => {
-                      navigator.clipboard.writeText(generatedEmail);
-                    }}
-                    className="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700 text-sm font-medium"
-                  >
-                    📋 Copy to Clipboard
-                  </button>
-                  <button
                     onClick={handleInsertToGmail}
                     className="w-full bg-green-600 text-white py-2 rounded hover:bg-green-700 text-sm font-medium"
                   >
-                    ✉️ Insert to Gmail
+                    Insert to mail
                   </button>
                 </div>
               </div>
             ) : (
               <div className="text-center py-8">
                 <p className="text-gray-500 text-sm">
-                  Generate a draft to see it here
+                  Generate a draft to see it here. Each generation adds a new
+                  draft.
                 </p>
               </div>
             )}
@@ -402,7 +368,6 @@ export default function App() {
             disabled={isLoading || !isFormValid}
             className="w-full bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 disabled:bg-gray-400 text-sm font-medium flex items-center justify-center gap-2 transition-colors"
           >
-            <span>✨</span>
             {isLoading ? "Generating..." : "Generate Draft"}
           </button>
         </div>
