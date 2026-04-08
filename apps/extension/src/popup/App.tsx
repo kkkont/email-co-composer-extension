@@ -1,35 +1,37 @@
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 import type { EmailIntent } from "../types";
 
 const API_URL = "http://localhost:3000/api/generate";
 
-const GOALS = [
-  "Inform",
-  "Request",
-  "Clarify",
-  "Feedback",
-  "Propose",
-  "Apologize",
-];
+const GOAL_KEYS = [
+  "inform",
+  "request",
+  "clarify",
+  "feedback",
+  "propose",
+  "apologize",
+] as const;
 
 // Helper functions for dynamic labels
-const getToneLabel = (value: number): string => {
-  if (value < 0.2) return "Very Casual";
-  if (value < 0.4) return "Casual";
-  if (value < 0.6) return "Neutral";
-  if (value < 0.8) return "Formal";
-  return "Very Formal";
+const getToneLabelKey = (value: number): string => {
+  if (value < 0.2) return "form.tone.values.veryCasual";
+  if (value < 0.4) return "form.tone.values.casual";
+  if (value < 0.6) return "form.tone.values.neutral";
+  if (value < 0.8) return "form.tone.values.formal";
+  return "form.tone.values.veryFormal";
 };
 
-const getLengthLabel = (value: number): string => {
-  if (value < 0.2) return "Very Brief";
-  if (value < 0.4) return "Brief";
-  if (value < 0.6) return "Balanced";
-  if (value < 0.8) return "Detailed";
-  return "Very Detailed";
+const getLengthLabelKey = (value: number): string => {
+  if (value < 0.2) return "form.length.values.veryBrief";
+  if (value < 0.4) return "form.length.values.brief";
+  if (value < 0.6) return "form.length.values.balanced";
+  if (value < 0.8) return "form.length.values.detailed";
+  return "form.length.values.veryDetailed";
 };
 
 export default function App() {
+  const { t } = useTranslation();
   const [intent, setIntent] = useState<EmailIntent>({
     goal: "",
     mainMessage: "",
@@ -65,7 +67,7 @@ export default function App() {
       insertToGmail(data.email);
     } catch (error) {
       console.error("Failed to generate email:", error);
-      setDrafts((prev) => [...prev, "Error generating email. Is the backend running?"]);
+      setDrafts((prev) => [...prev, t("actions.errorMessage")]);
       setActiveDraftIndex(drafts.length);
     } finally {
       setIsLoading(false);
@@ -106,10 +108,9 @@ export default function App() {
       <div className="flex-1 overflow-y-auto">
         <div className="p-4 space-y-4">
           <div>
-            <h2 className="text-lg font-bold mb-1">Define Your Intent</h2>
+            <h2 className="text-lg font-bold mb-1">{t("app.title")}</h2>
             <p className="text-xs text-gray-600 mb-4">
-              Guide the assistant to craft the perfect response based on your
-              specific goals.
+              {t("app.subtitle")}
             </p>
           </div>
 
@@ -117,22 +118,22 @@ export default function App() {
           <div>
             <div className="flex justify-between items-center mb-2">
               <h3 className="text-xs font-semibold text-gray-700">
-                COMMUNICATIVE GOAL
+                {t("form.goal.label")}
               </h3>
-              <span className="text-xs text-blue-600">MANDATORY</span>
+              <span className="text-xs text-blue-600">{t("form.mandatory")}</span>
             </div>
             <div className="flex flex-wrap gap-2">
-              {GOALS.map((goal) => (
+              {GOAL_KEYS.map((key) => (
                 <button
-                  key={goal}
-                  onClick={() => setIntent({ ...intent, goal })}
+                  key={key}
+                  onClick={() => setIntent({ ...intent, goal: t(`form.goal.options.${key}`) })}
                   className={`px-3 py-1 rounded-full text-xs font-medium transition-colors ${
-                    intent.goal === goal
+                    intent.goal === t(`form.goal.options.${key}`)
                       ? "bg-blue-600 text-white"
                       : "bg-gray-100 text-gray-700 hover:bg-gray-200"
                   }`}
                 >
-                  {goal}
+                  {t(`form.goal.options.${key}`)}
                 </button>
               ))}
             </div>
@@ -142,9 +143,9 @@ export default function App() {
           <div>
             <div className="flex justify-between items-center mb-1">
               <h3 className="text-xs font-semibold text-gray-700">
-                MAIN MESSAGE
+                {t("form.mainMessage.label")}
               </h3>
-              <span className="text-xs text-blue-600">MANDATORY</span>
+              <span className="text-xs text-blue-600">{t("form.mandatory")}</span>
             </div>
             <textarea
               className="w-full p-3 border rounded text-sm resize-none focus:outline-none focus:ring-2 focus:ring-blue-500"
@@ -153,7 +154,7 @@ export default function App() {
               onChange={(e) =>
                 setIntent({ ...intent, mainMessage: e.target.value })
               }
-              placeholder="What is the core takeaway for the recipient?"
+              placeholder={t("form.mainMessage.placeholder")}
             />
           </div>
 
@@ -161,9 +162,9 @@ export default function App() {
           <div>
             <div className="flex justify-between items-center mb-1">
               <h3 className="text-xs font-semibold text-gray-700">
-                RECIPIENT CONTEXT
+                {t("form.recipient.label")}
               </h3>
-              <span className="text-xs text-blue-600">MANDATORY</span>
+              <span className="text-xs text-blue-600">{t("form.mandatory")}</span>
             </div>
             <input
               type="text"
@@ -172,7 +173,7 @@ export default function App() {
               onChange={(e) =>
                 setIntent({ ...intent, recipientContext: e.target.value })
               }
-              placeholder="Full Name or Title"
+              placeholder={t("form.recipient.placeholder")}
             />
           </div>
 
@@ -188,7 +189,7 @@ export default function App() {
                 ▶
               </span>
               <h3 className="text-xs font-semibold text-gray-700">
-                ADVANCED CONTROLS
+                {t("form.advanced.toggle")}
               </h3>
             </button>
 
@@ -198,10 +199,10 @@ export default function App() {
                 <div>
                   <div className="flex justify-between items-center mb-2">
                     <h3 className="text-xs font-semibold text-gray-700">
-                      TONE
+                      {t("form.tone.label")}
                     </h3>
                     <span className="text-xs text-blue-600">
-                      {getToneLabel(intent.tone)}
+                      {t(getToneLabelKey(intent.tone))}
                     </span>
                   </div>
                   <div className="px-1">
@@ -220,8 +221,8 @@ export default function App() {
                       className="w-full h-2 bg-gray-300 rounded-lg appearance-none cursor-pointer slider"
                     />
                     <div className="flex justify-between text-xs text-gray-500 mt-1">
-                      <span>Casual</span>
-                      <span>Formal</span>
+                      <span>{t("form.tone.casual")}</span>
+                      <span>{t("form.tone.formal")}</span>
                     </div>
                   </div>
                 </div>
@@ -230,10 +231,10 @@ export default function App() {
                 <div className="mb-4">
                   <div className="flex justify-between items-center mb-2">
                     <span className="text-xs font-medium text-gray-700">
-                      LENGTH
+                      {t("form.length.label")}
                     </span>
                     <span className="text-xs text-blue-600">
-                      {getLengthLabel(intent.length)}
+                      {t(getLengthLabelKey(intent.length))}
                     </span>
                   </div>
                   <div className="px-1">
@@ -252,8 +253,8 @@ export default function App() {
                       className="w-full h-2 bg-gray-300 rounded-lg appearance-none cursor-pointer slider"
                     />
                     <div className="flex justify-between text-xs text-gray-500 mt-1">
-                      <span>Brief</span>
-                      <span>Detailed</span>
+                      <span>{t("form.length.brief")}</span>
+                      <span>{t("form.length.detailed")}</span>
                     </div>
                   </div>
                 </div>
@@ -261,10 +262,10 @@ export default function App() {
                 {/* Urgency Toggle */}
                 <div className="flex justify-between items-center mb-4">
                   <span className="text-xs font-medium text-gray-700">
-                    URGENCY
+                    {t("form.urgency.label")}
                   </span>
                   <span className="text-xs text-gray-600 mr-2">
-                    Mark as immediate action
+                    {t("form.urgency.description")}
                   </span>
                   <button
                     onClick={() =>
@@ -285,7 +286,7 @@ export default function App() {
                 {/* Extra Notes */}
                 <div>
                   <h3 className="text-xs font-semibold text-gray-700 mb-1">
-                    EXTRA NOTES
+                    {t("form.extraNotes.label")}
                   </h3>
                   <textarea
                     className="w-full p-3 border rounded text-sm resize-none focus:outline-none focus:ring-2 focus:ring-blue-500"
@@ -294,7 +295,7 @@ export default function App() {
                     onChange={(e) =>
                       setIntent({ ...intent, extraNotes: e.target.value })
                     }
-                    placeholder="Mention specific context or deadline..."
+                    placeholder={t("form.extraNotes.placeholder")}
                   />
                 </div>
               </div>
@@ -310,13 +311,13 @@ export default function App() {
           disabled={isLoading || !isFormValid}
           className="w-full bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 disabled:bg-gray-400 text-sm font-medium flex items-center justify-center gap-2 transition-colors"
         >
-          {isLoading ? "Generating..." : "Generate Draft"}
+          {isLoading ? t("actions.generating") : t("actions.generate")}
         </button>
 
         {drafts.length > 0 && (
           <div>
             <p className="text-xs text-gray-500 mb-2">
-              Click a draft to insert it into your email:
+              {t("actions.draftHint")}
             </p>
             <div className="flex flex-wrap gap-2">
               {drafts.map((draft, i) => (
@@ -332,7 +333,7 @@ export default function App() {
                       : "bg-gray-100 text-gray-700 hover:bg-gray-200"
                   }`}
                 >
-                  Draft {i + 1}
+                 {t("actions.draftLabel", { number: i + 1 })}
                 </button>
               ))}
             </div>

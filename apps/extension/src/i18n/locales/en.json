@@ -1,65 +1,70 @@
 {
   "app": {
-    "title": "Email Co-Composer"
+    "title": "Define Your Intent",
+    "subtitle": "Guide the assistant to craft the perfect response based on your specific goals."
   },
   "form": {
+    "mandatory": "MANDATORY",
     "goal": {
-      "label": "Communication Goal",
-      "placeholder": "Select your goal...",
+      "label": "COMMUNICATIVE GOAL",
       "options": {
         "inform": "Inform",
         "request": "Request",
         "clarify": "Clarify",
-        "follow-up": "Follow-Up",
-        "thank": "Thank",
-        "feedback": "Give Feedback",
+        "feedback": "Feedback",
         "propose": "Propose",
         "apologize": "Apologize"
       }
     },
     "mainMessage": {
-      "label": "Main Message",
-      "placeholder": "What do you want to communicate?"
+      "label": "MAIN MESSAGE",
+      "placeholder": "What is the core takeaway for the recipient?"
     },
     "recipient": {
-      "label": "Recipient Context",
-      "placeholder": "e.g., professor, colleague, client"
+      "label": "RECIPIENT CONTEXT",
+      "placeholder": "Full Name or Title"
     },
     "advanced": {
-      "toggle": "Advanced Controls"
+      "toggle": "ADVANCED CONTROLS"
     },
     "tone": {
-      "label": "Tone",
-      "options": {
-        "formal": "Formal",
+      "label": "TONE",
+      "casual": "Casual",
+      "formal": "Formal",
+      "values": {
+        "veryCasual": "Very Casual",
+        "casual": "Casual",
         "neutral": "Neutral",
-        "casual": "Casual"
+        "formal": "Formal",
+        "veryFormal": "Very Formal"
       }
     },
     "length": {
-      "label": "Length",
-      "options": {
-        "short": "Short",
-        "medium": "Medium",
-        "long": "Long"
+      "label": "LENGTH",
+      "brief": "Brief",
+      "detailed": "Detailed",
+      "values": {
+        "veryBrief": "Very Brief",
+        "brief": "Brief",
+        "balanced": "Balanced",
+        "detailed": "Detailed",
+        "veryDetailed": "Very Detailed"
       }
     },
     "urgency": {
-      "label": "Urgency",
-      "options": {
-        "low": "Low",
-        "medium": "Medium",
-        "high": "High"
-      }
+      "label": "URGENCY",
+      "description": "Mark as immediate action"
     },
     "extraNotes": {
-      "label": "Extra Notes",
-      "placeholder": "e.g., mention the deadline, keep it brief, include action steps"
+      "label": "EXTRA NOTES",
+      "placeholder": "Mention specific context or deadline..."
     }
   },
   "actions": {
-    "generate": "Generate Email",
+    "generate": "Generate Draft",
     "generating": "Generating...",
-    "insertToGmail": "Insert to Gmail"
+    "draftHint": "Click a draft to insert it into your email:",
+    "draftLabel": "Draft {{number}}",
+    "errorMessage": "Error generating email. Is the backend running?"
   }
 }
