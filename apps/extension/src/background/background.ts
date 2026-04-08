@@ -4,5 +4,9 @@ chrome.runtime.onInstalled.addListener((details) => {
 
 // Open side panel when extension icon is clicked
 chrome.action.onClicked.addListener((tab) => {
-  chrome.sidePanel.open({ tabId: tab.id });
+  if (tab.windowId === undefined) {
+    return;
+  }
+
+  chrome.sidePanel.open({ windowId: tab.windowId, tabId: tab.id });
 });
