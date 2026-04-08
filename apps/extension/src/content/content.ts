@@ -1,21 +1,44 @@
 chrome.runtime.onMessage.addListener((request, _sender, _sendResponse) => {
   if (request.action === 'insertEmail') {
-    insertEmailToGmail(request.email);
+    insertEmailToComposeBox(request.email);
   }
   if (request.action === 'clearEmail') {
-    clearGmailComposeBox();
+    clearComposeBox();
   }
 });
 
-// Watch for Gmail compose window opening
+const COMPOSE_SELECTORS = [
+  // Gmail selectors
+  '[role="textbox"][aria-label*="Message"]',
+  '[role="textbox"][aria-label*="message"]',
+  '[role="textbox"][aria-label*="Body"]',
+  '[role="textbox"][aria-label*="body"]',
+  'div[aria-label*="Message"][contenteditable="true"]',
+  'div[aria-label*="body"][contenteditable="true"]',
+  'div.Am.Al.editable[contenteditable="true"]',
+  'div[contenteditable="true"][role="textbox"]',
+  // Outlook selectors
+  'div[aria-label*="Message body"][contenteditable="true"]',
+  'div[role="textbox"][aria-label*="Message body"]',
+  'div.elementToProof[contenteditable="true"]',
+  'div[id^="editorParent"] div[contenteditable="true"]',
+];
+
+function findComposeBox(): HTMLElement | null {
+  for (const selector of COMPOSE_SELECTORS) {
+    const el = document.querySelector(selector) as HTMLElement;
+    if (el) return el;
+  }
+  return null;
+}
+
+// Watch for compose window opening (Gmail & Outlook)
 function watchForCompose() {
   const seenBoxes = new WeakSet<Element>();
 
   const observer = new MutationObserver(() => {
     const composeBoxes = document.querySelectorAll(
-      'div[aria-label*="Message"][contenteditable="true"], ' +
-      'div[aria-label*="message"][contenteditable="true"], ' +
-      'div.Am.Al.editable[contenteditable="true"]'
+      COMPOSE_SELECTORS.join(', ')
     );
     for (const box of composeBoxes) {
       if (!seenBoxes.has(box)) {
@@ -31,23 +54,8 @@ function watchForCompose() {
 
 watchForCompose();
 
-function insertEmailToGmail(emailText: string) {
-  const selectors = [
-    '[role="textbox"][aria-label*="Message"]',
-    '[role="textbox"][aria-label*="message"]',
-    '[role="textbox"][aria-label*="Body"]',
-    '[role="textbox"][aria-label*="body"]',
-    'div[aria-label*="Message"][contenteditable="true"]',
-    'div[aria-label*="body"][contenteditable="true"]',
-    'div.Am.Al.editable[contenteditable="true"]',
-    'div[contenteditable="true"][role="textbox"]'
-  ];
-
-  let composeBox: HTMLElement | null = null;
-  for (const selector of selectors) {
-    composeBox = document.querySelector(selector) as HTMLElement;
-    if (composeBox) break;
-  }
+function insertEmailToComposeBox(emailText: string) {
+  const composeBox = findComposeBox();
   
   if (composeBox) {
     composeBox.focus();
@@ -56,27 +64,12 @@ function insertEmailToGmail(emailText: string) {
     composeBox.dispatchEvent(new Event('input', { bubbles: true }));
     console.log('Email inserted successfully');
   } else {
-    console.error('Could not find Gmail compose box. Make sure a compose window is open.');
+    console.error('Could not find compose box. Make sure a compose window is open.');
   }
 }
 
-function clearGmailComposeBox() {
-  const selectors = [
-    '[role="textbox"][aria-label*="Message"]',
-    '[role="textbox"][aria-label*="message"]',
-    '[role="textbox"][aria-label*="Body"]',
-    '[role="textbox"][aria-label*="body"]',
-    'div[aria-label*="Message"][contenteditable="true"]',
-    'div[aria-label*="body"][contenteditable="true"]',
-    'div.Am.Al.editable[contenteditable="true"]',
-    'div[contenteditable="true"][role="textbox"]'
-  ];
-
-  let composeBox: HTMLElement | null = null;
-  for (const selector of selectors) {
-    composeBox = document.querySelector(selector) as HTMLElement;
-    if (composeBox) break;
-  }
+function clearComposeBox() {
+  const composeBox = findComposeBox();
 
   if (composeBox) {
     composeBox.focus();

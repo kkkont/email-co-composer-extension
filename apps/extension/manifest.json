@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "Email Co-Composer",
   "version": "1.0.0",
-  "description": "AI-powered email co-composer for Gmail",
+  "description": "AI-powered email co-composer for Gmail and Outlook",
   "permissions": ["activeTab", "scripting", "sidePanel"],
   "action": {
     "default_title": "Email Co-Composer"
@@ -16,7 +16,7 @@
   },
   "content_scripts": [
     {
-      "matches": ["https://mail.google.com/*"],
+      "matches": ["https://mail.google.com/*", "https://outlook.live.com/*", "https://outlook.office.com/*", "https://outlook.office365.com/*"],
       "js": ["content.js"]
     }
   ]
