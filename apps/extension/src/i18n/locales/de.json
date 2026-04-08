@@ -1,0 +1,70 @@
+{
+  "app": {
+    "title": "Definieren Sie Ihr Ziel",
+    "subtitle": "Beschreiben Sie Ihr Ziel und wir erstellen den Entwurf für die E-Mail."
+  },
+  "form": {
+    "mandatory": "VERPFLICHTEND",
+    "goal": {
+      "label": "KOMMUNIKATIVES ZIEL",
+      "options": {
+        "inform": "Informieren",
+        "request": "Anfragen",
+        "clarify": "Klären",
+        "feedback": "Feedback",
+        "propose": "Vorschlagen",
+        "apologize": "Entschuldigen"
+      }
+    },
+    "mainMessage": {
+      "label": "HAUPTNACHRICHT",
+      "placeholder": "Was ist die zentrale Botschaft für den Empfänger?"
+    },
+    "recipient": {
+      "label": "EMPFÄNGERKONTEXT",
+      "placeholder": "Name, Titel oder Beziehung (z.B. Lehrer John)"
+    },
+    "advanced": {
+      "toggle": "ERWEITERTE STEUERUNGEN"
+    },
+    "tone": {
+      "label": "TON",
+      "casual": "Lässig",
+      "formal": "Formal",
+      "values": {
+        "veryCasual": "Sehr Lässig",
+        "casual": "Lässig",
+        "neutral": "Neutral",
+        "formal": "Formal",
+        "veryFormal": "Sehr Formal"
+      }
+    },
+    "length": {
+      "label": "LÄNGE",
+      "brief": "Kurz",
+      "detailed": "Detailliert",
+      "values": {
+        "veryBrief": "Sehr Kurz",
+        "brief": "Kurz",
+        "balanced": "Ausgewogen",
+        "detailed": "Detailliert",
+        "veryDetailed": "Sehr Detailliert"
+      }
+    },
+    "urgency": {
+      "label": "DRINGLICHKEIT",
+      "description": "Als sofortige Aktion markieren"
+    },
+    "extraNotes": {
+      "label": "ZUSÄTZLICHE NOTIZEN",
+      "placeholder": "Geben Sie spezifischen Kontext oder Fristen an..."
+    }
+  },
+  "actions": {
+    "generate": "Entwurf erstellen",
+    "generating": "Wird erstellt...",
+    "draftHint": "Klicken Sie auf einen Entwurf, um ihn in Ihre E-Mail einzufügen:",
+    "draftLabel": "Entwurf {{number}}",
+    "errorMessage": "Fehler beim Erstellen der E-Mail. Läuft der Backend-Dienst?"
+  }
+}

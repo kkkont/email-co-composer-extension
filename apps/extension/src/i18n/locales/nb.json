@@ -1,0 +1,70 @@
+{
+  "app": {
+    "title": "Definer Ditt Mål",
+    "subtitle": "Beskriv målet ditt, så lager vi utkastet til e-posten."
+  },
+  "form": {
+    "mandatory": "OBLIGATORISK",
+    "goal": {
+      "label": "KOMMUNIKATIVT MÅL",
+      "options": {
+        "inform": "Informere",
+        "request": "Forespørsel",
+        "clarify": "Klarifisere",
+        "feedback": "Tilbakemelding",
+        "propose": "Foreslå",
+        "apologize": "Be om unnskyldning"
+      }
+    },
+    "mainMessage": {
+      "label": "HOVEDBUDSKAP",
+      "placeholder": "Hva er hovedpoenget for mottakeren?"
+    },
+    "recipient": {
+      "label": "MOTTAGERKONTEKST",
+      "placeholder": "Navn, tittel eller relasjon (f.eks. Lærer John)"
+    },
+    "advanced": {
+      "toggle": "AVANSERTE KONTROLLER"
+    },
+    "tone": {
+      "label": "TONE",
+      "casual": "Uformell",
+      "formal": "Formell",
+      "values": {
+        "veryCasual": "Veldig Uformell",
+        "casual": "Uformell",
+        "neutral": "Nøytral",
+        "formal": "Formell",
+        "veryFormal": "Veldig Formell"
+      }
+    },
+    "length": {
+      "label": "LENGDE",
+      "brief": "Kort",
+      "detailed": "Detaljert",
+      "values": {
+        "veryBrief": "Veldig Kort",
+        "brief": "Kort",
+        "balanced": "Balansert",
+        "detailed": "Detaljert",
+        "veryDetailed": "Veldig Detaljert"
+      }
+    },
+    "urgency": {
+      "label": "HASSELIGHET",
+      "description": "Merk som umiddelbar handling"
+    },
+    "extraNotes": {
+      "label": "EKSTRA NOTATER",
+      "placeholder": "Nevn spesifikk kontekst eller frist..."
+    }
+  },
+  "actions": {
+    "generate": "Generer Utkast",
+    "generating": "Genererer...",
+    "draftHint": "Klikk på et utkast for å sette det inn i e-posten din:",
+    "draftLabel": "Utkast {{number}}",
+    "errorMessage": "Feil ved generering av e-post. Kjører backend?"
+  }
+}

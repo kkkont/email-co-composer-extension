@@ -1,0 +1,70 @@
+{
+  "app": {
+    "title": "Definieer Je Intentie",
+    "subtitle": "Beschrijf je doel en wij stellen de e-mail op."
+  },
+  "form": {
+    "mandatory": "VERPLICHT",
+    "goal": {
+      "label": "COMMUNICATIE DOEL",
+      "options": {
+        "inform": "Informeren",
+        "request": "Verzoeken",
+        "clarify": "Verduidelijken",
+        "feedback": "Feedback",
+        "propose": "Voorstellen",
+        "apologize": "Verontschuldigen"
+      }
+    },
+    "mainMessage": {
+      "label": "HOUDING BERICHT",
+      "placeholder": "Wat is de kernboodschap voor de ontvanger?"
+    },
+    "recipient": {
+      "label": "ONTVANGER CONTEXT",
+      "placeholder": "Naam, titel of relatie (bijv. Leraar John)"
+    },
+    "advanced": {
+      "toggle": "GEAVANCEERDE INSTELLINGEN"
+    },
+    "tone": {
+      "label": "TOON",
+      "casual": "Informeel",
+      "formal": "Formeel",
+      "values": {
+        "veryCasual": "Zeer Informeel",
+        "casual": "Informeel",
+        "neutral": "Neutraal",
+        "formal": "Formeel",
+        "veryFormal": "Zeer Formeel"
+      }
+    },
+    "length": {
+      "label": "LENGTE",
+      "brief": "Kort",
+      "detailed": "Gedetailleerd",
+      "values": {
+        "veryBrief": "Zeer Kort",
+        "brief": "Kort",
+        "balanced": "Gebalanceerd",
+        "detailed": "Gedetailleerd",
+        "veryDetailed": "Zeer Gedetailleerd"
+      }
+    },
+    "urgency": {
+      "label": "DRINGENDHEID",
+      "description": "Markeer als onmiddellijke actie"
+    },
+    "extraNotes": {
+      "label": "EXTRA OPMERKINGEN",
+      "placeholder": "Vermeld specifieke context of deadline..."
+    }
+  },
+  "actions": {
+    "generate": "Genereer Concept",
+    "generating": "Genereert...",
+    "draftHint": "Klik op een concept om het in je e-mail in te voegen:",
+    "draftLabel": "Concept {{number}}",
+    "errorMessage": "Fout bij het genereren van de e-mail. Is de backend actief?"
+  }
+}

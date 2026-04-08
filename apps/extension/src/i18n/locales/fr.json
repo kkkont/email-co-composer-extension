@@ -1,0 +1,70 @@
+{
+  "app": {
+    "title": "Définissez Votre Intent",
+    "subtitle": "Décrivez votre objectif et nous rédigerons l'email."
+  },
+  "form": {
+    "mandatory": "OBLIGATOIRE",
+    "goal": {
+      "label": "OBJECTIF COMMUNICATIF",
+      "options": {
+        "inform": "Informer",
+        "request": "Demander",
+        "clarify": "Clarifier",
+        "feedback": "Retour d'information",
+        "propose": "Proposer",
+        "apologize": "S'excuser"
+      }
+    },
+    "mainMessage": {
+      "label": "MESSAGE PRINCIPAL",
+      "placeholder": "Quel est le message clé pour le destinataire ?"
+    },
+    "recipient": {
+      "label": "CONTEXTE DU DESTINATAIRE",
+      "placeholder": "Nom, titre ou relation (ex. Professeur John)"
+    },
+    "advanced": {
+      "toggle": "CONTROLES AVANCÉS"
+    },
+    "tone": {
+      "label": "TON",
+      "casual": "Décontracté",
+      "formal": "Formel",
+      "values": {
+        "veryCasual": "Très Décontracté",
+        "casual": "Décontracté",
+        "neutral": "Neutre",
+        "formal": "Formel",
+        "veryFormal": "Très Formel"
+      }
+    },
+    "length": {
+      "label": "LONGUEUR",
+      "brief": "Bref",
+      "detailed": "Détaillé",
+      "values": {
+        "veryBrief": "Très Bref",
+        "brief": "Bref",
+        "balanced": "Équilibré",
+        "detailed": "Détaillé",
+        "veryDetailed": "Très Détaillé"
+      }
+    },
+    "urgency": {
+      "label": "URGENCE",
+      "description": "Marquer comme action immédiate"
+    },
+    "extraNotes": {
+      "label": "NOTES SUPPLÉMENTAIRES",
+      "placeholder": "Mentionnez un contexte spécifique ou une date limite..."
+    }
+  },
+  "actions": {
+    "generate": "Générer le Brouillon",
+    "generating": "Génération en cours...",
+    "draftHint": "Cliquez sur un brouillon pour l'insérer dans votre email :",
+    "draftLabel": "Brouillon {{number}}",
+    "errorMessage": "Erreur lors de la génération de l'email. Le backend fonctionne-t-il ?"
+  }
+}

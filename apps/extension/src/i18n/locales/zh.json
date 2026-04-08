@@ -1,0 +1,70 @@
+{
+  "app": {
+    "title": "定义您的意图",
+    "subtitle": "描述您的目标，我们将为您草拟邮件。"
+  },
+  "form": {
+    "mandatory": "必填",
+    "goal": {
+      "label": "沟通目标",
+      "options": {
+        "inform": "通知",
+        "request": "请求",
+        "clarify": "澄清",
+        "feedback": "反馈",
+        "propose": "提议",
+        "apologize": "道歉"
+      }
+    },
+    "mainMessage": {
+      "label": "主要信息",
+      "placeholder": "收件人的核心要点是什么？"
+    },
+    "recipient": {
+      "label": "收件人信息",
+      "placeholder": "姓名、职称或关系（例如：教师约翰）"
+    },
+    "advanced": {
+      "toggle": "高级设置"
+    },
+    "tone": {
+      "label": "语气",
+      "casual": "随意",
+      "formal": "正式",
+      "values": {
+        "veryCasual": "非常随意",
+        "casual": "随意",
+        "neutral": "中性",
+        "formal": "正式",
+        "veryFormal": "非常正式"
+      }
+    },
+    "length": {
+      "label": "长度",
+      "brief": "简短",
+      "detailed": "详细",
+      "values": {
+        "veryBrief": "非常简短",
+        "brief": "简短",
+        "balanced": "适中",
+        "detailed": "详细",
+        "veryDetailed": "非常详细"
+      }
+    },
+    "urgency": {
+      "label": "紧急性",
+      "description": "标记为立即处理"
+    },
+    "extraNotes": {
+      "label": "额外备注",
+      "placeholder": "提及具体的背景或截止日期..."
+    }
+  },
+  "actions": {
+    "generate": "生成草稿",
+    "generating": "正在生成...",
+    "draftHint": "点击草稿将其插入到您的邮件中：",
+    "draftLabel": "草稿 {{number}}",
+    "errorMessage": "生成邮件时出错。后端是否正在运行？"
+  }
+}

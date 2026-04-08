@@ -1,0 +1,70 @@
+{
+  "app": {
+    "title": "Määra oma eesmärk",
+    "subtitle": "Kirjeldage oma eesmärki ja me koostame e-kirja."
+  },
+  "form": {
+    "mandatory": "KOHUSTUSLIK",
+    "goal": {
+      "label": "KOMMUNIKATIIVNE EESMÄRK",
+      "options": {
+        "inform": "Teavitada",
+        "request": "Küsimine",
+        "clarify": "Selgitada",
+        "feedback": "Tagasiside",
+        "propose": "Pakkuda",
+        "apologize": "Vabandada"
+      }
+    },
+    "mainMessage": {
+      "label": "PEAMINE SÕNUM",
+      "placeholder": "Mis on peamine sõnum saajale?"
+    },
+    "recipient": {
+      "label": "SAAJA KONTEKST",
+      "placeholder": "Nimi, amet või suhe (nt. Õpetaja John)"
+    },
+    "advanced": {
+      "toggle": "EDASISED SEADISTUSED"
+    },
+    "tone": {
+      "label": "TOON",
+      "casual": "Mugav",
+      "formal": "Ametlik",
+      "values": {
+        "veryCasual": "Väga mugav",
+        "casual": "Mugav",
+        "neutral": "Neutraalne",
+        "formal": "Ametlik",
+        "veryFormal": "Väga ametlik"
+      }
+    },
+    "length": {
+      "label": "PIKKUS",
+      "brief": "Lühike",
+      "detailed": "Üksikasjalik",
+      "values": {
+        "veryBrief": "Väga lühike",
+        "brief": "Lühike",
+        "balanced": "Tasakaalustatud",
+        "detailed": "Üksikasjalik",
+        "veryDetailed": "Väga üksikasjalik"
+      }
+    },
+    "urgency": {
+      "label": "KIIRENDUS",
+      "description": "Märgi kui kohene tegevus"
+    },
+    "extraNotes": {
+      "label": "LISAMÄRKUSED",
+      "placeholder": "Maini konkreetset konteksti või tähtaega..."
+    }
+  },
+  "actions": {
+    "generate": "Genereeri mustand",
+    "generating": "Genereerimine...",
+    "draftHint": "Klõpsa mustandil, et see oma e-kirja sisestada:",
+    "draftLabel": "Mustand {{number}}",
+    "errorMessage": "Viga e-kirja genereerimisel. Kas server töötab?"
+  }
+}

@@ -1,0 +1,70 @@
+{
+  "app": {
+    "title": "Defina Seu Intuito",
+    "subtitle": "Descreva seu objetivo e nós redigiremos o e-mail."
+  },
+  "form": {
+    "mandatory": "OBRIGATÓRIO",
+    "goal": {
+      "label": "OBJETIVO COMUNICATIVO",
+      "options": {
+        "inform": "Informar",
+        "request": "Solicitar",
+        "clarify": "Esclarecer",
+        "feedback": "Feedback",
+        "propose": "Propor",
+        "apologize": "Pedindo Desculpas"
+      }
+    },
+    "mainMessage": {
+      "label": "MENSAGEM PRINCIPAL",
+      "placeholder": "Qual é a mensagem principal para o destinatário?"
+    },
+    "recipient": {
+      "label": "CONTEXTO DO DESTINATÁRIO",
+      "placeholder": "Nome, cargo ou relação (ex. Professor João)"
+    },
+    "advanced": {
+      "toggle": "CONTROLES AVANÇADOS"
+    },
+    "tone": {
+      "label": "TOM",
+      "casual": "Informal",
+      "formal": "Formal",
+      "values": {
+        "veryCasual": "Muito Informal",
+        "casual": "Informal",
+        "neutral": "Neutro",
+        "formal": "Formal",
+        "veryFormal": "Muito Formal"
+      }
+    },
+    "length": {
+      "label": "EXTENSÃO",
+      "brief": "Breve",
+      "detailed": "Detalhado",
+      "values": {
+        "veryBrief": "Muito Breve",
+        "brief": "Breve",
+        "balanced": "Equilibrado",
+        "detailed": "Detalhado",
+        "veryDetailed": "Muito Detalhado"
+      }
+    },
+    "urgency": {
+      "label": "URGÊNCIA",
+      "description": "Marcar como ação imediata"
+    },
+    "extraNotes": {
+      "label": "NOTAS ADICIONAIS",
+      "placeholder": "Mencione contexto específico ou prazo..."
+    }
+  },
+  "actions": {
+    "generate": "Gerar Rascunho",
+    "generating": "Gerando...",
+    "draftHint": "Clique em um rascunho para inseri-lo no seu e-mail:",
+    "draftLabel": "Rascunho {{number}}",
+    "errorMessage": "Erro ao gerar o e-mail. O backend está em execução?"
+  }
+}

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
+import { availableLanguages, languageNames } from "../i18n";
 import type { EmailIntent } from "../types";
 
 const API_URL = "http://localhost:3000/api/generate";
@@ -31,7 +32,7 @@ const getLengthLabelKey = (value: number): string => {
 };
 
 export default function App() {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const [intent, setIntent] = useState<EmailIntent>({
     goal: "",
     mainMessage: "",
@@ -108,7 +109,20 @@ export default function App() {
       <div className="flex-1 overflow-y-auto">
         <div className="p-4 space-y-4">
           <div>
-            <h2 className="text-lg font-bold mb-1">{t("app.title")}</h2>
+            <div className="flex justify-between items-center">
+              <h2 className="text-lg font-bold mb-1">{t("app.title")}</h2>
+              <select
+                value={i18n.language}
+                onChange={(e) => i18n.changeLanguage(e.target.value)}
+                className="text-xs border rounded px-2 py-1 bg-white text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              >
+                {availableLanguages.map((code) => (
+                  <option key={code} value={code}>
+                    {code.toUpperCase()} - {languageNames[code] ?? code}
+                  </option>
+                ))}
+              </select>
+            </div>
             <p className="text-xs text-gray-600 mb-4">
               {t("app.subtitle")}
             </p>

@@ -1,0 +1,70 @@
+{
+  "app": {
+    "title": "Definiera Ditt Syfte",
+    "subtitle": "Beskriv ditt mål så skriver vi ett utkast till e-post."
+  },
+  "form": {
+    "mandatory": "OBLIGATORISK",
+    "goal": {
+      "label": "KOMMUNIKATIVT MÅL",
+      "options": {
+        "inform": "Informera",
+        "request": "Begära",
+        "clarify": "Klargöra",
+        "feedback": "Feedback",
+        "propose": "Föreslå",
+        "apologize": "Be om ursäkt"
+      }
+    },
+    "mainMessage": {
+      "label": "HUVUDMEDDELANDE",
+      "placeholder": "Vad är den viktigaste poängen för mottagaren?"
+    },
+    "recipient": {
+      "label": "MOTTAGARENS KONTEKST",
+      "placeholder": "Namn, titel eller relation (t.ex. Lärare John)"
+    },
+    "advanced": {
+      "toggle": "AVANCERADE INSTÄLLNINGAR"
+    },
+    "tone": {
+      "label": "TON",
+      "casual": "Avslappnad",
+      "formal": "Formell",
+      "values": {
+        "veryCasual": "Mycket Avslappnad",
+        "casual": "Avslappnad",
+        "neutral": "Neutral",
+        "formal": "Formell",
+        "veryFormal": "Mycket Formell"
+      }
+    },
+    "length": {
+      "label": "LÄNGD",
+      "brief": "Kort",
+      "detailed": "Detaljerad",
+      "values": {
+        "veryBrief": "Mycket Kort",
+        "brief": "Kort",
+        "balanced": "Balanserad",
+        "detailed": "Detaljerad",
+        "veryDetailed": "Mycket Detaljerad"
+      }
+    },
+    "urgency": {
+      "label": "BRÅDSKA",
+      "description": "Markera som omedelbar åtgärd"
+    },
+    "extraNotes": {
+      "label": "EXTRA NOTER",
+      "placeholder": "Nämn specifik kontext eller deadline..."
+    }
+  },
+  "actions": {
+    "generate": "Generera Utkast",
+    "generating": "Genererar...",
+    "draftHint": "Klicka på ett utkast för att infoga det i din e-post:",
+    "draftLabel": "Utkast {{number}}",
+    "errorMessage": "Fel vid generering av e-post. Är backend igång?"
+  }
+}

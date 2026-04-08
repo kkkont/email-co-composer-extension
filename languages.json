@@ -1,0 +1,17 @@
+[
+  { "code": "et", "name": "Eesti", "englishName": "Estonian" },
+  { "code": "de", "name": "Deutsch", "englishName": "German" },
+  { "code": "fr", "name": "Français", "englishName": "French" },
+  { "code": "es", "name": "Español", "englishName": "Spanish" },
+  { "code": "nb", "name": "Norsk", "englishName": "Norwegian" },
+  { "code": "fi", "name": "Suomi", "englishName": "Finnish" },
+  { "code": "sv", "name": "Svenska", "englishName": "Swedish" },
+  { "code": "da", "name": "Dansk", "englishName": "Danish" },
+  { "code": "nl", "name": "Nederlands", "englishName": "Dutch" },
+  { "code": "it", "name": "Italiano", "englishName": "Italian" },
+  { "code": "pt", "name": "Português", "englishName": "Portuguese" },
+  { "code": "ru", "name": "Русский", "englishName": "Russian" },
+  { "code": "zh", "name": "中文", "englishName": "Chinese" },
+  { "code": "ja", "name": "日本語", "englishName": "Japanese" },
+  { "code": "ko", "name": "한국어", "englishName": "Korean" }
+]

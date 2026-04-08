@@ -1,0 +1,70 @@
+{
+  "app": {
+    "title": "Definer Dit Formål",
+    "subtitle": "Beskriv dit mål, så laver vi udkastet til e-mailen."
+  },
+  "form": {
+    "mandatory": "PÅKRÆVET",
+    "goal": {
+      "label": "KOMMUNIKATIVT MÅL",
+      "options": {
+        "inform": "Informere",
+        "request": "Anmode",
+        "clarify": "Afklare",
+        "feedback": "Feedback",
+        "propose": "Foreslå",
+        "apologize": "Undskylde"
+      }
+    },
+    "mainMessage": {
+      "label": "HOVEDBUDSKAB",
+      "placeholder": "Hvad er hovedpointen for modtageren?"
+    },
+    "recipient": {
+      "label": "MODTAGERS KONTEKST",
+      "placeholder": "Navn, titel eller relation (f.eks. Lærer John)"
+    },
+    "advanced": {
+      "toggle": "AVANCEREDE KONTROLLER"
+    },
+    "tone": {
+      "label": "TONE",
+      "casual": "Uformel",
+      "formal": "Formel",
+      "values": {
+        "veryCasual": "Meget Uformel",
+        "casual": "Uformel",
+        "neutral": "Neutral",
+        "formal": "Formel",
+        "veryFormal": "Meget Formel"
+      }
+    },
+    "length": {
+      "label": "LÆNGDE",
+      "brief": "Kort",
+      "detailed": "Detaljeret",
+      "values": {
+        "veryBrief": "Meget Kort",
+        "brief": "Kort",
+        "balanced": "Afbalanceret",
+        "detailed": "Detaljeret",
+        "veryDetailed": "Meget Detaljeret"
+      }
+    },
+    "urgency": {
+      "label": "HASTIGHED",
+      "description": "Marker som øjeblikkelig handling"
+    },
+    "extraNotes": {
+      "label": "EKSTRA NOTER",
+      "placeholder": "Nævn specifik kontekst eller deadline..."
+    }
+  },
+  "actions": {
+    "generate": "Generer Udkast",
+    "generating": "Genererer...",
+    "draftHint": "Klik på et udkast for at indsætte det i din e-mail:",
+    "draftLabel": "Udkast {{number}}",
+    "errorMessage": "Fejl ved generering af e-mail. Kører backend?"
+  }
+}

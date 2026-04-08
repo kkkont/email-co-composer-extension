@@ -1,0 +1,70 @@
+{
+  "app": {
+    "title": "Define Tu Intención",
+    "subtitle": "Describe tu objetivo y redactaremos el correo."
+  },
+  "form": {
+    "mandatory": "OBLIGATORIO",
+    "goal": {
+      "label": "OBJETIVO COMUNICATIVO",
+      "options": {
+        "inform": "Informar",
+        "request": "Solicitar",
+        "clarify": "Aclarar",
+        "feedback": "Comentarios",
+        "propose": "Proponer",
+        "apologize": "Disculparse"
+      }
+    },
+    "mainMessage": {
+      "label": "MENSAJE PRINCIPAL",
+      "placeholder": "¿Cuál es el mensaje clave para el destinatario?"
+    },
+    "recipient": {
+      "label": "CONTEXTO DEL DESTINATARIO",
+      "placeholder": "Nombre, título o relación (por ejemplo, Profesor Juan)"
+    },
+    "advanced": {
+      "toggle": "CONTROLES AVANZADOS"
+    },
+    "tone": {
+      "label": "TONO",
+      "casual": "Informal",
+      "formal": "Formal",
+      "values": {
+        "veryCasual": "Muy Informal",
+        "casual": "Informal",
+        "neutral": "Neutral",
+        "formal": "Formal",
+        "veryFormal": "Muy Formal"
+      }
+    },
+    "length": {
+      "label": "LONGITUD",
+      "brief": "Breve",
+      "detailed": "Detallado",
+      "values": {
+        "veryBrief": "Muy Breve",
+        "brief": "Breve",
+        "balanced": "Equilibrado",
+        "detailed": "Detallado",
+        "veryDetailed": "Muy Detallado"
+      }
+    },
+    "urgency": {
+      "label": "URGENCIA",
+      "description": "Marcar como acción inmediata"
+    },
+    "extraNotes": {
+      "label": "NOTAS ADICIONALES",
+      "placeholder": "Menciona contexto específico o fecha límite..."
+    }
+  },
+  "actions": {
+    "generate": "Generar Borrador",
+    "generating": "Generando...",
+    "draftHint": "Haz clic en un borrador para insertarlo en tu correo:",
+    "draftLabel": "Borrador {{number}}",
+    "errorMessage": "Error al generar el correo. ¿Está funcionando el backend?"
+  }
+}

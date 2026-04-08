@@ -1,7 +1,7 @@
 {
   "app": {
     "title": "Define Your Intent",
-    "subtitle": "Guide the assistant to craft the perfect response based on your specific goals."
+    "subtitle": "Describe your goal and we'll draft the email."
   },
   "form": {
     "mandatory": "MANDATORY",
@@ -22,7 +22,7 @@
     },
     "recipient": {
       "label": "RECIPIENT CONTEXT",
-      "placeholder": "Full Name or Title"
+      "placeholder": "Name, title, or relation (e.g. Teacher John)"
     },
     "advanced": {
       "toggle": "ADVANCED CONTROLS"

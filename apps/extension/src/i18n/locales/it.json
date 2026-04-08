@@ -1,0 +1,70 @@
+{
+  "app": {
+    "title": "Definisci il Tuo Intento",
+    "subtitle": "Descrivi il tuo obiettivo e noi redigeremo l'email."
+  },
+  "form": {
+    "mandatory": "OBBLIGATORIO",
+    "goal": {
+      "label": "OBIETTIVO COMUNICATIVO",
+      "options": {
+        "inform": "Informare",
+        "request": "Richiedere",
+        "clarify": "Chiarire",
+        "feedback": "Feedback",
+        "propose": "Proporre",
+        "apologize": "Scusarsi"
+      }
+    },
+    "mainMessage": {
+      "label": "MESSAGGIO PRINCIPALE",
+      "placeholder": "Qual è il messaggio principale per il destinatario?"
+    },
+    "recipient": {
+      "label": "CONTESTO DEL DESTINATARIO",
+      "placeholder": "Nome, titolo o relazione (es. Insegnante Giovanni)"
+    },
+    "advanced": {
+      "toggle": "CONTROLLI AVANZATI"
+    },
+    "tone": {
+      "label": "TONO",
+      "casual": "Informale",
+      "formal": "Formale",
+      "values": {
+        "veryCasual": "Molto Informale",
+        "casual": "Informale",
+        "neutral": "Neutro",
+        "formal": "Formale",
+        "veryFormal": "Molto Formale"
+      }
+    },
+    "length": {
+      "label": "LUNGHEZZA",
+      "brief": "Breve",
+      "detailed": "Dettagliato",
+      "values": {
+        "veryBrief": "Molto Breve",
+        "brief": "Breve",
+        "balanced": "Bilanciato",
+        "detailed": "Dettagliato",
+        "veryDetailed": "Molto Dettagliato"
+      }
+    },
+    "urgency": {
+      "label": "URGENZA",
+      "description": "Contrassegna come azione immediata"
+    },
+    "extraNotes": {
+      "label": "NOTE AGGIUNTIVE",
+      "placeholder": "Menziona contesto specifico o scadenza..."
+    }
+  },
+  "actions": {
+    "generate": "Genera Bozza",
+    "generating": "Generando...",
+    "draftHint": "Clicca su una bozza per inserirla nella tua email:",
+    "draftLabel": "Bozza {{number}}",
+    "errorMessage": "Errore nella generazione dell'email. Il backend è in esecuzione?"
+  }
+}

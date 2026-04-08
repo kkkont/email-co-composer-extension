@@ -1,0 +1,70 @@
+{
+  "app": {
+    "title": "Määritä Aikomuksesi",
+    "subtitle": "Kuvaa tavoitteesi, niin laadimme sähköpostin."
+  },
+  "form": {
+    "mandatory": "PAKOLLINEN",
+    "goal": {
+      "label": "VIESTINTÄTAVOITE",
+      "options": {
+        "inform": "Informoi",
+        "request": "Pyyntö",
+        "clarify": "Selvennä",
+        "feedback": "Palaute",
+        "propose": "Ehdota",
+        "apologize": "Anteeksi"
+      }
+    },
+    "mainMessage": {
+      "label": "PÄÄVIESTI",
+      "placeholder": "Mikä on vastaanottajan keskeinen viesti?"
+    },
+    "recipient": {
+      "label": "VASTAANOTTAJAN KONTEXTI",
+      "placeholder": "Nimi, titteli tai suhde (esim. Opettaja John)"
+    },
+    "advanced": {
+      "toggle": "KEHITTYNEET ASETUKSET"
+    },
+    "tone": {
+      "label": "SÄVY",
+      "casual": "Rento",
+      "formal": "Virallinen",
+      "values": {
+        "veryCasual": "Erittäin rento",
+        "casual": "Rento",
+        "neutral": "Neutraali",
+        "formal": "Virallinen",
+        "veryFormal": "Erittäin virallinen"
+      }
+    },
+    "length": {
+      "label": "PITUUS",
+      "brief": "Lyhyt",
+      "detailed": "Yksityiskohtainen",
+      "values": {
+        "veryBrief": "Erittäin lyhyt",
+        "brief": "Lyhyt",
+        "balanced": "Tasapainoinen",
+        "detailed": "Yksityiskohtainen",
+        "veryDetailed": "Erittäin yksityiskohtainen"
+      }
+    },
+    "urgency": {
+      "label": "HÄTÄ",
+      "description": "Merkitse välittömäksi toiminnaksi"
+    },
+    "extraNotes": {
+      "label": "LISÄHUOMAUTUKSET",
+      "placeholder": "Mainitse erityinen konteksti tai määräaika..."
+    }
+  },
+  "actions": {
+    "generate": "Luo Luonnos",
+    "generating": "Luodaan...",
+    "draftHint": "Napsauta luonnosta lisätäksesi se sähköpostiisi:",
+    "draftLabel": "Luonnos {{number}}",
+    "errorMessage": "Virhe sähköpostin luomisessa. Onko taustapalvelin käynnissä?"
+  }
+}

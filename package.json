@@ -12,7 +12,8 @@
     "dev": "npm run dev:backend & npm run dev:extension",
     "build:backend": "npm run build --workspace=apps/backend",
     "build:extension": "npm run build --workspace=apps/extension",
-    "build": "npm run build:backend && npm run build:extension"
+    "build": "npm run build:backend && npm run build:extension",
+    "translate": "npx tsx --env-file=.env.local scripts/translate.ts"
   },
   "repository": {
     "type": "git",

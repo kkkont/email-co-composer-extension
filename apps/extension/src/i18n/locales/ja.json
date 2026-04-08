@@ -1,0 +1,70 @@
+{
+  "app": {
+    "title": "意図を定義する",
+    "subtitle": "あなたの目標を説明してください。私たちがメールのドラフトを作成します。"
+  },
+  "form": {
+    "mandatory": "必須",
+    "goal": {
+      "label": "コミュニケーションの目標",
+      "options": {
+        "inform": "通知する",
+        "request": "リクエストする",
+        "clarify": "明確にする",
+        "feedback": "フィードバック",
+        "propose": "提案する",
+        "apologize": "謝罪する"
+      }
+    },
+    "mainMessage": {
+      "label": "メインメッセージ",
+      "placeholder": "受取人にとっての核心的なポイントは何ですか？"
+    },
+    "recipient": {
+      "label": "受取人のコンテキスト",
+      "placeholder": "名前、役職、または関係（例：ジョン先生）"
+    },
+    "advanced": {
+      "toggle": "詳細設定"
+    },
+    "tone": {
+      "label": "トーン",
+      "casual": "カジュアル",
+      "formal": "フォーマル",
+      "values": {
+        "veryCasual": "とてもカジュアル",
+        "casual": "カジュアル",
+        "neutral": "ニュートラル",
+        "formal": "フォーマル",
+        "veryFormal": "とてもフォーマル"
+      }
+    },
+    "length": {
+      "label": "長さ",
+      "brief": "簡潔",
+      "detailed": "詳細",
+      "values": {
+        "veryBrief": "とても簡潔",
+        "brief": "簡潔",
+        "balanced": "バランスの取れた",
+        "detailed": "詳細",
+        "veryDetailed": "とても詳細"
+      }
+    },
+    "urgency": {
+      "label": "緊急性",
+      "description": "即時対応としてマークする"
+    },
+    "extraNotes": {
+      "label": "追加のメモ",
+      "placeholder": "特定のコンテキストや締切を記載..."
+    }
+  },
+  "actions": {
+    "generate": "ドラフトを生成",
+    "generating": "生成中...",
+    "draftHint": "ドラフトをクリックしてメールに挿入してください：",
+    "draftLabel": "ドラフト {{number}}",
+    "errorMessage": "メールの生成中にエラーが発生しました。バックエンドは動作していますか？"
+  }
+}
