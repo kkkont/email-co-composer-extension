@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
-import { Mail } from "lucide-react";
+import { Mail, Trash2 } from "lucide-react";
 import { availableLanguages, languageNames } from "../i18n";
 import type { EmailIntent } from "../types";
 
@@ -102,6 +102,18 @@ export default function App() {
     });
   };
 
+  const clearGmailCompose = () => {
+    chrome.tabs.query({ active: true, currentWindow: true }, async (tabs) => {
+      const tabId = tabs[0]?.id;
+      if (!tabId) return;
+      try {
+        await chrome.tabs.sendMessage(tabId, { action: "clearEmail" });
+      } catch {
+        // content script not loaded, nothing to clear
+      }
+    });
+  };
+
   const isFormValid =
     intent.goal && intent.mainMessage && intent.recipientContext;
 
@@ -115,7 +127,19 @@ export default function App() {
               <h2 className="text-lg font-bold"><Mail className="inline w-10 h-10 mr-1 text-blue-600" strokeWidth={1.5} /> {t("app.title")}</h2>
               <select
                 value={i18n.language}
-                onChange={(e) => i18n.changeLanguage(e.target.value)}
+                onChange={(e) => {
+                  i18n.changeLanguage(e.target.value);
+                  setIntent({
+                    goal: "",
+                    mainMessage: "",
+                    recipientContext: "",
+                    tone: 0.5,
+                    length: 0.5,
+                    urgency: false,
+                    extraNotes: "",
+                  });
+                  clearGmailCompose();
+                }}
                 className="text-xs border rounded px-2 py-1 bg-white text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
               >
                 {availableLanguages.map((code) => (
@@ -332,9 +356,22 @@ export default function App() {
 
         {drafts.length > 0 && (
           <div>
-            <p className="text-xs text-gray-500 mb-2">
-              {t("actions.draftHint")}
-            </p>
+            <div className="flex justify-between items-center mb-2">
+              <p className="text-xs text-gray-500">
+                {t("actions.draftHint")}
+              </p>
+              <button
+                onClick={() => {
+                  setDrafts([]);
+                  setActiveDraftIndex(0);
+                  clearGmailCompose();
+                }}
+                className="text-gray-400 hover:text-red-500 transition-colors"
+                title="Clear all drafts"
+              >
+                <Trash2 className="w-4 h-4" />
+              </button>
+            </div>
             <div className="flex flex-wrap gap-2">
               {drafts.map((draft, i) => (
                 <button
