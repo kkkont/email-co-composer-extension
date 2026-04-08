@@ -27,9 +27,12 @@ export const languageNames: Record<string, string> = {
   ...Object.fromEntries(languagesJson.map((l) => [l.code, l.name])),
 };
 
+const browserLang = navigator.language.split("-")[0];
+const detectedLng = availableLanguages.includes(browserLang) ? browserLang : "en";
+
 i18n.use(initReactI18next).init({
   resources,
-  lng: "en",
+  lng: detectedLng,
   fallbackLng: "en",
   interpolation: {
     escapeValue: false,

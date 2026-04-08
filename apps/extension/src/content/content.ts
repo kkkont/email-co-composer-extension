@@ -4,6 +4,30 @@ chrome.runtime.onMessage.addListener((request, _sender, _sendResponse) => {
   }
 });
 
+// Watch for Gmail compose window opening
+function watchForCompose() {
+  const seenBoxes = new WeakSet<Element>();
+
+  const observer = new MutationObserver(() => {
+    const composeBoxes = document.querySelectorAll(
+      'div[aria-label*="Message"][contenteditable="true"], ' +
+      'div[aria-label*="message"][contenteditable="true"], ' +
+      'div.Am.Al.editable[contenteditable="true"]'
+    );
+    for (const box of composeBoxes) {
+      if (!seenBoxes.has(box)) {
+        seenBoxes.add(box);
+        chrome.runtime.sendMessage({ action: 'openSidePanel' });
+        return;
+      }
+    }
+  });
+
+  observer.observe(document.body, { childList: true, subtree: true });
+}
+
+watchForCompose();
+
 function insertEmailToGmail(emailText: string) {
   const selectors = [
     '[role="textbox"][aria-label*="Message"]',
