@@ -30,7 +30,7 @@ async function main() {
         console.log(`Translating to ${lang.name} (${lang.code})...`);
 
         const response = await client.chat.completions.create({
-            model: "gpt-4o-mini",
+            model: "gpt-4o",
             temperature: 0.2,
             messages: [
                 {
@@ -54,11 +54,14 @@ Rules:
             ],
         });
 
-        const content = response.choices[0]?.message?.content?.trim();
+        let content = response.choices[0]?.message?.content?.trim();
         if (!content) {
             console.error(`  No response for ${lang.name}, skipping.`);
             continue;
         }
+
+        // Strip markdown code block wrapper if present
+        content = content.replace(/^```(?:json)?\s*\n?/, "").replace(/\n?```\s*$/, "");
 
         try {
             const translated = JSON.parse(content);

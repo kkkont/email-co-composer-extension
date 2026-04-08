@@ -1,7 +1,7 @@
 {
   "app": {
-    "title": "Definer Dit Formål",
-    "subtitle": "Beskriv dit mål, så laver vi udkastet til e-mailen."
+    "title": "Definer Din Intention",
+    "subtitle": "Beskriv dit mål, og vi skriver udkastet til e-mailen."
   },
   "form": {
     "mandatory": "PÅKRÆVET",
@@ -18,14 +18,14 @@
     },
     "mainMessage": {
       "label": "HOVEDBUDSKAB",
-      "placeholder": "Hvad er hovedpointen for modtageren?"
+      "placeholder": "Hvad er det vigtigste budskab til modtageren?"
     },
     "recipient": {
-      "label": "MODTAGERS KONTEKST",
+      "label": "MODTAGERKONTEKST",
       "placeholder": "Navn, titel eller relation (f.eks. Lærer John)"
     },
     "advanced": {
-      "toggle": "AVANCEREDE KONTROLLER"
+      "toggle": "AVANCEREDE INDSTILLINGER"
     },
     "tone": {
       "label": "TONE",

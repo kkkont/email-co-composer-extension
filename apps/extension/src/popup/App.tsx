@@ -55,6 +55,7 @@ export default function App() {
         ...intent,
         goal: intent.goal,
         tone: Math.round(intent.tone * 100) / 100,
+        language: i18n.language,
       };
       const response = await fetch(API_URL, {
         method: "POST",

@@ -1,7 +1,7 @@
 {
   "app": {
-    "title": "Definer Ditt Mål",
-    "subtitle": "Beskriv målet ditt, så lager vi utkastet til e-posten."
+    "title": "Definer Din Intensjon",
+    "subtitle": "Beskriv målet ditt, så skriver vi utkastet til e-posten."
   },
   "form": {
     "mandatory": "OBLIGATORISK",
@@ -9,34 +9,34 @@
       "label": "KOMMUNIKATIVT MÅL",
       "options": {
         "inform": "Informere",
-        "request": "Forespørsel",
-        "clarify": "Klarifisere",
+        "request": "Be om",
+        "clarify": "Avklare",
         "feedback": "Tilbakemelding",
         "propose": "Foreslå",
-        "apologize": "Be om unnskyldning"
+        "apologize": "Beklage"
       }
     },
     "mainMessage": {
       "label": "HOVEDBUDSKAP",
-      "placeholder": "Hva er hovedpoenget for mottakeren?"
+      "placeholder": "Hva er hovedbudskapet til mottakeren?"
     },
     "recipient": {
-      "label": "MOTTAGERKONTEKST",
+      "label": "MOTTAKERKONTEKST",
       "placeholder": "Navn, tittel eller relasjon (f.eks. Lærer John)"
     },
     "advanced": {
-      "toggle": "AVANSERTE KONTROLLER"
+      "toggle": "AVANSERTE INNSTILLINGER"
     },
     "tone": {
-      "label": "TONE",
+      "label": "TONEN",
       "casual": "Uformell",
       "formal": "Formell",
       "values": {
-        "veryCasual": "Veldig Uformell",
+        "veryCasual": "Veldig uformell",
         "casual": "Uformell",
         "neutral": "Nøytral",
         "formal": "Formell",
-        "veryFormal": "Veldig Formell"
+        "veryFormal": "Veldig formell"
       }
     },
     "length": {
@@ -44,15 +44,15 @@
       "brief": "Kort",
       "detailed": "Detaljert",
       "values": {
-        "veryBrief": "Veldig Kort",
+        "veryBrief": "Veldig kort",
         "brief": "Kort",
         "balanced": "Balansert",
         "detailed": "Detaljert",
-        "veryDetailed": "Veldig Detaljert"
+        "veryDetailed": "Veldig detaljert"
       }
     },
     "urgency": {
-      "label": "HASSELIGHET",
+      "label": "HASTEVERK",
       "description": "Merk som umiddelbar handling"
     },
     "extraNotes": {

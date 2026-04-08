@@ -1,6 +1,6 @@
 {
   "app": {
-    "title": "Define Tu Intención",
+    "title": "Define tu Intención",
     "subtitle": "Describe tu objetivo y redactaremos el correo."
   },
   "form": {
@@ -11,18 +11,18 @@
         "inform": "Informar",
         "request": "Solicitar",
         "clarify": "Aclarar",
-        "feedback": "Comentarios",
+        "feedback": "Retroalimentación",
         "propose": "Proponer",
         "apologize": "Disculparse"
       }
     },
     "mainMessage": {
       "label": "MENSAJE PRINCIPAL",
-      "placeholder": "¿Cuál es el mensaje clave para el destinatario?"
+      "placeholder": "¿Cuál es el mensaje principal para el destinatario?"
     },
     "recipient": {
       "label": "CONTEXTO DEL DESTINATARIO",
-      "placeholder": "Nombre, título o relación (por ejemplo, Profesor Juan)"
+      "placeholder": "Nombre, título o relación (ej. Profesor Juan)"
     },
     "advanced": {
       "toggle": "CONTROLES AVANZADOS"

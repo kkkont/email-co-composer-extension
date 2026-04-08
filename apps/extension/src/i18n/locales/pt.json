@@ -1,7 +1,7 @@
 {
   "app": {
-    "title": "Defina Seu Intuito",
-    "subtitle": "Descreva seu objetivo e nós redigiremos o e-mail."
+    "title": "Defina Seu Objetivo",
+    "subtitle": "Descreva seu objetivo e nós redigiremos o email."
   },
   "form": {
     "mandatory": "OBRIGATÓRIO",
@@ -13,16 +13,16 @@
         "clarify": "Esclarecer",
         "feedback": "Feedback",
         "propose": "Propor",
-        "apologize": "Pedindo Desculpas"
+        "apologize": "Pedir desculpas"
       }
     },
     "mainMessage": {
       "label": "MENSAGEM PRINCIPAL",
-      "placeholder": "Qual é a mensagem principal para o destinatário?"
+      "placeholder": "Qual é a principal mensagem para o destinatário?"
     },
     "recipient": {
       "label": "CONTEXTO DO DESTINATÁRIO",
-      "placeholder": "Nome, cargo ou relação (ex. Professor João)"
+      "placeholder": "Nome, cargo ou relação (ex.: Professor João)"
     },
     "advanced": {
       "toggle": "CONTROLES AVANÇADOS"
@@ -40,7 +40,7 @@
       }
     },
     "length": {
-      "label": "EXTENSÃO",
+      "label": "COMPRIMENTO",
       "brief": "Breve",
       "detailed": "Detalhado",
       "values": {
@@ -56,15 +56,15 @@
       "description": "Marcar como ação imediata"
     },
     "extraNotes": {
-      "label": "NOTAS ADICIONAIS",
+      "label": "NOTAS EXTRAS",
       "placeholder": "Mencione contexto específico ou prazo..."
     }
   },
   "actions": {
     "generate": "Gerar Rascunho",
     "generating": "Gerando...",
-    "draftHint": "Clique em um rascunho para inseri-lo no seu e-mail:",
+    "draftHint": "Clique em um rascunho para inseri-lo no seu email:",
     "draftLabel": "Rascunho {{number}}",
-    "errorMessage": "Erro ao gerar o e-mail. O backend está em execução?"
+    "errorMessage": "Erro ao gerar email. O backend está em execução?"
   }
 }

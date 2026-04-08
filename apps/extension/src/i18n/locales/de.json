@@ -1,10 +1,10 @@
 {
   "app": {
     "title": "Definieren Sie Ihr Ziel",
-    "subtitle": "Beschreiben Sie Ihr Ziel und wir erstellen den Entwurf für die E-Mail."
+    "subtitle": "Beschreiben Sie Ihr Ziel und wir entwerfen die E-Mail."
   },
   "form": {
-    "mandatory": "VERPFLICHTEND",
+    "mandatory": "PFLICHTFELD",
     "goal": {
       "label": "KOMMUNIKATIVES ZIEL",
       "options": {
@@ -17,11 +17,11 @@
       }
     },
     "mainMessage": {
-      "label": "HAUPTNACHRICHT",
-      "placeholder": "Was ist die zentrale Botschaft für den Empfänger?"
+      "label": "HAUPTBOTSCHAFT",
+      "placeholder": "Was ist die Kernbotschaft für den Empfänger?"
     },
     "recipient": {
-      "label": "EMPFÄNGERKONTEXT",
+      "label": "KONTEXT DES EMPFÄNGERS",
       "placeholder": "Name, Titel oder Beziehung (z.B. Lehrer John)"
     },
     "advanced": {
@@ -29,26 +29,26 @@
     },
     "tone": {
       "label": "TON",
-      "casual": "Lässig",
-      "formal": "Formal",
+      "casual": "Locker",
+      "formal": "Formell",
       "values": {
-        "veryCasual": "Sehr Lässig",
-        "casual": "Lässig",
+        "veryCasual": "Sehr locker",
+        "casual": "Locker",
         "neutral": "Neutral",
-        "formal": "Formal",
-        "veryFormal": "Sehr Formal"
+        "formal": "Formell",
+        "veryFormal": "Sehr formell"
       }
     },
     "length": {
       "label": "LÄNGE",
       "brief": "Kurz",
-      "detailed": "Detailliert",
+      "detailed": "Ausführlich",
       "values": {
-        "veryBrief": "Sehr Kurz",
+        "veryBrief": "Sehr kurz",
         "brief": "Kurz",
         "balanced": "Ausgewogen",
-        "detailed": "Detailliert",
-        "veryDetailed": "Sehr Detailliert"
+        "detailed": "Ausführlich",
+        "veryDetailed": "Sehr ausführlich"
       }
     },
     "urgency": {
@@ -56,15 +56,15 @@
       "description": "Als sofortige Aktion markieren"
     },
     "extraNotes": {
-      "label": "ZUSÄTZLICHE NOTIZEN",
-      "placeholder": "Geben Sie spezifischen Kontext oder Fristen an..."
+      "label": "ZUSÄTZLICHE HINWEISE",
+      "placeholder": "Geben Sie spezifischen Kontext oder Frist an..."
     }
   },
   "actions": {
     "generate": "Entwurf erstellen",
-    "generating": "Wird erstellt...",
+    "generating": "Erstellen...",
     "draftHint": "Klicken Sie auf einen Entwurf, um ihn in Ihre E-Mail einzufügen:",
     "draftLabel": "Entwurf {{number}}",
-    "errorMessage": "Fehler beim Erstellen der E-Mail. Läuft der Backend-Dienst?"
+    "errorMessage": "Fehler beim Erstellen der E-Mail. Läuft das Backend?"
   }
 }

@@ -1,7 +1,7 @@
 {
   "app": {
     "title": "定义您的意图",
-    "subtitle": "描述您的目标，我们将为您草拟邮件。"
+    "subtitle": "描述您的目标，我们将起草邮件。"
   },
   "form": {
     "mandatory": "必填",
@@ -18,14 +18,14 @@
     },
     "mainMessage": {
       "label": "主要信息",
-      "placeholder": "收件人的核心要点是什么？"
+      "placeholder": "收件人需要了解的核心内容是什么？"
     },
     "recipient": {
-      "label": "收件人信息",
-      "placeholder": "姓名、职称或关系（例如：教师约翰）"
+      "label": "收件人背景",
+      "placeholder": "姓名、职称或关系（例如：老师张三）"
     },
     "advanced": {
-      "toggle": "高级设置"
+      "toggle": "高级控制"
     },
     "tone": {
       "label": "语气",
@@ -52,12 +52,12 @@
       }
     },
     "urgency": {
-      "label": "紧急性",
-      "description": "标记为立即处理"
+      "label": "紧急程度",
+      "description": "标记为立即行动"
     },
     "extraNotes": {
-      "label": "额外备注",
-      "placeholder": "提及具体的背景或截止日期..."
+      "label": "附加备注",
+      "placeholder": "提及具体背景或截止日期..."
     }
   },
   "actions": {
@@ -65,6 +65,6 @@
     "generating": "正在生成...",
     "draftHint": "点击草稿将其插入到您的邮件中：",
     "draftLabel": "草稿 {{number}}",
-    "errorMessage": "生成邮件时出错。后端是否正在运行？"
+    "errorMessage": "生成邮件时出错。后台是否正在运行？"
   }
 }

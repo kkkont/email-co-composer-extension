@@ -12,6 +12,7 @@ export interface EmailIntent {
   length: number;
   urgency: boolean;
   extraNotes: string;
+  language: string;
 }
 
 export async function generateEmail(intent: EmailIntent): Promise<string> {
@@ -46,8 +47,12 @@ export async function generateEmail(intent: EmailIntent): Promise<string> {
     ? `The communicative goal is to "${intent.goal}". Structure the email to clearly achieve this goal.`
     : "";
 
-  const systemPrompt = `You are an email writing assistant. Write ONLY the email body — no subject line, no labels, no meta-commentary, no explanations. Output just the email text ready to send.
+  const languageInstruction = intent.language && intent.language !== "en"
+    ? `IMPORTANT: Write the entire email in ${intent.language} language.`
+    : "";
 
+  const systemPrompt = `You are an email writing assistant. Write ONLY the email body — no subject line, no labels, no meta-commentary, no explanations. Output just the email text ready to send.
+${languageInstruction ? `\n${languageInstruction}\n` : ""}
 You MUST follow these style and formatting rules exactly:`;
 
   const userPrompt = `Write an email with these exact requirements:

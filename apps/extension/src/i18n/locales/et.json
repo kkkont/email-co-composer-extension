@@ -1,42 +1,42 @@
 {
   "app": {
-    "title": "Määra oma eesmärk",
-    "subtitle": "Kirjeldage oma eesmärki ja me koostame e-kirja."
+    "title": "Määratle Oma Kavatsus",
+    "subtitle": "Kirjelda oma eesmärki ja me koostame e-kirja mustandi."
   },
   "form": {
     "mandatory": "KOHUSTUSLIK",
     "goal": {
       "label": "KOMMUNIKATIIVNE EESMÄRK",
       "options": {
-        "inform": "Teavitada",
-        "request": "Küsimine",
+        "inform": "Informeerida",
+        "request": "Paluda",
         "clarify": "Selgitada",
         "feedback": "Tagasiside",
-        "propose": "Pakkuda",
+        "propose": "Teha ettepanek",
         "apologize": "Vabandada"
       }
     },
     "mainMessage": {
       "label": "PEAMINE SÕNUM",
-      "placeholder": "Mis on peamine sõnum saajale?"
+      "placeholder": "Mis on saaja jaoks peamine sõnum?"
     },
     "recipient": {
-      "label": "SAAJA KONTEKST",
-      "placeholder": "Nimi, amet või suhe (nt. Õpetaja John)"
+      "label": "ADRESSAADI KONTEKST",
+      "placeholder": "Nimi, ametinimetus või suhe (nt Õpetaja Jaan)"
     },
     "advanced": {
-      "toggle": "EDASISED SEADISTUSED"
+      "toggle": "TÄIUSTATUD SEADED"
     },
     "tone": {
       "label": "TOON",
-      "casual": "Mugav",
-      "formal": "Ametlik",
+      "casual": "Vaba",
+      "formal": "Formaalne",
       "values": {
-        "veryCasual": "Väga mugav",
-        "casual": "Mugav",
+        "veryCasual": "Väga vaba",
+        "casual": "Vaba",
         "neutral": "Neutraalne",
-        "formal": "Ametlik",
-        "veryFormal": "Väga ametlik"
+        "formal": "Formaalne",
+        "veryFormal": "Väga formaalne"
       }
     },
     "length": {
@@ -52,7 +52,7 @@
       }
     },
     "urgency": {
-      "label": "KIIRENDUS",
+      "label": "KIIRE",
       "description": "Märgi kui kohene tegevus"
     },
     "extraNotes": {
@@ -61,10 +61,10 @@
     }
   },
   "actions": {
-    "generate": "Genereeri mustand",
-    "generating": "Genereerimine...",
-    "draftHint": "Klõpsa mustandil, et see oma e-kirja sisestada:",
+    "generate": "Loo Mustand",
+    "generating": "Loomine...",
+    "draftHint": "Klõpsa mustandil, et see oma e-kirja lisada:",
     "draftLabel": "Mustand {{number}}",
-    "errorMessage": "Viga e-kirja genereerimisel. Kas server töötab?"
+    "errorMessage": "Viga e-kirja loomisel. Kas taustsüsteem töötab?"
   }
 }

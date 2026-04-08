@@ -22,7 +22,7 @@
     },
     "recipient": {
       "label": "CONTESTO DEL DESTINATARIO",
-      "placeholder": "Nome, titolo o relazione (es. Insegnante Giovanni)"
+      "placeholder": "Nome, titolo o relazione (es. Professore Mario)"
     },
     "advanced": {
       "toggle": "CONTROLLI AVANZATI"
@@ -53,7 +53,7 @@
     },
     "urgency": {
       "label": "URGENZA",
-      "description": "Contrassegna come azione immediata"
+      "description": "Segna come azione immediata"
     },
     "extraNotes": {
       "label": "NOTE AGGIUNTIVE",
@@ -62,7 +62,7 @@
   },
   "actions": {
     "generate": "Genera Bozza",
-    "generating": "Generando...",
+    "generating": "Generazione in corso...",
     "draftHint": "Clicca su una bozza per inserirla nella tua email:",
     "draftLabel": "Bozza {{number}}",
     "errorMessage": "Errore nella generazione dell'email. Il backend è in esecuzione?"

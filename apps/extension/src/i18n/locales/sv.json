@@ -1,10 +1,10 @@
 {
   "app": {
     "title": "Definiera Ditt Syfte",
-    "subtitle": "Beskriv ditt mål så skriver vi ett utkast till e-post."
+    "subtitle": "Beskriv ditt mål så skriver vi utkastet till e-postmeddelandet."
   },
   "form": {
-    "mandatory": "OBLIGATORISK",
+    "mandatory": "OBLIGATORISKT",
     "goal": {
       "label": "KOMMUNIKATIVT MÅL",
       "options": {
@@ -17,23 +17,23 @@
       }
     },
     "mainMessage": {
-      "label": "HUVUDMEDDELANDE",
-      "placeholder": "Vad är den viktigaste poängen för mottagaren?"
+      "label": "HUVUDBUDSKAP",
+      "placeholder": "Vad är det viktigaste mottagaren ska ta med sig?"
     },
     "recipient": {
-      "label": "MOTTAGARENS KONTEKST",
+      "label": "MOTTAGARENS KONTEXT",
       "placeholder": "Namn, titel eller relation (t.ex. Lärare John)"
     },
     "advanced": {
-      "toggle": "AVANCERADE INSTÄLLNINGAR"
+      "toggle": "AVANCERADE KONTROLLER"
     },
     "tone": {
       "label": "TON",
-      "casual": "Avslappnad",
+      "casual": "Informell",
       "formal": "Formell",
       "values": {
-        "veryCasual": "Mycket Avslappnad",
-        "casual": "Avslappnad",
+        "veryCasual": "Mycket Informell",
+        "casual": "Informell",
         "neutral": "Neutral",
         "formal": "Formell",
         "veryFormal": "Mycket Formell"
@@ -41,30 +41,30 @@
     },
     "length": {
       "label": "LÄNGD",
-      "brief": "Kort",
+      "brief": "Kortfattad",
       "detailed": "Detaljerad",
       "values": {
-        "veryBrief": "Mycket Kort",
-        "brief": "Kort",
+        "veryBrief": "Mycket Kortfattad",
+        "brief": "Kortfattad",
         "balanced": "Balanserad",
         "detailed": "Detaljerad",
         "veryDetailed": "Mycket Detaljerad"
       }
     },
     "urgency": {
-      "label": "BRÅDSKA",
+      "label": "BRÅDSKANDE",
       "description": "Markera som omedelbar åtgärd"
     },
     "extraNotes": {
-      "label": "EXTRA NOTER",
-      "placeholder": "Nämn specifik kontext eller deadline..."
+      "label": "EXTRA ANTECKNINGAR",
+      "placeholder": "Ange specifik kontext eller deadline..."
     }
   },
   "actions": {
-    "generate": "Generera Utkast",
-    "generating": "Genererar...",
-    "draftHint": "Klicka på ett utkast för att infoga det i din e-post:",
+    "generate": "Skapa Utkast",
+    "generating": "Skapar...",
+    "draftHint": "Klicka på ett utkast för att infoga det i ditt e-postmeddelande:",
     "draftLabel": "Utkast {{number}}",
-    "errorMessage": "Fel vid generering av e-post. Är backend igång?"
+    "errorMessage": "Fel vid skapande av e-post. Är backend igång?"
   }
 }

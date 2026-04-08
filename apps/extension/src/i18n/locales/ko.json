@@ -8,7 +8,7 @@
     "goal": {
       "label": "의사소통 목표",
       "options": {
-        "inform": "정보 제공",
+        "inform": "알림",
         "request": "요청",
         "clarify": "명확히 하기",
         "feedback": "피드백",
@@ -18,7 +18,7 @@
     },
     "mainMessage": {
       "label": "주요 메시지",
-      "placeholder": "수신자를 위한 핵심 내용은 무엇인가요?"
+      "placeholder": "수신자에게 전달할 핵심 내용은 무엇인가요?"
     },
     "recipient": {
       "label": "수신자 정보",
@@ -30,30 +30,30 @@
     "tone": {
       "label": "톤",
       "casual": "캐주얼",
-      "formal": "정중",
+      "formal": "포멀",
       "values": {
         "veryCasual": "매우 캐주얼",
         "casual": "캐주얼",
         "neutral": "중립",
-        "formal": "정중",
-        "veryFormal": "매우 정중"
+        "formal": "포멀",
+        "veryFormal": "매우 포멀"
       }
     },
     "length": {
       "label": "길이",
-      "brief": "간단",
-      "detailed": "상세",
+      "brief": "간결하게",
+      "detailed": "상세하게",
       "values": {
-        "veryBrief": "매우 간단",
-        "brief": "간단",
-        "balanced": "균형 잡힌",
-        "detailed": "상세",
-        "veryDetailed": "매우 상세"
+        "veryBrief": "매우 간결하게",
+        "brief": "간결하게",
+        "balanced": "균형 있게",
+        "detailed": "상세하게",
+        "veryDetailed": "매우 상세하게"
       }
     },
     "urgency": {
-      "label": "긴급성",
-      "description": "즉각적인 조치로 표시"
+      "label": "긴급도",
+      "description": "즉시 조치로 표시"
     },
     "extraNotes": {
       "label": "추가 메모",

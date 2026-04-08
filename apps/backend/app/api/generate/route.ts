@@ -40,6 +40,7 @@ export async function POST(request: NextRequest) {
       length: length ?? 0.5,
       urgency: urgency ?? false,
       extraNotes: extraNotes ?? "",
+      language: body.language ?? "en",
     });
 
     return NextResponse.json({ email }, { headers: corsHeaders });

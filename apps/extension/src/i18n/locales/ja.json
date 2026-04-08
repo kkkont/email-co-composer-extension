@@ -1,28 +1,28 @@
 {
   "app": {
     "title": "意図を定義する",
-    "subtitle": "あなたの目標を説明してください。私たちがメールのドラフトを作成します。"
+    "subtitle": "あなたの目的を説明してください。メールの下書きを作成します。"
   },
   "form": {
     "mandatory": "必須",
     "goal": {
-      "label": "コミュニケーションの目標",
+      "label": "コミュニケーションの目的",
       "options": {
-        "inform": "通知する",
-        "request": "リクエストする",
-        "clarify": "明確にする",
+        "inform": "通知",
+        "request": "依頼",
+        "clarify": "明確化",
         "feedback": "フィードバック",
-        "propose": "提案する",
-        "apologize": "謝罪する"
+        "propose": "提案",
+        "apologize": "謝罪"
       }
     },
     "mainMessage": {
-      "label": "メインメッセージ",
-      "placeholder": "受取人にとっての核心的なポイントは何ですか？"
+      "label": "主なメッセージ",
+      "placeholder": "受取人への主要な要点は何ですか？"
     },
     "recipient": {
-      "label": "受取人のコンテキスト",
-      "placeholder": "名前、役職、または関係（例：ジョン先生）"
+      "label": "受取人の状況",
+      "placeholder": "名前、役職、または関係（例：先生のジョン）"
     },
     "advanced": {
       "toggle": "詳細設定"
@@ -32,11 +32,11 @@
       "casual": "カジュアル",
       "formal": "フォーマル",
       "values": {
-        "veryCasual": "とてもカジュアル",
+        "veryCasual": "非常にカジュアル",
         "casual": "カジュアル",
         "neutral": "ニュートラル",
         "formal": "フォーマル",
-        "veryFormal": "とてもフォーマル"
+        "veryFormal": "非常にフォーマル"
       }
     },
     "length": {
@@ -44,27 +44,27 @@
       "brief": "簡潔",
       "detailed": "詳細",
       "values": {
-        "veryBrief": "とても簡潔",
+        "veryBrief": "非常に簡潔",
         "brief": "簡潔",
-        "balanced": "バランスの取れた",
+        "balanced": "バランス",
         "detailed": "詳細",
-        "veryDetailed": "とても詳細"
+        "veryDetailed": "非常に詳細"
       }
     },
     "urgency": {
-      "label": "緊急性",
-      "description": "即時対応としてマークする"
+      "label": "緊急度",
+      "description": "即時対応としてマーク"
     },
     "extraNotes": {
-      "label": "追加のメモ",
-      "placeholder": "特定のコンテキストや締切を記載..."
+      "label": "追加メモ",
+      "placeholder": "特定の状況や締め切りを記載..."
     }
   },
   "actions": {
-    "generate": "ドラフトを生成",
+    "generate": "下書きを生成",
     "generating": "生成中...",
-    "draftHint": "ドラフトをクリックしてメールに挿入してください：",
-    "draftLabel": "ドラフト {{number}}",
-    "errorMessage": "メールの生成中にエラーが発生しました。バックエンドは動作していますか？"
+    "draftHint": "下書きをクリックしてメールに挿入してください：",
+    "draftLabel": "下書き {{number}}",
+    "errorMessage": "メールの生成中にエラーが発生しました。バックエンドは稼働していますか？"
   }
 }

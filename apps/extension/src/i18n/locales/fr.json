@@ -1,6 +1,6 @@
 {
   "app": {
-    "title": "Définissez Votre Intent",
+    "title": "Définissez Votre Intention",
     "subtitle": "Décrivez votre objectif et nous rédigerons l'email."
   },
   "form": {
@@ -18,14 +18,14 @@
     },
     "mainMessage": {
       "label": "MESSAGE PRINCIPAL",
-      "placeholder": "Quel est le message clé pour le destinataire ?"
+      "placeholder": "Quel est le message principal pour le destinataire ?"
     },
     "recipient": {
       "label": "CONTEXTE DU DESTINATAIRE",
-      "placeholder": "Nom, titre ou relation (ex. Professeur John)"
+      "placeholder": "Nom, titre ou relation (par ex. Professeur Jean)"
     },
     "advanced": {
-      "toggle": "CONTROLES AVANCÉS"
+      "toggle": "CONTRÔLES AVANCÉS"
     },
     "tone": {
       "label": "TON",
@@ -41,11 +41,11 @@
     },
     "length": {
       "label": "LONGUEUR",
-      "brief": "Bref",
+      "brief": "Court",
       "detailed": "Détaillé",
       "values": {
-        "veryBrief": "Très Bref",
-        "brief": "Bref",
+        "veryBrief": "Très Court",
+        "brief": "Court",
         "balanced": "Équilibré",
         "detailed": "Détaillé",
         "veryDetailed": "Très Détaillé"
@@ -57,14 +57,14 @@
     },
     "extraNotes": {
       "label": "NOTES SUPPLÉMENTAIRES",
-      "placeholder": "Mentionnez un contexte spécifique ou une date limite..."
+      "placeholder": "Mentionner un contexte spécifique ou une échéance..."
     }
   },
   "actions": {
-    "generate": "Générer le Brouillon",
-    "generating": "Génération en cours...",
+    "generate": "Générer un Brouillon",
+    "generating": "Génération...",
     "draftHint": "Cliquez sur un brouillon pour l'insérer dans votre email :",
     "draftLabel": "Brouillon {{number}}",
-    "errorMessage": "Erreur lors de la génération de l'email. Le backend fonctionne-t-il ?"
+    "errorMessage": "Erreur lors de la génération de l'email. Le backend est-il en cours d'exécution ?"
   }
 }

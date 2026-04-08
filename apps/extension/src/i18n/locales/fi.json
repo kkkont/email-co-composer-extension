@@ -1,42 +1,42 @@
 {
   "app": {
     "title": "Määritä Aikomuksesi",
-    "subtitle": "Kuvaa tavoitteesi, niin laadimme sähköpostin."
+    "subtitle": "Kuvaile tavoitteesi ja laadimme sähköpostin."
   },
   "form": {
     "mandatory": "PAKOLLINEN",
     "goal": {
-      "label": "VIESTINTÄTAVOITE",
+      "label": "VIESTIN TAVOITE",
       "options": {
         "inform": "Informoi",
-        "request": "Pyyntö",
+        "request": "Pyydä",
         "clarify": "Selvennä",
         "feedback": "Palaute",
         "propose": "Ehdota",
-        "apologize": "Anteeksi"
+        "apologize": "Pyydä anteeksi"
       }
     },
     "mainMessage": {
       "label": "PÄÄVIESTI",
-      "placeholder": "Mikä on vastaanottajan keskeinen viesti?"
+      "placeholder": "Mikä on vastaanottajan tärkein viesti?"
     },
     "recipient": {
-      "label": "VASTAANOTTAJAN KONTEXTI",
+      "label": "VASTAANOTTAJAN KONTEKSTI",
       "placeholder": "Nimi, titteli tai suhde (esim. Opettaja John)"
     },
     "advanced": {
-      "toggle": "KEHITTYNEET ASETUKSET"
+      "toggle": "LAAJENNETUT SÄÄDÖT"
     },
     "tone": {
       "label": "SÄVY",
       "casual": "Rento",
-      "formal": "Virallinen",
+      "formal": "Muodollinen",
       "values": {
         "veryCasual": "Erittäin rento",
         "casual": "Rento",
         "neutral": "Neutraali",
-        "formal": "Virallinen",
-        "veryFormal": "Erittäin virallinen"
+        "formal": "Muodollinen",
+        "veryFormal": "Erittäin muodollinen"
       }
     },
     "length": {
@@ -52,8 +52,8 @@
       }
     },
     "urgency": {
-      "label": "HÄTÄ",
-      "description": "Merkitse välittömäksi toiminnaksi"
+      "label": "KIIREELLISYYS",
+      "description": "Merkitse välittömäksi toimenpiteeksi"
     },
     "extraNotes": {
       "label": "LISÄHUOMAUTUKSET",
@@ -63,8 +63,8 @@
   "actions": {
     "generate": "Luo Luonnos",
     "generating": "Luodaan...",
-    "draftHint": "Napsauta luonnosta lisätäksesi se sähköpostiisi:",
+    "draftHint": "Klikkaa luonnosta lisätäksesi sen sähköpostiisi:",
     "draftLabel": "Luonnos {{number}}",
-    "errorMessage": "Virhe sähköpostin luomisessa. Onko taustapalvelin käynnissä?"
+    "errorMessage": "Virhe sähköpostin luomisessa. Onko taustajärjestelmä käynnissä?"
   }
 }

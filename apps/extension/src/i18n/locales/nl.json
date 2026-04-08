@@ -1,15 +1,15 @@
 {
   "app": {
-    "title": "Definieer Je Intentie",
-    "subtitle": "Beschrijf je doel en wij stellen de e-mail op."
+    "title": "Bepaal Uw Intentie",
+    "subtitle": "Beschrijf uw doel en wij stellen de e-mail op."
   },
   "form": {
     "mandatory": "VERPLICHT",
     "goal": {
-      "label": "COMMUNICATIE DOEL",
+      "label": "COMMUNICATIEF DOEL",
       "options": {
         "inform": "Informeren",
-        "request": "Verzoeken",
+        "request": "Verzoek",
         "clarify": "Verduidelijken",
         "feedback": "Feedback",
         "propose": "Voorstellen",
@@ -17,7 +17,7 @@
       }
     },
     "mainMessage": {
-      "label": "HOUDING BERICHT",
+      "label": "HOOFDBERICHT",
       "placeholder": "Wat is de kernboodschap voor de ontvanger?"
     },
     "recipient": {
@@ -25,7 +25,7 @@
       "placeholder": "Naam, titel of relatie (bijv. Leraar John)"
     },
     "advanced": {
-      "toggle": "GEAVANCEERDE INSTELLINGEN"
+      "toggle": "GEAVANCEERDE OPTIES"
     },
     "tone": {
       "label": "TOON",
@@ -42,17 +42,17 @@
     "length": {
       "label": "LENGTE",
       "brief": "Kort",
-      "detailed": "Gedetailleerd",
+      "detailed": "Uitgebreid",
       "values": {
         "veryBrief": "Zeer Kort",
         "brief": "Kort",
         "balanced": "Gebalanceerd",
-        "detailed": "Gedetailleerd",
-        "veryDetailed": "Zeer Gedetailleerd"
+        "detailed": "Uitgebreid",
+        "veryDetailed": "Zeer Uitgebreid"
       }
     },
     "urgency": {
-      "label": "DRINGENDHEID",
+      "label": "URGENTIE",
       "description": "Markeer als onmiddellijke actie"
     },
     "extraNotes": {
@@ -62,9 +62,9 @@
   },
   "actions": {
     "generate": "Genereer Concept",
-    "generating": "Genereert...",
-    "draftHint": "Klik op een concept om het in je e-mail in te voegen:",
+    "generating": "Genereren...",
+    "draftHint": "Klik op een concept om het in uw e-mail in te voegen:",
     "draftLabel": "Concept {{number}}",
-    "errorMessage": "Fout bij het genereren van de e-mail. Is de backend actief?"
+    "errorMessage": "Fout bij het genereren van e-mail. Draait de backend?"
   }
 }
