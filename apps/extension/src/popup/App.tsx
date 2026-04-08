@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
+import { Mail } from "lucide-react";
 import { availableLanguages, languageNames } from "../i18n";
 import type { EmailIntent } from "../types";
 
@@ -110,8 +111,8 @@ export default function App() {
       <div className="flex-1 overflow-y-auto">
         <div className="p-4 space-y-4">
           <div>
-            <div className="flex justify-between items-center">
-              <h2 className="text-lg font-bold mb-1">{t("app.title")}</h2>
+            <div className="flex justify-between items-center mb-4">
+              <h2 className="text-lg font-bold"><Mail className="inline w-10 h-10 mr-1 text-blue-600" strokeWidth={1.5} /> {t("app.title")}</h2>
               <select
                 value={i18n.language}
                 onChange={(e) => i18n.changeLanguage(e.target.value)}
@@ -124,7 +125,7 @@ export default function App() {
                 ))}
               </select>
             </div>
-            <p className="text-xs text-gray-600 mb-4">
+            <p className="text-xs text-gray-600 mb-6">
               {t("app.subtitle")}
             </p>
           </div>
