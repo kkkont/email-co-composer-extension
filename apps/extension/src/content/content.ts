@@ -59,7 +59,11 @@ function insertEmailToComposeBox(emailText: string) {
   
   if (composeBox) {
     composeBox.focus();
-    composeBox.innerText = emailText;
+    const htmlContent = emailText
+      .split('\n\n')
+      .map(p => `<div>${p.replace(/\n/g, '<br>')}</div>`)
+      .join('<div><br></div>');
+    composeBox.innerHTML = htmlContent;
     
     composeBox.dispatchEvent(new Event('input', { bubbles: true }));
     console.log('Email inserted successfully');

@@ -53,7 +53,9 @@ export async function generateEmail(intent: EmailIntent): Promise<string> {
 
   const systemPrompt = `You are an email writing assistant. Write ONLY the email body — no subject line, no labels, no meta-commentary, no explanations. Output just the email text ready to send.
 ${languageInstruction ? `\n${languageInstruction}\n` : ""}
-You MUST follow these style and formatting rules exactly:`;
+You MUST follow these style and formatting rules exactly:
+- Use proper paragraph formatting: separate the greeting, each body paragraph, and the closing with blank lines.
+- Never output the entire email as a single paragraph.`;
 
   const userPrompt = `Write an email with these exact requirements:
 
@@ -76,13 +78,13 @@ Remember: Output ONLY the email body. Follow the LENGTH constraint strictly.`;
     intent.length < 0.2 ? 128 : intent.length < 0.4 ? 200 : intent.length < 0.6 ? 512 : intent.length < 0.8 ? 768 : 1024;
 
   const response = await client.chat.completions.create({
-    model: "gpt-4o-mini",
+    model: "gpt-5.4-nano-2026-03-17",
     messages: [
       { role: "system", content: systemPrompt },
       { role: "user", content: userPrompt },
     ],
     temperature: 0.7,
-    max_tokens: maxTokens,
+    max_completion_tokens: maxTokens,
   });
 
   const content = response.choices[0]?.message?.content;
