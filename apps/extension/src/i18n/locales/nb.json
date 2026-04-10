@@ -1,4 +1,8 @@
 {
+  "page": {
+    "composer": "Komponist",
+    "drafts": "Utkast"
+  },
   "app": {
     "title": "Co-Composer",
     "subtitle": "Beskriv målet ditt, så skriver vi utkastet til e-posten."
@@ -53,7 +57,8 @@
     },
     "urgency": {
       "label": "HASTEVERK",
-      "description": "Merk som umiddelbar handling"
+      "description": "Merk som umiddelbar handling",
+      "enabled": "Merket som hasteverk"
     },
     "extraNotes": {
       "label": "EKSTRA NOTATER",
@@ -66,5 +71,25 @@
     "draftHint": "Klikk på et utkast for å sette det inn i e-posten din:",
     "draftLabel": "Utkast {{number}}",
     "errorMessage": "Feil ved generering av e-post. Kjører backend?"
+  },
+  "drafts": {
+    "empty": "Ingen utkast ennå. Generer din første e-post for å komme i gang!",
+    "emptyHint": "Bruk Composer-fanen til å beskrive hva du vil skrive.",
+    "copy": "Kopier til utklipp",
+    "delete": "Slett utkast",
+    "generatedContent": "Generert e-post",
+    "insert": "Sett inn i Gmail",
+    "refine": "Forbedre utkast",
+    "editing": "Forbedrer utkast",
+    "original": "Original",
+    "refining": "Forbedret",
+    "editContent": "Rediger e-postinnhold",
+    "editHint": "Rediger den genererte e-posten direkte, eller juster meldingen ovenfor for å generere på nytt",
+    "save": "Lagre endringer",
+    "cancel": "Avbryt",
+    "saveEdits": "Lagre & Forbedre",
+    "refineSection": "Forbedre Dette Utkastet",
+    "refineAndRegenerate": "Forbedre & Generer på Nytt",
+    "resetChanges": "Tilbakestill"
   }
 }

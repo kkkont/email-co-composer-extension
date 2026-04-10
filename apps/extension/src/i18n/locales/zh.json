@@ -1,4 +1,8 @@
 {
+  "page": {
+    "composer": "作事器",
+    "drafts": "草稿"
+  },
   "app": {
     "title": "Co-Composer",
     "subtitle": "描述您的目标，我们将起草邮件。"
@@ -53,7 +57,8 @@
     },
     "urgency": {
       "label": "紧急程度",
-      "description": "标记为立即行动"
+      "description": "标记为即时行动",
+      "enabled": "已标记为紧急"
     },
     "extraNotes": {
       "label": "附加备注",
@@ -66,5 +71,12 @@
     "draftHint": "点击草稿将其插入到您的邮件中：",
     "draftLabel": "草稿 {{number}}",
     "errorMessage": "生成邮件时出错。后台是否正在运行？"
+  },
+  "drafts": {
+    "empty": "还没有草稿。生成你的第一封邮件开始吧！",
+    "copy": "复制到剪贴板",
+    "delete": "删除草稿",
+    "generatedContent": "生成的邮件",
+    "insert": "插入至 Gmail"
   }
 }

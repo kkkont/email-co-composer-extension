@@ -1,4 +1,8 @@
 {
+  "page": {
+    "composer": "Sävellyjä",
+    "drafts": "Luonnokset"
+  },
   "app": {
     "title": "Co-Composer",
     "subtitle": "Kuvaile tavoitteesi ja laadimme sähköpostin."
@@ -53,7 +57,8 @@
     },
     "urgency": {
       "label": "KIIREELLISYYS",
-      "description": "Merkitse välittömäksi toimenpiteeksi"
+      "description": "Merkitse välittömäksi toimenpiteeksi",
+      "enabled": "Merkitty kiireelliseksi"
     },
     "extraNotes": {
       "label": "LISÄHUOMAUTUKSET",
@@ -66,5 +71,25 @@
     "draftHint": "Klikkaa luonnosta lisätäksesi sen sähköpostiisi:",
     "draftLabel": "Luonnos {{number}}",
     "errorMessage": "Virhe sähköpostin luomisessa. Onko taustajärjestelmä käynnissä?"
+  },
+  "drafts": {
+    "empty": "Ei vielä luonnoksia. Luo ensimmäinen sähköpostisi päästäksesi alkuun!",
+    "emptyHint": "Käytä Composer-välilehteä kuvataksesi mitä haluat kirjoittaa.",
+    "copy": "Kopioi leikepöydille",
+    "delete": "Poista luonnos",
+    "generatedContent": "Luotu sähköposti",
+    "insert": "Lisää Gmailiin",
+    "refine": "Tarkenna luonnosta",
+    "editing": "Tarkennetaan luonnosta",
+    "original": "Alkuperäinen",
+    "refining": "Tarkennettu",
+    "editContent": "Muokkaa sähköpostin sisältöä",
+    "editHint": "Muokkaa luotua sähköpostia suoraan, tai säädä yllä olevaa kehotetta uudelleen luomiseksi",
+    "save": "Tallenna muutokset",
+    "cancel": "Peruuta",
+    "saveEdits": "Tallenna & Tarkenna",
+    "refineSection": "Tarkenna Tätä Luonnosta",
+    "refineAndRegenerate": "Tarkenna & Luo Uudelleen",
+    "resetChanges": "Palauta"
   }
 }

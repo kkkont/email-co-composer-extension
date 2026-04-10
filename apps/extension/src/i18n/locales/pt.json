@@ -1,4 +1,8 @@
 {
+  "page": {
+    "composer": "Compositor",
+    "drafts": "Rascunhos"
+  },
   "app": {
     "title": "Co-Composer",
     "subtitle": "Descreva seu objetivo e nós redigiremos o email."
@@ -53,7 +57,8 @@
     },
     "urgency": {
       "label": "URGÊNCIA",
-      "description": "Marcar como ação imediata"
+      "description": "Marcar como ação imediata",
+      "enabled": "Marcado como urgente"
     },
     "extraNotes": {
       "label": "NOTAS EXTRAS",
@@ -66,5 +71,25 @@
     "draftHint": "Clique em um rascunho para inseri-lo no seu email:",
     "draftLabel": "Rascunho {{number}}",
     "errorMessage": "Erro ao gerar email. O backend está em execução?"
+  },
+  "drafts": {
+    "empty": "Nenhum rascunho ainda. Gere seu primeiro email para começar!",
+    "emptyHint": "Use a aba Composer para descrever o que você quer escrever.",
+    "copy": "Copiar para a área de transferência",
+    "delete": "Deletar rascunho",
+    "generatedContent": "Email gerado",
+    "insert": "Inserir no Gmail",
+    "refine": "Refinar rascunho",
+    "editing": "Refinando rascunho",
+    "original": "Original",
+    "refining": "Refinado",
+    "editContent": "Editar conteúdo do email",
+    "editHint": "Edite o email gerado diretamente, ou ajuste o prompt acima para regenerar",
+    "save": "Salvar alterações",
+    "cancel": "Cancelar",
+    "saveEdits": "Salvar & Refinar",
+    "refineSection": "Refinar Este Rascunho",
+    "refineAndRegenerate": "Refinar & Regenerar",
+    "resetChanges": "Redefinir"
   }
 }

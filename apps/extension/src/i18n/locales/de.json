@@ -1,4 +1,8 @@
 {
+  "page": {
+    "composer": "Verfasser",
+    "drafts": "Entwürfe"
+  },
   "app": {
     "title": "Co-Composer",
     "subtitle": "Beschreiben Sie Ihr Ziel und wir entwerfen die E-Mail."
@@ -53,7 +57,8 @@
     },
     "urgency": {
       "label": "DRINGLICHKEIT",
-      "description": "Als sofortige Aktion markieren"
+      "description": "Als sofortige Aktion markieren",
+      "enabled": "Als dringend markiert"
     },
     "extraNotes": {
       "label": "ZUSÄTZLICHE HINWEISE",
@@ -65,6 +70,23 @@
     "generating": "Erstellen...",
     "draftHint": "Klicken Sie auf einen Entwurf, um ihn in Ihre E-Mail einzufügen:",
     "draftLabel": "Entwurf {{number}}",
-    "errorMessage": "Fehler beim Erstellen der E-Mail. Läuft das Backend?"
+    "errorMessage": "Fehler beim Erstellen der E-Mail. Läuft das Backend?",
+    "clearAll": "Alle Entwürfe löschen"
+  },
+  "drafts": {
+    "session": "Sitzung {{number}}",
+    "rootLabel": "Original",
+    "refinementLabel": "Verfeinerung {{number}}",
+    "refineSection": "Verfeinern & neu generieren",
+    "refineAndRegenerate": "Verfeinern & Neu generieren",
+    "resetChanges": "Änderungen zurücksetzen",
+    "saveEdits": "Änderungen speichern",
+    "editFeedsRegen": "Ihre Änderungen werden als Grundlage für die Neugenerierung verwendet",
+    "editHint": "Bearbeiten Sie die E-Mail direkt, oder passen Sie die Parameter unten an und generieren Sie neu",
+    "empty": "Noch keine Entwürfe",
+    "emptyHint": "Erstellen Sie eine E-Mail auf der Registerkarte Composer",
+    "insert": "In Gmail einfügen",
+    "copy": "In die Zwischenablage kopieren",
+    "delete": "Entwurf löschen"
   }
 }

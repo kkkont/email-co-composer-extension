@@ -1,4 +1,8 @@
 {
+  "page": {
+    "composer": "Forfatter",
+    "drafts": "Udkast"
+  },
   "app": {
     "title": "Co-Composer",
     "subtitle": "Beskriv dit mål, og vi skriver udkastet til e-mailen."
@@ -53,7 +57,8 @@
     },
     "urgency": {
       "label": "HASTIGHED",
-      "description": "Marker som øjeblikkelig handling"
+      "description": "Marker som øjeblikkelig handling",
+      "enabled": "Markeret som hastelig"
     },
     "extraNotes": {
       "label": "EKSTRA NOTER",
@@ -65,6 +70,23 @@
     "generating": "Genererer...",
     "draftHint": "Klik på et udkast for at indsætte det i din e-mail:",
     "draftLabel": "Udkast {{number}}",
-    "errorMessage": "Fejl ved generering af e-mail. Kører backend?"
+    "errorMessage": "Fejl ved generering af e-mail. Kører backend?",
+    "clearAll": "Ryd alle udkast"
+  },
+  "drafts": {
+    "session": "Session {{number}}",
+    "rootLabel": "Original",
+    "refinementLabel": "Forbedring {{number}}",
+    "refineSection": "Forbedre & generer på nyt",
+    "refineAndRegenerate": "Forbedre & Generer på Nyt",
+    "resetChanges": "Nulstil ændringer",
+    "saveEdits": "Gem ændringer",
+    "editFeedsRegen": "Dine ændringer vil blive brugt som grundlag for regenerering",
+    "editHint": "Rediger e-mailen direkte, eller juster parametrene nedenfor og generer på nyt",
+    "empty": "Ingen udkast endnu",
+    "emptyHint": "Generer en e-mail fra Composer-fanen for at komme i gang",
+    "insert": "Indsæt i Gmail",
+    "copy": "Kopier til udklipsholder",
+    "delete": "Slet udkast"
   }
 }

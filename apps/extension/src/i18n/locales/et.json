@@ -1,4 +1,8 @@
 {
+  "page": {
+    "composer": "Koostaja",
+    "drafts": "Mustandid"
+  },
   "app": {
     "title": "Co-Composer",
     "subtitle": "Kirjelda oma eesmärki ja me koostame e-kirja mustandi."
@@ -53,7 +57,8 @@
     },
     "urgency": {
       "label": "KIIRE",
-      "description": "Märgi kui kohene tegevus"
+      "description": "Märgi kui kohene tegevus",
+      "enabled": "Märgitud kiireks"
     },
     "extraNotes": {
       "label": "LISAMÄRKUSED",
@@ -65,6 +70,26 @@
     "generating": "Loomine...",
     "draftHint": "Klõpsa mustandil, et see oma e-kirja lisada:",
     "draftLabel": "Mustand {{number}}",
-    "errorMessage": "Viga e-kirja loomisel. Kas taustsüsteem töötab?"
+    "errorMessage": "Viga e-kirja loomisel. Kas taustajärjestelm töötab?"
+  },
+  "drafts": {
+    "empty": "Valasti mustandit veel. Loo oma esimene e-kiri alustamiseks!",
+    "emptyHint": "Kasuta Composer vahekaarti oma kirjutamise sisu kirjeldamiseks.",
+    "copy": "Kopeeri lõikepöörde",
+    "delete": "Kustuta mustand",
+    "generatedContent": "Loodud e-kiri",
+    "insert": "Sisesta Gmailisse",
+    "refine": "Täpsusta mustandit",
+    "editing": "Täpsustades mustandit",
+    "original": "Algne",
+    "refining": "Täpsustatud",
+    "editContent": "Muuda e-kirja sisu",
+    "editHint": "Muuda loodud e-kirja otse, või kohandage ülalolev viip uuesti loomiseks",
+    "save": "Salvesta muudatused",
+    "cancel": "Tühista",
+    "saveEdits": "Salvesta & Täpsusta",
+    "refineSection": "Täpsusta Seda Mustandit",
+    "refineAndRegenerate": "Täpsusta & Loo Uuesti",
+    "resetChanges": "Lähtesta"
   }
 }

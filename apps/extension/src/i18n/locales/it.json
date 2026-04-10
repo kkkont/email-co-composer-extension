@@ -1,4 +1,8 @@
 {
+  "page": {
+    "composer": "Compositore",
+    "drafts": "Bozze"
+  },
   "app": {
     "title": "Co-Composer",
     "subtitle": "Descrivi il tuo obiettivo e noi redigeremo l'email."
@@ -53,7 +57,8 @@
     },
     "urgency": {
       "label": "URGENZA",
-      "description": "Segna come azione immediata"
+      "description": "Segna come azione immediata",
+      "enabled": "Contrassegnato come urgente"
     },
     "extraNotes": {
       "label": "NOTE AGGIUNTIVE",
@@ -66,5 +71,25 @@
     "draftHint": "Clicca su una bozza per inserirla nella tua email:",
     "draftLabel": "Bozza {{number}}",
     "errorMessage": "Errore nella generazione dell'email. Il backend è in esecuzione?"
+  },
+  "drafts": {
+    "empty": "Nessuna bozza per il momento. Genera la tua prima email per iniziare!",
+    "emptyHint": "Usa la scheda Composer per descrivere cosa vuoi scrivere.",
+    "copy": "Copia negli appunti",
+    "delete": "Elimina bozza",
+    "generatedContent": "Email generata",
+    "insert": "Inserisci in Gmail",
+    "refine": "Raffina bozza",
+    "editing": "Affinamento della bozza",
+    "original": "Originale",
+    "refining": "Affinato",
+    "editContent": "Modifica contenuto email",
+    "editHint": "Modifica direttamente l'email generata, o regola il prompt qui sopra per rigenerare",
+    "save": "Salva modifiche",
+    "cancel": "Annulla",
+    "saveEdits": "Salva & Raffina",
+    "refineSection": "Raffina Questa Bozza",
+    "refineAndRegenerate": "Raffina & Rigenera",
+    "resetChanges": "Reimposta"
   }
 }

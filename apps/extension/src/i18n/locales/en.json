@@ -1,4 +1,8 @@
 {
+  "page": {
+    "composer": "Composer",
+    "drafts": "Drafts"
+  },
   "app": {
     "title": "Co-Composer",
     "subtitle": "Describe your goal and we'll draft the email."
@@ -53,7 +57,8 @@
     },
     "urgency": {
       "label": "URGENCY",
-      "description": "Mark as immediate action"
+      "description": "Mark as immediate action",
+      "enabled": "Marked as urgent"
     },
     "extraNotes": {
       "label": "EXTRA NOTES",
@@ -65,6 +70,23 @@
     "generating": "Generating...",
     "draftHint": "Click a draft to insert it into your email:",
     "draftLabel": "Draft {{number}}",
-    "errorMessage": "Error generating email. Is the backend running?"
+    "errorMessage": "Error generating email. Is the backend running?",
+    "clearAll": "Clear all drafts"
+  },
+  "drafts": {
+    "session": "Session {{number}}",
+    "rootLabel": "Original",
+    "refinementLabel": "Refinement {{number}}",
+    "refineSection": "Refine & regenerate",
+    "refineAndRegenerate": "Refine & Regenerate",
+    "resetChanges": "Reset changes",
+    "saveEdits": "Save edits",
+    "editFeedsRegen": "Your edits will be used as the base for regeneration",
+    "editHint": "Edit the email directly, or adjust the parameters below and regenerate",
+    "empty": "No drafts yet",
+    "emptyHint": "Generate an email from the Composer tab to get started",
+    "insert": "Insert into Gmail",
+    "copy": "Copy to clipboard",
+    "delete": "Delete draft"
   }
 }
