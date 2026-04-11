@@ -73,20 +73,23 @@ ${intent.extraNotes ? `ADDITIONAL CONTEXT: ${intent.extraNotes}` : ""}
 
 Remember: Output ONLY the email body. Follow the LENGTH constraint strictly.`;
 
-  // Scale max_tokens to match length setting
-  const maxTokens =
+  // Scale output tokens to match length setting, plus reasoning overhead
+  const outputTokens =
     intent.length < 0.2 ? 128 : intent.length < 0.4 ? 200 : intent.length < 0.6 ? 512 : intent.length < 0.8 ? 768 : 1024;
+  // Reasoning models use reasoning_tokens + output tokens from the same budget
+  const maxTokens = outputTokens + 2048;
 
   const response = await client.chat.completions.create({
-    model: "gpt-5.4-nano-2026-03-17",
+    model: "gpt-5-nano-2025-08-07",
     messages: [
       { role: "system", content: systemPrompt },
       { role: "user", content: userPrompt },
     ],
-    temperature: 0.7,
     max_completion_tokens: maxTokens,
+    reasoning_effort: "minimal",
   });
 
+  console.log("OpenAI response:", JSON.stringify(response, null, 2));
   const content = response.choices[0]?.message?.content;
   if (!content) {
     throw new Error("No response from OpenAI");
