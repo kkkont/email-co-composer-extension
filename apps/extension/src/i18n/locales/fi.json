@@ -73,11 +73,14 @@
     "errorMessage": "Virhe sähköpostin luomisessa. Onko taustajärjestelmä käynnissä?"
   },
   "drafts": {
+    "generatedContent": "Luotu sähköposti",
+    "session": "Chat-istunto {{number}}",
+    "rootLabel": "Alkuperäinen",
+    "refinementLabel": "Versio {{number}}",
     "empty": "Ei vielä luonnoksia. Luo ensimmäinen sähköpostisi päästäksesi alkuun!",
     "emptyHint": "Käytä Composer-välilehteä kuvataksesi mitä haluat kirjoittaa.",
     "copy": "Kopioi leikepöydille",
     "delete": "Poista luonnos",
-    "generatedContent": "Luotu sähköposti",
     "insert": "Lisää Gmailiin",
     "refine": "Tarkenna luonnosta",
     "editing": "Tarkennetaan luonnosta",

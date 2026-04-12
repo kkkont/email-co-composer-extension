@@ -74,9 +74,10 @@
     "clearAll": "Alle concepten verwijderen"
   },
   "drafts": {
-    "session": "Sessie {{number}}",
+    "generatedContent": "Gegenereerde email",
+    "session": "Chat-sessie {{number}}",
     "rootLabel": "Origineel",
-    "refinementLabel": "Verfijning {{number}}",
+    "refinementLabel": "Versie {{number}}",
     "refineSection": "Verfijnen & opnieuw genereren",
     "refineAndRegenerate": "Verfijnen & Opnieuw Genereren",
     "resetChanges": "Wijzigingen herstellen",

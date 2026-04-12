@@ -74,9 +74,10 @@
     "clearAll": "Ryd alle udkast"
   },
   "drafts": {
-    "session": "Session {{number}}",
+    "generatedContent": "Genereret E-mail",
+    "session": "Chat-Session {{number}}",
     "rootLabel": "Original",
-    "refinementLabel": "Forbedring {{number}}",
+    "refinementLabel": "Version {{number}}",
     "refineSection": "Forbedre & generer på nyt",
     "refineAndRegenerate": "Forbedre & Generer på Nyt",
     "resetChanges": "Nulstil ændringer",

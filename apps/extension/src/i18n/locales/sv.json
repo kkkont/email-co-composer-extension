@@ -73,11 +73,14 @@
     "errorMessage": "Fel vid skapande av e-post. Är backend igång?"
   },
   "drafts": {
+    "generatedContent": "Genererat email",
+    "session": "Chat-session {{number}}",
+    "rootLabel": "Original",
+    "refinementLabel": "Version {{number}}",
     "empty": "Inga utkast ännu. Skapa ditt första e-postmeddelande för att komma igång!",
     "emptyHint": "Använd fliken Composer för att beskriva vad du vill skriva.",
     "copy": "Kopiera till urklipp",
     "delete": "Ta bort utkast",
-    "generatedContent": "Genererat email",
     "insert": "Infoga i Gmail",
     "refine": "Förbättra utkast",
     "editing": "Förbättring av utkast",

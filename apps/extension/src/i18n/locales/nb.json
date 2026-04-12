@@ -73,11 +73,14 @@
     "errorMessage": "Feil ved generering av e-post. Kjører backend?"
   },
   "drafts": {
+    "generatedContent": "Generert e-post",
+    "session": "Chat-seanse {{number}}",
+    "rootLabel": "Original",
+    "refinementLabel": "Versjon {{number}}",
     "empty": "Ingen utkast ennå. Generer din første e-post for å komme i gang!",
     "emptyHint": "Bruk Composer-fanen til å beskrive hva du vil skrive.",
     "copy": "Kopier til utklipp",
     "delete": "Slett utkast",
-    "generatedContent": "Generert e-post",
     "insert": "Sett inn i Gmail",
     "refine": "Forbedre utkast",
     "editing": "Forbedrer utkast",

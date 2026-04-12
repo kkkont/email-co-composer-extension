@@ -73,11 +73,14 @@
     "errorMessage": "Erro ao gerar email. O backend está em execução?"
   },
   "drafts": {
+    "generatedContent": "Email gerado",
+    "session": "Sessão de chat {{number}}",
+    "rootLabel": "Original",
+    "refinementLabel": "Versão {{number}}",
     "empty": "Nenhum rascunho ainda. Gere seu primeiro email para começar!",
     "emptyHint": "Use a aba Composer para descrever o que você quer escrever.",
     "copy": "Copiar para a área de transferência",
     "delete": "Deletar rascunho",
-    "generatedContent": "Email gerado",
     "insert": "Inserir no Gmail",
     "refine": "Refinar rascunho",
     "editing": "Refinando rascunho",

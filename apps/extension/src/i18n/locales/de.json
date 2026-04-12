@@ -74,9 +74,10 @@
     "clearAll": "Alle Entwürfe löschen"
   },
   "drafts": {
-    "session": "Sitzung {{number}}",
+    "generatedContent": "Generierte E-Mail",
+    "session": "Chat-Sitzung {{number}}",
     "rootLabel": "Original",
-    "refinementLabel": "Verfeinerung {{number}}",
+    "refinementLabel": "Version {{number}}",
     "refineSection": "Verfeinern & neu generieren",
     "refineAndRegenerate": "Verfeinern & Neu generieren",
     "resetChanges": "Änderungen zurücksetzen",

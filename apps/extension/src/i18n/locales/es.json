@@ -74,9 +74,10 @@
     "clearAll": "Eliminar todos los borradores"
   },
   "drafts": {
-    "session": "Sesión {{number}}",
+    "generatedContent": "Correo Generado",
+    "session": "Sesión de Chat {{number}}",
     "rootLabel": "Original",
-    "refinementLabel": "Refinamiento {{number}}",
+    "refinementLabel": "Versión {{number}}",
     "refineSection": "Refinar & regenerar",
     "refineAndRegenerate": "Refinar & Regenerar",
     "resetChanges": "Restablecer cambios",

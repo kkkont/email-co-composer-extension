@@ -73,11 +73,14 @@
     "errorMessage": "Erreur lors de la génération de l'email. Le backend est-il en cours d'exécution ?"
   },
   "drafts": {
+    "generatedContent": "Email généré",
+    "session": "Sesstion de chat {{number}}",
+    "rootLabel": "Original",
+    "refinementLabel": "Version {{number}}",
     "empty": "Aucun brouillon pour l'instant. Générez votre premier email pour commencer !",
     "emptyHint": "Utilisez l'onglet Composer pour décrire ce que vous souhaitez écrire.",
     "copy": "Copier dans le presse-papiers",
     "delete": "Supprimer le brouillon",
-    "generatedContent": "Email généré",
     "insert": "Insérer dans Gmail",
     "refine": "Affiner le brouillon",
     "editing": "Affinage du brouillon",

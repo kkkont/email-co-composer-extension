@@ -73,11 +73,14 @@
     "errorMessage": "Viga e-kirja loomisel. Kas taustajärjestelm töötab?"
   },
   "drafts": {
+    "generatedContent": "Loodud e-kiri",
+    "session": "Vestluse seanss {{number}}",
+    "rootLabel": "Algne",
+    "refinementLabel": "Versioon {{number}}",
     "empty": "Valasti mustandit veel. Loo oma esimene e-kiri alustamiseks!",
     "emptyHint": "Kasuta Composer vahekaarti oma kirjutamise sisu kirjeldamiseks.",
     "copy": "Kopeeri lõikepöörde",
     "delete": "Kustuta mustand",
-    "generatedContent": "Loodud e-kiri",
     "insert": "Sisesta Gmailisse",
     "refine": "Täpsusta mustandit",
     "editing": "Täpsustades mustandit",

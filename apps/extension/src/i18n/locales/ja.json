@@ -74,9 +74,10 @@
     "clearAll": "すべての下書きをクリア"
   },
   "drafts": {
-    "session": "セッション {{number}}",
+    "generatedContent": "生成されたメール",
+    "session": "チャットセッション {{number}}",
     "rootLabel": "元の",
-    "refinementLabel": "調整 {{number}}",
+    "refinementLabel": "バージョン {{number}}",
     "refineSection": "調整 & 再生成",
     "refineAndRegenerate": "調整して再生成",
     "resetChanges": "変更をリセット",

@@ -74,9 +74,10 @@
     "clearAll": "모든 초안 삭제"
   },
   "drafts": {
-    "session": "세션 {{number}}",
+    "generatedContent": "생성된 이메일",
+    "session": "채팅 세션 {{number}}",
     "rootLabel": "원본",
-    "refinementLabel": "다듬음 {{number}}",
+    "refinementLabel": "버전 {{number}}",
     "refineSection": "다듬기 & 재생성",
     "refineAndRegenerate": "다듬기 및 재생성",
     "resetChanges": "변경사항 초기화",

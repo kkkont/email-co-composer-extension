@@ -73,10 +73,14 @@
     "errorMessage": "生成邮件时出错。后台是否正在运行？"
   },
   "drafts": {
+    "generatedContent": "生成的邮件",
+    "session": "聊天会话 {{number}}",
+    "rootLabel": "原稿",
+    "refinementLabel": "版本 {{number}}",
     "empty": "还没有草稿。生成你的第一封邮件开始吧！",
+    "emptyHint": "点击草稿将其插入到您的邮件中：",
     "copy": "复制到剪贴板",
     "delete": "删除草稿",
-    "generatedContent": "生成的邮件",
     "insert": "插入至 Gmail"
   }
 }

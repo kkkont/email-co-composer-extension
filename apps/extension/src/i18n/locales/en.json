@@ -74,9 +74,10 @@
     "clearAll": "Clear all drafts"
   },
   "drafts": {
-    "session": "Session {{number}}",
+    "generatedContent": "Generated Email",
+    "session": "Chat Session {{number}}",
     "rootLabel": "Original",
-    "refinementLabel": "Refinement {{number}}",
+    "refinementLabel": "Version {{number}}",
     "refineSection": "Refine & regenerate",
     "refineAndRegenerate": "Refine & Regenerate",
     "resetChanges": "Reset changes",
