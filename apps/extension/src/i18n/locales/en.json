@@ -73,6 +73,20 @@
     "errorMessage": "Error generating email. Is the backend running?",
     "clearAll": "Clear all drafts"
   },
+  "languageChangeModal": {
+    "title": "Change language?",
+    "messageSingle": "1 draft in {{currentLanguage}} will be deleted if you switch to {{pendingLanguage}}.",
+    "messagePlural": "{{count}} drafts in {{currentLanguage}} will be deleted if you switch to {{pendingLanguage}}.",
+    "cancel": "Cancel",
+    "confirm": "Delete drafts and switch"
+  },
+  "clearAllModal": {
+    "title": "Clear all drafts?",
+    "messageSingle": "1 draft in {{currentLanguage}} will be deleted.",
+    "messagePlural": "{{count}} drafts in {{currentLanguage}} will be deleted.",
+    "cancel": "Cancel",
+    "confirm": "Delete all drafts"
+  },
   "drafts": {
     "generatedContent": "Generated Email",
     "session": "Chat Session {{number}}",

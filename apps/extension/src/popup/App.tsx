@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { Mail, Trash2 } from "lucide-react";
 import { availableLanguages, languageNames } from "../i18n";
@@ -37,6 +37,8 @@ export default function App() {
   const [currentPage, setCurrentPage] = useState<"composer" | "drafts">(
     "composer",
   );
+  const [pendingLanguage, setPendingLanguage] = useState<string | null>(null);
+  const [showClearAllModal, setShowClearAllModal] = useState(false);
   const [intent, setIntent] = useState<EmailIntent>({
     goal: "",
     mainMessage: "",
@@ -49,6 +51,12 @@ export default function App() {
   const [drafts, setDrafts] = useState<Draft[]>([]);
   const [isLoading, setIsLoading] = useState(false);
   const [showAdvanced, setShowAdvanced] = useState(false);
+
+  useEffect(() => {
+    if (currentPage === "drafts" && drafts.length === 0) {
+      setCurrentPage("composer");
+    }
+  }, [currentPage, drafts.length]);
 
   // ── Generate from composer (fresh session) ──────────────────────────────
   const handleGenerate = async () => {
@@ -174,6 +182,54 @@ export default function App() {
     setDrafts((prev) => prev.filter((draft) => draft.id !== id));
   };
 
+  const clearAllDrafts = () => {
+    setDrafts([]);
+    setCurrentPage("composer");
+    setShowClearAllModal(false);
+    clearGmailCompose();
+  };
+
+  const applyLanguageChange = (language: string) => {
+    i18n.changeLanguage(language);
+    setIntent({
+      goal: "",
+      mainMessage: "",
+      recipientContext: "",
+      tone: 0.5,
+      length: 0.5,
+      urgency: false,
+      extraNotes: "",
+    });
+    clearAllDrafts();
+    setPendingLanguage(null);
+  };
+
+  const currentLanguageName = languageNames[i18n.language] ?? i18n.language;
+  const pendingLanguageName = pendingLanguage
+    ? languageNames[pendingLanguage] ?? pendingLanguage
+    : null;
+  const pendingLanguageMessage = pendingLanguageName
+    ? t(
+        drafts.length === 1
+          ? "languageChangeModal.messageSingle"
+          : "languageChangeModal.messagePlural",
+        {
+          count: drafts.length,
+          currentLanguage: currentLanguageName,
+          pendingLanguage: pendingLanguageName,
+        },
+      )
+    : "";
+  const clearAllMessage = t(
+    drafts.length === 1
+      ? "clearAllModal.messageSingle"
+      : "clearAllModal.messagePlural",
+    {
+      count: drafts.length,
+      currentLanguage: currentLanguageName,
+    },
+  );
+
   return (
     <div className="flex flex-col bg-white h-screen">
       {/* Page Navigation */}
@@ -188,25 +244,25 @@ export default function App() {
         >
           {t("page.composer")}
         </button>
-        <button
-          onClick={() => setCurrentPage("drafts")}
-          className={`flex-1 py-3 text-sm font-medium transition-colors relative ${
-            currentPage === "drafts"
-              ? "text-blue-600 border-b-2 border-blue-600 bg-white"
-              : "text-gray-600 hover:text-gray-800"
-          }`}
-        >
-          {t("page.drafts")}
-          {drafts.length > 0 && (
+        {drafts.length > 0 && (
+          <button
+            onClick={() => setCurrentPage("drafts")}
+            className={`flex-1 py-3 text-sm font-medium transition-colors relative ${
+              currentPage === "drafts"
+                ? "text-blue-600 border-b-2 border-blue-600 bg-white"
+                : "text-gray-600 hover:text-gray-800"
+            }`}
+          >
+            {t("page.drafts")}
             <span className="absolute top-1 right-2 bg-blue-600 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
               {drafts.length}
             </span>
-          )}
-        </button>
+          </button>
+        )}
       </div>
 
       {/* Page Content */}
-      {currentPage === "drafts" ? (
+      {currentPage === "drafts" && drafts.length > 0 ? (
         <DraftsPage
           drafts={drafts}
           onDeleteDraft={handleDeleteDraft}
@@ -231,17 +287,12 @@ export default function App() {
                   <select
                     value={i18n.language}
                     onChange={(e) => {
-                      i18n.changeLanguage(e.target.value);
-                      setIntent({
-                        goal: "",
-                        mainMessage: "",
-                        recipientContext: "",
-                        tone: 0.5,
-                        length: 0.5,
-                        urgency: false,
-                        extraNotes: "",
-                      });
-                      clearGmailCompose();
+                      if (drafts.length > 0) {
+                        setPendingLanguage(e.target.value);
+                        return;
+                      }
+
+                      applyLanguageChange(e.target.value);
                     }}
                     className="text-xs border rounded px-2 py-1 bg-white text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
                   >
@@ -469,10 +520,7 @@ export default function App() {
             </button>
             {drafts.length > 0 && (
               <button
-                onClick={() => {
-                  setDrafts([]);
-                  clearGmailCompose();
-                }}
+                onClick={() => setShowClearAllModal(true)}
                 className="w-full mt-2 flex items-center justify-center gap-1.5 text-xs text-gray-400 hover:text-red-500 transition-colors py-1"
               >
                 <Trash2 className="w-3.5 h-3.5" />
@@ -481,6 +529,64 @@ export default function App() {
             )}
           </div>
         </>
+      )}
+
+      {pendingLanguage && (
+        <div className="absolute inset-0 z-20 flex items-center justify-center bg-black/40 p-4">
+          <div className="w-full max-w-sm rounded-xl bg-white shadow-lg border border-gray-200 p-4 space-y-4">
+            <div className="space-y-1">
+              <h3 className="text-sm font-semibold text-gray-900">
+                {t("languageChangeModal.title")}
+              </h3>
+              <p className="text-xs leading-relaxed text-gray-600">
+                {pendingLanguageMessage}
+              </p>
+            </div>
+            <div className="flex justify-end gap-2">
+              <button
+                onClick={() => setPendingLanguage(null)}
+                className="px-3 py-2 text-xs font-medium text-gray-600 hover:text-gray-800 transition-colors"
+              >
+                {t("languageChangeModal.cancel")}
+              </button>
+              <button
+                onClick={() => applyLanguageChange(pendingLanguage)}
+                className="px-3 py-2 rounded-lg bg-red-500 text-white text-xs font-medium hover:bg-red-600 transition-colors"
+              >
+                {t("languageChangeModal.confirm")}
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {showClearAllModal && (
+        <div className="absolute inset-0 z-20 flex items-center justify-center bg-black/40 p-4">
+          <div className="w-full max-w-sm rounded-xl bg-white shadow-lg border border-gray-200 p-4 space-y-4">
+            <div className="space-y-1">
+              <h3 className="text-sm font-semibold text-gray-900">
+                {t("clearAllModal.title")}
+              </h3>
+              <p className="text-xs leading-relaxed text-gray-600">
+                {clearAllMessage}
+              </p>
+            </div>
+            <div className="flex justify-end gap-2">
+              <button
+                onClick={() => setShowClearAllModal(false)}
+                className="px-3 py-2 text-xs font-medium text-gray-600 hover:text-gray-800 transition-colors"
+              >
+                {t("clearAllModal.cancel")}
+              </button>
+              <button
+                onClick={clearAllDrafts}
+                className="px-3 py-2 rounded-lg bg-red-500 text-white text-xs font-medium hover:bg-red-600 transition-colors"
+              >
+                {t("clearAllModal.confirm")}
+              </button>
+            </div>
+          </div>
+        </div>
       )}
     </div>
   );
