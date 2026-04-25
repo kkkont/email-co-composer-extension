@@ -88,15 +88,16 @@ Remember: Output ONLY the email body. Follow the LENGTH constraint strictly.`;
             : 1024;
 
   const response = await client.chat.completions.create({
-    model: "gpt-5.4-nano-2026-03-17",
+    model: "gpt-5-nano-2025-08-07",
     messages: [
       { role: "system", content: systemPrompt },
       { role: "user", content: userPrompt },
     ],
-    temperature: 0.7,
     max_completion_tokens: maxTokens,
+    reasoning_effort: "minimal",
   });
 
+  console.log("OpenAI response:", JSON.stringify(response, null, 2));
   const content = response.choices[0]?.message?.content;
   if (!content) {
     throw new Error("No response from OpenAI");
