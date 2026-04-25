@@ -1,4 +1,8 @@
 {
+  "page": {
+    "composer": "Kompositör",
+    "drafts": "Utkast"
+  },
   "app": {
     "title": "Co-Composer",
     "subtitle": "Beskriv ditt mål så skriver vi utkastet till e-postmeddelandet."
@@ -53,7 +57,8 @@
     },
     "urgency": {
       "label": "BRÅDSKANDE",
-      "description": "Markera som omedelbar åtgärd"
+      "description": "Markera som omedelbar åtgärd",
+      "enabled": "Markerat som brådskande"
     },
     "extraNotes": {
       "label": "EXTRA ANTECKNINGAR",
@@ -66,5 +71,28 @@
     "draftHint": "Klicka på ett utkast för att infoga det i ditt e-postmeddelande:",
     "draftLabel": "Utkast {{number}}",
     "errorMessage": "Fel vid skapande av e-post. Är backend igång?"
+  },
+  "drafts": {
+    "generatedContent": "Genererat email",
+    "session": "Chat-session {{number}}",
+    "rootLabel": "Original",
+    "refinementLabel": "Version {{number}}",
+    "empty": "Inga utkast ännu. Skapa ditt första e-postmeddelande för att komma igång!",
+    "emptyHint": "Använd fliken Composer för att beskriva vad du vill skriva.",
+    "copy": "Kopiera till urklipp",
+    "delete": "Ta bort utkast",
+    "insert": "Infoga i Gmail",
+    "refine": "Förbättra utkast",
+    "editing": "Förbättring av utkast",
+    "original": "Original",
+    "refining": "Förbättrad",
+    "editContent": "Redigera e-postinnehål",
+    "editHint": "Redigera det genererade e-postmeddelandet direkt, eller justera prompten ovan för att återgenerera",
+    "save": "Spara ändringar",
+    "cancel": "Avbryt",
+    "saveEdits": "Spara & Förbättra",
+    "refineSection": "Förbättra Detta Utkast",
+    "refineAndRegenerate": "Förbättra & Återgenerera",
+    "resetChanges": "Återställ"
   }
 }

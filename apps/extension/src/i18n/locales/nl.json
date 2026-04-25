@@ -1,4 +1,8 @@
 {
+  "page": {
+    "composer": "Samensteller",
+    "drafts": "Concepten"
+  },
   "app": {
     "title": "Co-Composer",
     "subtitle": "Beschrijf uw doel en wij stellen de e-mail op."
@@ -53,7 +57,8 @@
     },
     "urgency": {
       "label": "URGENTIE",
-      "description": "Markeer als onmiddellijke actie"
+      "description": "Markeer als onmiddellijke actie",
+      "enabled": "Gemarkeerd als dringend"
     },
     "extraNotes": {
       "label": "EXTRA OPMERKINGEN",
@@ -65,6 +70,24 @@
     "generating": "Genereren...",
     "draftHint": "Klik op een concept om het in uw e-mail in te voegen:",
     "draftLabel": "Concept {{number}}",
-    "errorMessage": "Fout bij het genereren van e-mail. Draait de backend?"
+    "errorMessage": "Fout bij het genereren van e-mail. Draait de backend?",
+    "clearAll": "Alle concepten verwijderen"
+  },
+  "drafts": {
+    "generatedContent": "Gegenereerde email",
+    "session": "Chat-sessie {{number}}",
+    "rootLabel": "Origineel",
+    "refinementLabel": "Versie {{number}}",
+    "refineSection": "Verfijnen & opnieuw genereren",
+    "refineAndRegenerate": "Verfijnen & Opnieuw Genereren",
+    "resetChanges": "Wijzigingen herstellen",
+    "saveEdits": "Wijzigingen opslaan",
+    "editFeedsRegen": "Uw wijzigingen zullen als basis voor regeneratie worden gebruikt",
+    "editHint": "Bewerk de e-mail rechtstreeks, of pas de parameters hieronder aan en genereer opnieuw",
+    "empty": "Nog geen concepten",
+    "emptyHint": "Genereer een e-mail via het Composer-tabblad om aan de slag te gaan",
+    "insert": "In Gmail invoegen",
+    "copy": "Naar klembord kopiëren",
+    "delete": "Concept verwijderen"
   }
 }

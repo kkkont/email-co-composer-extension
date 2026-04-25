@@ -1,4 +1,8 @@
 {
+  "page": {
+    "composer": "作成",
+    "drafts": "下書き"
+  },
   "app": {
     "title": "Co-Composer",
     "subtitle": "あなたの目的を説明してください。メールの下書きを作成します。"
@@ -53,7 +57,8 @@
     },
     "urgency": {
       "label": "緊急度",
-      "description": "即時対応としてマーク"
+      "description": "即時対応としてマーク",
+      "enabled": "緊急としてマークされています"
     },
     "extraNotes": {
       "label": "追加メモ",
@@ -65,6 +70,24 @@
     "generating": "生成中...",
     "draftHint": "下書きをクリックしてメールに挿入してください：",
     "draftLabel": "下書き {{number}}",
-    "errorMessage": "メールの生成中にエラーが発生しました。バックエンドは稼働していますか？"
+    "errorMessage": "メールの生成中にエラーが発生しました。バックエンドは稼働していますか？",
+    "clearAll": "すべての下書きをクリア"
+  },
+  "drafts": {
+    "generatedContent": "生成されたメール",
+    "session": "チャットセッション {{number}}",
+    "rootLabel": "元の",
+    "refinementLabel": "バージョン {{number}}",
+    "refineSection": "調整 & 再生成",
+    "refineAndRegenerate": "調整して再生成",
+    "resetChanges": "変更をリセット",
+    "saveEdits": "変更を保存",
+    "editFeedsRegen": "あなたの編集は再生成の基盤として使用されます",
+    "editHint": "メールを直接編集するか、以下のパラメータを調整して再生成してください",
+    "empty": "下書きがまだありません",
+    "emptyHint": "始めるにはComposerタブからメールを生成してください",
+    "insert": "Gmailに挿入",
+    "copy": "クリップボードにコピー",
+    "delete": "下書きを削除"
   }
 }

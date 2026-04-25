@@ -1,4 +1,8 @@
 {
+  "page": {
+    "composer": "Compositor",
+    "drafts": "Borradores"
+  },
   "app": {
     "title": "Co-Composer",
     "subtitle": "Describe tu objetivo y redactaremos el correo."
@@ -53,7 +57,8 @@
     },
     "urgency": {
       "label": "URGENCIA",
-      "description": "Marcar como acción inmediata"
+      "description": "Marcar como acción inmediata",
+      "enabled": "Marcado como urgente"
     },
     "extraNotes": {
       "label": "NOTAS ADICIONALES",
@@ -65,6 +70,24 @@
     "generating": "Generando...",
     "draftHint": "Haz clic en un borrador para insertarlo en tu correo:",
     "draftLabel": "Borrador {{number}}",
-    "errorMessage": "Error al generar el correo. ¿Está funcionando el backend?"
+    "errorMessage": "Error al generar el correo. ¿Está funcionando el backend?",
+    "clearAll": "Eliminar todos los borradores"
+  },
+  "drafts": {
+    "generatedContent": "Correo Generado",
+    "session": "Sesión de Chat {{number}}",
+    "rootLabel": "Original",
+    "refinementLabel": "Versión {{number}}",
+    "refineSection": "Refinar & regenerar",
+    "refineAndRegenerate": "Refinar & Regenerar",
+    "resetChanges": "Restablecer cambios",
+    "saveEdits": "Guardar cambios",
+    "editFeedsRegen": "Tus ediciones se utilizarán como base para la regeneración",
+    "editHint": "Edita el correo directamente, o ajusta los parámetros abajo y regenera",
+    "empty": "Sin borradores aún",
+    "emptyHint": "Genera un correo desde la pestaña Composer para empezar",
+    "insert": "Insertar en Gmail",
+    "copy": "Copiar al portapapeles",
+    "delete": "Eliminar borrador"
   }
 }

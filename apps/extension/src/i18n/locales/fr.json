@@ -1,4 +1,8 @@
 {
+  "page": {
+    "composer": "Compositeur",
+    "drafts": "Brouillons"
+  },
   "app": {
     "title": "Co-Composer",
     "subtitle": "Décrivez votre objectif et nous rédigerons l'email."
@@ -53,7 +57,8 @@
     },
     "urgency": {
       "label": "URGENCE",
-      "description": "Marquer comme action immédiate"
+      "description": "Marquer comme action immédiate",
+      "enabled": "Marqué comme urgent"
     },
     "extraNotes": {
       "label": "NOTES SUPPLÉMENTAIRES",
@@ -66,5 +71,28 @@
     "draftHint": "Cliquez sur un brouillon pour l'insérer dans votre email :",
     "draftLabel": "Brouillon {{number}}",
     "errorMessage": "Erreur lors de la génération de l'email. Le backend est-il en cours d'exécution ?"
+  },
+  "drafts": {
+    "generatedContent": "Email généré",
+    "session": "Sesstion de chat {{number}}",
+    "rootLabel": "Original",
+    "refinementLabel": "Version {{number}}",
+    "empty": "Aucun brouillon pour l'instant. Générez votre premier email pour commencer !",
+    "emptyHint": "Utilisez l'onglet Composer pour décrire ce que vous souhaitez écrire.",
+    "copy": "Copier dans le presse-papiers",
+    "delete": "Supprimer le brouillon",
+    "insert": "Insérer dans Gmail",
+    "refine": "Affiner le brouillon",
+    "editing": "Affinage du brouillon",
+    "original": "Original",
+    "refining": "Affiné",
+    "editContent": "Modifier le contenu de l'email",
+    "editHint": "Modifiez l'email généré directement, ou ajustez l'invite ci-dessus pour régénérer",
+    "save": "Enregistrer les modifications",
+    "cancel": "Annuler",
+    "saveEdits": "Enregistrer & Affiner",
+    "refineSection": "Affiner Ce Brouillon",
+    "refineAndRegenerate": "Affiner & Régénérer",
+    "resetChanges": "Réinitialiser"
   }
 }

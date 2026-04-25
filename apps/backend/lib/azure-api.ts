@@ -13,10 +13,11 @@ export interface EmailIntent {
   urgency: boolean;
   extraNotes: string;
   language: string;
+  /** If present, use this as the base to refine rather than generating from scratch */
+  currentDraft?: string;
 }
 
 export async function generateEmail(intent: EmailIntent): Promise<string> {
-  // Map sliders to concrete constraints
   const toneInstruction =
     intent.tone < 0.2
       ? "Use a very casual, friendly tone. Heavy use of contractions. Informal greetings (e.g. 'Hey'). Conversational language, like texting a friend."
@@ -47,9 +48,10 @@ export async function generateEmail(intent: EmailIntent): Promise<string> {
     ? `The communicative goal is to "${intent.goal}". Structure the email to clearly achieve this goal.`
     : "";
 
-  const languageInstruction = intent.language && intent.language !== "en"
-    ? `IMPORTANT: Write the entire email in ${intent.language} language.`
-    : "";
+  const languageInstruction =
+    intent.language && intent.language !== "en"
+      ? `IMPORTANT: Write the entire email in ${intent.language} language.`
+      : "";
 
   const systemPrompt = `You are an email writing assistant. Write ONLY the email body — no subject line, no labels, no meta-commentary, no explanations. Output just the email text ready to send.
 ${languageInstruction ? `\n${languageInstruction}\n` : ""}
@@ -57,6 +59,7 @@ You MUST follow these style and formatting rules exactly:
 - Use proper paragraph formatting: separate the greeting, each body paragraph, and the closing with blank lines.
 - Never output the entire email as a single paragraph.`;
 
+  // ── Build user prompt ─────────────────────────────────────────────────────
   const userPrompt = `Write an email with these exact requirements:
 
 RECIPIENT: ${intent.recipientContext}
@@ -73,11 +76,16 @@ ${intent.extraNotes ? `ADDITIONAL CONTEXT: ${intent.extraNotes}` : ""}
 
 Remember: Output ONLY the email body. Follow the LENGTH constraint strictly.`;
 
-  // Scale output tokens to match length setting, plus reasoning overhead
-  const outputTokens =
-    intent.length < 0.2 ? 128 : intent.length < 0.4 ? 200 : intent.length < 0.6 ? 512 : intent.length < 0.8 ? 768 : 1024;
-  // Reasoning models use reasoning_tokens + output tokens from the same budget
-  const maxTokens = outputTokens + 2048;
+  const maxTokens =
+    intent.length < 0.2
+      ? 128
+      : intent.length < 0.4
+        ? 200
+        : intent.length < 0.6
+          ? 512
+          : intent.length < 0.8
+            ? 768
+            : 1024;
 
   const response = await client.chat.completions.create({
     model: "gpt-5-nano-2025-08-07",
