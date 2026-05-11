@@ -57,8 +57,7 @@
     },
     "urgency": {
       "label": "СРОЧНОСТЬ",
-      "description": "Отметить как срочное действие",
-      "enabled": "Отмечено как срочное"
+      "description": "Отметить как срочное действие"
     },
     "extraNotes": {
       "label": "ДОПОЛНИТЕЛЬНЫЕ ЗАМЕТКИ",
@@ -68,12 +67,10 @@
   "actions": {
     "generate": "Создать Черновик",
     "generating": "Создание...",
-    "draftHint": "Нажмите на черновик, чтобы вставить его в ваше письмо:",
-    "draftLabel": "Черновик {{number}}",
-    "errorMessage": "Ошибка при создании письма. Запущен ли сервер?"
+    "errorMessage": "Ошибка при создании письма. Запущен ли сервер?",
+    "clearAll": "Удалить все черновики"
   },
   "drafts": {
-    "generatedContent": "Созданное письмо",
     "session": "Сеанс чата {{number}}",
     "rootLabel": "Оригинал",
     "refinementLabel": "Версия {{number}}",
@@ -81,18 +78,22 @@
     "emptyHint": "Используйте вкладку Composer, чтобы описать, что вы хотите написать.",
     "copy": "Копировать в буфер обмена",
     "delete": "Удалить черновик",
-    "insert": "Вставить в Gmail",
-    "refine": "Уточнить черновик",
-    "editing": "Уточнение черновика",
-    "original": "Оригинал",
-    "refining": "Уточненный",
-    "editContent": "Редактировать содержимое письма",
-    "editHint": "Отредактируйте созданное письмо прямо или отрегулируйте приглашение выше для повторного создания",
-    "save": "Сохранить изменения",
-    "cancel": "Отмена",
-    "saveEdits": "Сохранить & Уточнить",
     "refineSection": "Уточнить Этот Черновик",
     "refineAndRegenerate": "Уточнить & Создать Заново",
     "resetChanges": "Сбросить"
+  },
+  "languageChangeModal": {
+    "title": "Сменить язык?",
+    "messageSingle": "1 черновик на {{currentLanguage}} будет удалён при переключении на {{pendingLanguage}}.",
+    "messagePlural": "{{count}} черновиков на {{currentLanguage}} будут удалены при переключении на {{pendingLanguage}}.",
+    "cancel": "Отмена",
+    "confirm": "Удалить черновики и сменить"
+  },
+  "clearAllModal": {
+    "title": "Удалить все черновики?",
+    "messageSingle": "1 черновик на {{currentLanguage}} будет удалён.",
+    "messagePlural": "{{count}} черновиков на {{currentLanguage}} будут удалены.",
+    "cancel": "Отмена",
+    "confirm": "Удалить все черновики"
   }
 }

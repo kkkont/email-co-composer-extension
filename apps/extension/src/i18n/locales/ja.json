@@ -57,8 +57,7 @@
     },
     "urgency": {
       "label": "緊急度",
-      "description": "即時対応としてマーク",
-      "enabled": "緊急としてマークされています"
+      "description": "即時対応としてマーク"
     },
     "extraNotes": {
       "label": "追加メモ",
@@ -68,26 +67,33 @@
   "actions": {
     "generate": "下書きを生成",
     "generating": "生成中...",
-    "draftHint": "下書きをクリックしてメールに挿入してください：",
-    "draftLabel": "下書き {{number}}",
     "errorMessage": "メールの生成中にエラーが発生しました。バックエンドは稼働していますか？",
     "clearAll": "すべての下書きをクリア"
   },
   "drafts": {
-    "generatedContent": "生成されたメール",
     "session": "チャットセッション {{number}}",
     "rootLabel": "元の",
     "refinementLabel": "バージョン {{number}}",
     "refineSection": "調整 & 再生成",
     "refineAndRegenerate": "調整して再生成",
     "resetChanges": "変更をリセット",
-    "saveEdits": "変更を保存",
-    "editFeedsRegen": "あなたの編集は再生成の基盤として使用されます",
-    "editHint": "メールを直接編集するか、以下のパラメータを調整して再生成してください",
     "empty": "下書きがまだありません",
     "emptyHint": "始めるにはComposerタブからメールを生成してください",
-    "insert": "Gmailに挿入",
     "copy": "クリップボードにコピー",
     "delete": "下書きを削除"
+  },
+  "languageChangeModal": {
+    "title": "言語を変更しますか？",
+    "messageSingle": "{{pendingLanguage}}に切り替えると、{{currentLanguage}}の下書き1件が削除されます。",
+    "messagePlural": "{{pendingLanguage}}に切り替えると、{{currentLanguage}}の下書き{{count}}件が削除されます。",
+    "cancel": "キャンセル",
+    "confirm": "下書きを削除して切り替え"
+  },
+  "clearAllModal": {
+    "title": "すべての下書きを削除しますか？",
+    "messageSingle": "{{currentLanguage}}の下書き1件が削除されます。",
+    "messagePlural": "{{currentLanguage}}の下書き{{count}}件が削除されます。",
+    "cancel": "キャンセル",
+    "confirm": "すべての下書きを削除"
   }
 }

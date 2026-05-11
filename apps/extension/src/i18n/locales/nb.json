@@ -57,8 +57,7 @@
     },
     "urgency": {
       "label": "HASTEVERK",
-      "description": "Merk som umiddelbar handling",
-      "enabled": "Merket som hasteverk"
+      "description": "Merk som umiddelbar handling"
     },
     "extraNotes": {
       "label": "EKSTRA NOTATER",
@@ -68,12 +67,10 @@
   "actions": {
     "generate": "Generer Utkast",
     "generating": "Genererer...",
-    "draftHint": "Klikk på et utkast for å sette det inn i e-posten din:",
-    "draftLabel": "Utkast {{number}}",
-    "errorMessage": "Feil ved generering av e-post. Kjører backend?"
+    "errorMessage": "Feil ved generering av e-post. Kjører backend?",
+    "clearAll": "Slett alle utkast"
   },
   "drafts": {
-    "generatedContent": "Generert e-post",
     "session": "Chat-seanse {{number}}",
     "rootLabel": "Original",
     "refinementLabel": "Versjon {{number}}",
@@ -81,18 +78,22 @@
     "emptyHint": "Bruk Composer-fanen til å beskrive hva du vil skrive.",
     "copy": "Kopier til utklipp",
     "delete": "Slett utkast",
-    "insert": "Sett inn i Gmail",
-    "refine": "Forbedre utkast",
-    "editing": "Forbedrer utkast",
-    "original": "Original",
-    "refining": "Forbedret",
-    "editContent": "Rediger e-postinnhold",
-    "editHint": "Rediger den genererte e-posten direkte, eller juster meldingen ovenfor for å generere på nytt",
-    "save": "Lagre endringer",
-    "cancel": "Avbryt",
-    "saveEdits": "Lagre & Forbedre",
     "refineSection": "Forbedre Dette Utkastet",
     "refineAndRegenerate": "Forbedre & Generer på Nytt",
     "resetChanges": "Tilbakestill"
+  },
+  "languageChangeModal": {
+    "title": "Endre språk?",
+    "messageSingle": "1 utkast på {{currentLanguage}} vil bli slettet hvis du bytter til {{pendingLanguage}}.",
+    "messagePlural": "{{count}} utkast på {{currentLanguage}} vil bli slettet hvis du bytter til {{pendingLanguage}}.",
+    "cancel": "Avbryt",
+    "confirm": "Slett utkast og bytt"
+  },
+  "clearAllModal": {
+    "title": "Slett alle utkast?",
+    "messageSingle": "1 utkast på {{currentLanguage}} vil bli slettet.",
+    "messagePlural": "{{count}} utkast på {{currentLanguage}} vil bli slettet.",
+    "cancel": "Avbryt",
+    "confirm": "Slett alle utkast"
   }
 }

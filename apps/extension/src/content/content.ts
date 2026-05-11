@@ -66,9 +66,8 @@ function insertEmailToComposeBox(emailText: string) {
     composeBox.innerHTML = htmlContent;
     
     composeBox.dispatchEvent(new Event('input', { bubbles: true }));
-    console.log('Email inserted successfully');
   } else {
-    console.error('Could not find compose box. Make sure a compose window is open.');
+    console.error('Could not find compose box');
   }
 }
 

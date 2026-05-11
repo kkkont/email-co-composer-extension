@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { generateEmail } from "@/lib/azure-api";
+import { generateEmail } from "@/lib/openai";
 
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",

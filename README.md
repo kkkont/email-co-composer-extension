@@ -1,10 +1,8 @@
 # Email Co-Composer Browser Extension
 
-> **Work in progress** — built as a course project for **Human-Centered AI (HCAI)**.
+A course project for **Human-Centered AI (HCAI)**.
 
-A Chrome extension that helps you draft emails directly within Gmail. Describe your intent — goal, message, tone, recipient — and the assistant will generate a polished email you can insert into a compose window with one click.
-
-**Current status:** The extension UI and Gmail integration are functional, but the **LLM backend (Azure OpenAI) has not been integrated yet**. Email generation currently echoes the user's input as a placeholder. Full AI-powered generation is planned as a next step.
+A Chrome extension that helps you draft emails directly within Gmail and Outlook. Describe your intent — goal, message, tone, length, recipient — and the AI assistant generates a polished email that is automatically inserted into the compose window.
 
 ## Architecture
 
@@ -12,15 +10,15 @@ The project is an **npm workspaces** monorepo with two apps:
 
 ```
 apps/
-  backend/    → Next.js API server (Azure OpenAI)
+  backend/    → Next.js API server (OpenAI)
   extension/  → Chrome Extension (Manifest V3, React + Vite)
 ```
 
 ### Backend (`apps/backend`)
 
-A Next.js app that exposes a single **POST `/api/generate`** endpoint. It is set up to forward the user's email intent to **Azure OpenAI** and stream the generated email back to the client. **The Azure OpenAI client is not yet wired up** — the route and prompt structure are in place, pending API credentials and final integration.
+A Next.js app exposing a single **POST `/api/generate`** endpoint. It takes the user's email intent (goal, message, recipient, tone, length, urgency, language) and returns a generated email via the OpenAI API.
 
-**Key tech:** Next.js 16, Azure OpenAI SDK (planned), streaming responses.
+**Key tech:** Next.js 16, OpenAI SDK.
 
 ### Extension (`apps/extension`)
 
@@ -28,17 +26,17 @@ A Chrome Manifest V3 extension with:
 
 | Component | Purpose |
 |---|---|
-| **Popup** (React) | Form UI where the user specifies goal, message, recipient, and tone |
-| **Content script** | Injects the generated email into the Gmail compose box |
-| **Background worker** | Lifecycle & install logging |
+| **Side Panel** (React) | Main UI — composer form and drafts management |
+| **Content script** | Detects Gmail/Outlook compose windows, inserts generated emails |
+| **Background worker** | Opens the side panel on icon click or compose detection |
 
-**Key tech:** React 18, Vite, Tailwind CSS, i18next (English locale, ready for additional languages).
+**Key tech:** React 18, Vite, Tailwind CSS, i18next (16 languages).
 
 ## Prerequisites
 
 - **Node.js** ≥ 18
 - **npm** ≥ 9 (workspaces support)
-- An **Azure OpenAI** deployment (endpoint URL, API key, deployment name)
+- An **OpenAI API key**
 
 ## Getting Started
 
@@ -48,14 +46,12 @@ A Chrome Manifest V3 extension with:
 npm install
 ```
 
-### 2. Configure environment (optional — Azure OpenAI integration is a WIP)
+### 2. Configure environment
 
-Create `apps/backend/.env.local`:
+Create `.env.local` in the project root:
 
 ```env
-AZURE_OPENAI_ENDPOINT=https://<your-resource>.openai.azure.com
-AZURE_OPENAI_API_KEY=<your-key>
-AZURE_OPENAI_DEPLOYMENT=<deployment-name>
+OPENAI_API_KEY=<your-key>
 ```
 
 ### 3. Run the backend
@@ -79,13 +75,12 @@ npm run build:extension
 
 ## Usage
 
-> **Note:** Since the LLM is not yet integrated, "Generate Email" currently returns the main message as-is. Full AI generation is coming soon.
-
-1. Open Gmail and start composing an email.
-2. Click the **Email Co-Composer** extension icon.
+1. Open Gmail or Outlook and start composing an email.
+2. The side panel opens automatically (or click the extension icon).
 3. Fill in **Goal**, **Main Message**, and **Recipient**.
-4. Click **Generate Email**.
-5. Click **Insert to Gmail** to paste the result into the compose box.
+4. Optionally adjust tone, length, urgency, and language.
+5. Click **Generate Draft** — the email is generated and inserted into the compose box.
+6. Use the **Drafts** tab to view history, refine, or regenerate.
 
 ## Scripts
 
@@ -97,33 +92,36 @@ npm run build:extension
 | `npm run build` | Build both backend and extension |
 | `npm run build:backend` | Production build for the backend |
 | `npm run build:extension` | Production build for the extension |
+| `npm run translate` | Re-translate locale files from English using OpenAI |
 
 ## Project Structure
 
 ```
-├── package.json              # Root workspace config
+├── package.json                # Root workspace config
+├── languages.json              # Supported languages list
+├── scripts/
+│   └── translate.ts            # Auto-translate locales via OpenAI
 ├── apps/
 │   ├── backend/
 │   │   ├── app/
-│   │   │   └── api/generate/ # POST endpoint for email generation
-│   │   └── lib/azure-api.ts  # Azure OpenAI client setup
+│   │   │   ├── api/generate/   # POST endpoint for email generation
+│   │   │   └── page.tsx        # Health-check landing page
+│   │   └── lib/openai.ts       # OpenAI client & prompt logic
 │   └── extension/
-│       ├── manifest.json     # Chrome MV3 manifest
+│       ├── manifest.json       # Chrome MV3 manifest
+│       ├── sidepanel.html      # Side panel entry point
 │       └── src/
-│           ├── popup/        # React popup UI
-│           ├── content/      # Gmail DOM injection
-│           ├── background/   # Service worker
-│           ├── i18n/         # Internationalization (en locale)
-│           └── types.ts      # Shared TypeScript types
+│           ├── popup/          # React UI (composer + drafts)
+│           ├── content/        # Gmail/Outlook compose detection & injection
+│           ├── background/     # Service worker (side panel management)
+│           ├── i18n/           # Internationalization (16 languages)
+│           └── types.ts        # Shared TypeScript types
 ```
 
 ## Internationalization
 
-UI strings are managed with **i18next**. Currently, only English is supported, but the i18n structure is in place for future language additions.
+UI strings are managed with **i18next**. The extension supports 16 languages:
 
-## Roadmap
+English, Estonian, German, French, Spanish, Norwegian, Finnish, Swedish, Danish, Dutch, Italian, Portuguese, Russian, Chinese, Japanese, Korean.
 
-- [ ] Integrate Azure OpenAI for actual email generation
-- [ ] Add more tone/goal options
-- [ ] Support additional languages beyond English
-- [ ] Implement user feedback loop for generated emails
+The browser language is auto-detected on first load. Users can switch languages from the composer UI. Running `npm run translate` regenerates all locale files from the English source using OpenAI. To add a new language, simply add an entry to `languages.json` and run the translate script.

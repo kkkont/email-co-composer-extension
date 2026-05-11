@@ -1,8 +1,7 @@
 {
   "name": "email-co-composer-extension",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "private": true,
   "workspaces": [
     "apps/*"
   ],
@@ -19,8 +18,6 @@
     "type": "git",
     "url": "git+https://github.com/kkkont/email-co-composer-extension.git"
   },
-  "keywords": [],
-  "author": "",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/kkkont/email-co-composer-extension/issues"
@@ -28,8 +25,5 @@
   "homepage": "https://github.com/kkkont/email-co-composer-extension#readme",
   "devDependencies": {
     "typescript": "^5.3.3"
-  },
-  "dependencies": {
-    "lucide-react": "^1.8.0"
   }
 }

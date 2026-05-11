@@ -57,8 +57,7 @@
     },
     "urgency": {
       "label": "URGENCY",
-      "description": "Mark as immediate action",
-      "enabled": "Marked as urgent"
+      "description": "Mark as immediate action"
     },
     "extraNotes": {
       "label": "EXTRA NOTES",
@@ -68,8 +67,6 @@
   "actions": {
     "generate": "Generate Draft",
     "generating": "Generating...",
-    "draftHint": "Click a draft to insert it into your email:",
-    "draftLabel": "Draft {{number}}",
     "errorMessage": "Error generating email. Is the backend running?",
     "clearAll": "Clear all drafts"
   },
@@ -88,19 +85,14 @@
     "confirm": "Delete all drafts"
   },
   "drafts": {
-    "generatedContent": "Generated Email",
     "session": "Chat Session {{number}}",
     "rootLabel": "Original",
     "refinementLabel": "Version {{number}}",
     "refineSection": "Refine & regenerate",
     "refineAndRegenerate": "Refine & Regenerate",
     "resetChanges": "Reset changes",
-    "saveEdits": "Save edits",
-    "editFeedsRegen": "Your edits will be used as the base for regeneration",
-    "editHint": "Edit the email directly, or adjust the parameters below and regenerate",
     "empty": "No drafts yet",
     "emptyHint": "Generate an email from the Composer tab to get started",
-    "insert": "Insert into Gmail",
     "copy": "Copy to clipboard",
     "delete": "Delete draft"
   }

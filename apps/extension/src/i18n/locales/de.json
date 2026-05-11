@@ -57,8 +57,7 @@
     },
     "urgency": {
       "label": "DRINGLICHKEIT",
-      "description": "Als sofortige Aktion markieren",
-      "enabled": "Als dringend markiert"
+      "description": "Als sofortige Aktion markieren"
     },
     "extraNotes": {
       "label": "ZUSÄTZLICHE HINWEISE",
@@ -68,26 +67,33 @@
   "actions": {
     "generate": "Entwurf erstellen",
     "generating": "Erstellen...",
-    "draftHint": "Klicken Sie auf einen Entwurf, um ihn in Ihre E-Mail einzufügen:",
-    "draftLabel": "Entwurf {{number}}",
     "errorMessage": "Fehler beim Erstellen der E-Mail. Läuft das Backend?",
     "clearAll": "Alle Entwürfe löschen"
   },
   "drafts": {
-    "generatedContent": "Generierte E-Mail",
     "session": "Chat-Sitzung {{number}}",
     "rootLabel": "Original",
     "refinementLabel": "Version {{number}}",
     "refineSection": "Verfeinern & neu generieren",
     "refineAndRegenerate": "Verfeinern & Neu generieren",
     "resetChanges": "Änderungen zurücksetzen",
-    "saveEdits": "Änderungen speichern",
-    "editFeedsRegen": "Ihre Änderungen werden als Grundlage für die Neugenerierung verwendet",
-    "editHint": "Bearbeiten Sie die E-Mail direkt, oder passen Sie die Parameter unten an und generieren Sie neu",
     "empty": "Noch keine Entwürfe",
     "emptyHint": "Erstellen Sie eine E-Mail auf der Registerkarte Composer",
-    "insert": "In Gmail einfügen",
     "copy": "In die Zwischenablage kopieren",
     "delete": "Entwurf löschen"
+  },
+  "languageChangeModal": {
+    "title": "Sprache ändern?",
+    "messageSingle": "1 Entwurf auf {{currentLanguage}} wird gelöscht, wenn Sie zu {{pendingLanguage}} wechseln.",
+    "messagePlural": "{{count}} Entwürfe auf {{currentLanguage}} werden gelöscht, wenn Sie zu {{pendingLanguage}} wechseln.",
+    "cancel": "Abbrechen",
+    "confirm": "Entwürfe löschen und wechseln"
+  },
+  "clearAllModal": {
+    "title": "Alle Entwürfe löschen?",
+    "messageSingle": "1 Entwurf auf {{currentLanguage}} wird gelöscht.",
+    "messagePlural": "{{count}} Entwürfe auf {{currentLanguage}} werden gelöscht.",
+    "cancel": "Abbrechen",
+    "confirm": "Alle Entwürfe löschen"
   }
 }

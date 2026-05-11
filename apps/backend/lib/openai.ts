@@ -97,7 +97,6 @@ Remember: Output ONLY the email body. Follow the LENGTH constraint strictly.`;
     reasoning_effort: "minimal",
   });
 
-  console.log("OpenAI response:", JSON.stringify(response, null, 2));
   const content = response.choices[0]?.message?.content;
   if (!content) {
     throw new Error("No response from OpenAI");

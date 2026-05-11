@@ -57,8 +57,7 @@
     },
     "urgency": {
       "label": "URGENCE",
-      "description": "Marquer comme action immédiate",
-      "enabled": "Marqué comme urgent"
+      "description": "Marquer comme action immédiate"
     },
     "extraNotes": {
       "label": "NOTES SUPPLÉMENTAIRES",
@@ -68,12 +67,10 @@
   "actions": {
     "generate": "Générer un Brouillon",
     "generating": "Génération...",
-    "draftHint": "Cliquez sur un brouillon pour l'insérer dans votre email :",
-    "draftLabel": "Brouillon {{number}}",
-    "errorMessage": "Erreur lors de la génération de l'email. Le backend est-il en cours d'exécution ?"
+    "errorMessage": "Erreur lors de la génération de l'email. Le backend est-il en cours d'exécution ?",
+    "clearAll": "Supprimer tous les brouillons"
   },
   "drafts": {
-    "generatedContent": "Email généré",
     "session": "Sesstion de chat {{number}}",
     "rootLabel": "Original",
     "refinementLabel": "Version {{number}}",
@@ -81,18 +78,22 @@
     "emptyHint": "Utilisez l'onglet Composer pour décrire ce que vous souhaitez écrire.",
     "copy": "Copier dans le presse-papiers",
     "delete": "Supprimer le brouillon",
-    "insert": "Insérer dans Gmail",
-    "refine": "Affiner le brouillon",
-    "editing": "Affinage du brouillon",
-    "original": "Original",
-    "refining": "Affiné",
-    "editContent": "Modifier le contenu de l'email",
-    "editHint": "Modifiez l'email généré directement, ou ajustez l'invite ci-dessus pour régénérer",
-    "save": "Enregistrer les modifications",
-    "cancel": "Annuler",
-    "saveEdits": "Enregistrer & Affiner",
     "refineSection": "Affiner Ce Brouillon",
     "refineAndRegenerate": "Affiner & Régénérer",
     "resetChanges": "Réinitialiser"
+  },
+  "languageChangeModal": {
+    "title": "Changer de langue ?",
+    "messageSingle": "1 brouillon en {{currentLanguage}} sera supprimé si vous passez à {{pendingLanguage}}.",
+    "messagePlural": "{{count}} brouillons en {{currentLanguage}} seront supprimés si vous passez à {{pendingLanguage}}.",
+    "cancel": "Annuler",
+    "confirm": "Supprimer les brouillons et changer"
+  },
+  "clearAllModal": {
+    "title": "Supprimer tous les brouillons ?",
+    "messageSingle": "1 brouillon en {{currentLanguage}} sera supprimé.",
+    "messagePlural": "{{count}} brouillons en {{currentLanguage}} seront supprimés.",
+    "cancel": "Annuler",
+    "confirm": "Supprimer tous les brouillons"
   }
 }

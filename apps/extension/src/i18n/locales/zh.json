@@ -57,8 +57,7 @@
     },
     "urgency": {
       "label": "紧急程度",
-      "description": "标记为即时行动",
-      "enabled": "已标记为紧急"
+      "description": "标记为即时行动"
     },
     "extraNotes": {
       "label": "附加备注",
@@ -68,12 +67,10 @@
   "actions": {
     "generate": "生成草稿",
     "generating": "正在生成...",
-    "draftHint": "点击草稿将其插入到您的邮件中：",
-    "draftLabel": "草稿 {{number}}",
-    "errorMessage": "生成邮件时出错。后台是否正在运行？"
+    "errorMessage": "生成邮件时出错。后台是否正在运行？",
+    "clearAll": "清除所有草稿"
   },
   "drafts": {
-    "generatedContent": "生成的邮件",
     "session": "聊天会话 {{number}}",
     "rootLabel": "原稿",
     "refinementLabel": "版本 {{number}}",
@@ -81,6 +78,22 @@
     "emptyHint": "点击草稿将其插入到您的邮件中：",
     "copy": "复制到剪贴板",
     "delete": "删除草稿",
-    "insert": "插入至 Gmail"
+    "refineSection": "优化与重新生成",
+    "refineAndRegenerate": "优化并重新生成",
+    "resetChanges": "重置更改"
+  },
+  "languageChangeModal": {
+    "title": "更改语言？",
+    "messageSingle": "切换到{{pendingLanguage}}后，{{currentLanguage}}的1份草稿将被删除。",
+    "messagePlural": "切换到{{pendingLanguage}}后，{{currentLanguage}}的{{count}}份草稿将被删除。",
+    "cancel": "取消",
+    "confirm": "删除草稿并切换"
+  },
+  "clearAllModal": {
+    "title": "清除所有草稿？",
+    "messageSingle": "{{currentLanguage}}的1份草稿将被删除。",
+    "messagePlural": "{{currentLanguage}}的{{count}}份草稿将被删除。",
+    "cancel": "取消",
+    "confirm": "删除所有草稿"
   }
 }

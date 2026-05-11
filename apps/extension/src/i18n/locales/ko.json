@@ -57,8 +57,7 @@
     },
     "urgency": {
       "label": "긴급도",
-      "description": "즉시 단원으로 표시",
-      "enabled": "긴급으로 표시되어 있습니다"
+      "description": "즉시 단원으로 표시"
     },
     "extraNotes": {
       "label": "추가 메모",
@@ -68,26 +67,33 @@
   "actions": {
     "generate": "초안 생성",
     "generating": "생성 중...",
-    "draftHint": "초땈을 클릭하여 이메일에 삽입하세요:",
-    "draftLabel": "초땈 {{number}}",
     "errorMessage": "이메일 생성 오류. 백엔드가 실행 중의 내스나요?",
     "clearAll": "모든 초안 삭제"
   },
   "drafts": {
-    "generatedContent": "생성된 이메일",
     "session": "채팅 세션 {{number}}",
     "rootLabel": "원본",
     "refinementLabel": "버전 {{number}}",
     "refineSection": "다듬기 & 재생성",
     "refineAndRegenerate": "다듬기 및 재생성",
     "resetChanges": "변경사항 초기화",
-    "saveEdits": "변경사항 저장",
-    "editFeedsRegen": "당신의 편집사항이 재생성의 기초로 사용됩니다",
-    "editHint": "이메일을 직접 편집하거나 아래 매개변수를 조정하고 재생성하세요",
     "empty": "아직 초안이 없습니다",
     "emptyHint": "시작하려면 Composer 탭에서 이메일을 생성하세요",
-    "insert": "Gmail에 삽입",
     "copy": "클립보드에 복사",
     "delete": "초안 삭제"
+  },
+  "languageChangeModal": {
+    "title": "언어를 변경하시겠습니까?",
+    "messageSingle": "{{pendingLanguage}}로 전환하면 {{currentLanguage}}의 초안 1개가 삭제됩니다.",
+    "messagePlural": "{{pendingLanguage}}로 전환하면 {{currentLanguage}}의 초안 {{count}}개가 삭제됩니다.",
+    "cancel": "취소",
+    "confirm": "초안 삭제 후 전환"
+  },
+  "clearAllModal": {
+    "title": "모든 초안을 삭제하시겠습니까?",
+    "messageSingle": "{{currentLanguage}}의 초안 1개가 삭제됩니다.",
+    "messagePlural": "{{currentLanguage}}의 초안 {{count}}개가 삭제됩니다.",
+    "cancel": "취소",
+    "confirm": "모든 초안 삭제"
   }
 }

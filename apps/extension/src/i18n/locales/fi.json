@@ -57,8 +57,7 @@
     },
     "urgency": {
       "label": "KIIREELLISYYS",
-      "description": "Merkitse välittömäksi toimenpiteeksi",
-      "enabled": "Merkitty kiireelliseksi"
+      "description": "Merkitse välittömäksi toimenpiteeksi"
     },
     "extraNotes": {
       "label": "LISÄHUOMAUTUKSET",
@@ -68,12 +67,10 @@
   "actions": {
     "generate": "Luo Luonnos",
     "generating": "Luodaan...",
-    "draftHint": "Klikkaa luonnosta lisätäksesi sen sähköpostiisi:",
-    "draftLabel": "Luonnos {{number}}",
-    "errorMessage": "Virhe sähköpostin luomisessa. Onko taustajärjestelmä käynnissä?"
+    "errorMessage": "Virhe sähköpostin luomisessa. Onko taustajärjestelmä käynnissä?",
+    "clearAll": "Tyhjennä kaikki luonnokset"
   },
   "drafts": {
-    "generatedContent": "Luotu sähköposti",
     "session": "Chat-istunto {{number}}",
     "rootLabel": "Alkuperäinen",
     "refinementLabel": "Versio {{number}}",
@@ -81,18 +78,22 @@
     "emptyHint": "Käytä Composer-välilehteä kuvataksesi mitä haluat kirjoittaa.",
     "copy": "Kopioi leikepöydille",
     "delete": "Poista luonnos",
-    "insert": "Lisää Gmailiin",
-    "refine": "Tarkenna luonnosta",
-    "editing": "Tarkennetaan luonnosta",
-    "original": "Alkuperäinen",
-    "refining": "Tarkennettu",
-    "editContent": "Muokkaa sähköpostin sisältöä",
-    "editHint": "Muokkaa luotua sähköpostia suoraan, tai säädä yllä olevaa kehotetta uudelleen luomiseksi",
-    "save": "Tallenna muutokset",
-    "cancel": "Peruuta",
-    "saveEdits": "Tallenna & Tarkenna",
     "refineSection": "Tarkenna Tätä Luonnosta",
     "refineAndRegenerate": "Tarkenna & Luo Uudelleen",
     "resetChanges": "Palauta"
+  },
+  "languageChangeModal": {
+    "title": "Vaihda kieltä?",
+    "messageSingle": "1 luonnos kielellä {{currentLanguage}} poistetaan, jos vaihdat kielelle {{pendingLanguage}}.",
+    "messagePlural": "{{count}} luonnosta kielellä {{currentLanguage}} poistetaan, jos vaihdat kielelle {{pendingLanguage}}.",
+    "cancel": "Peruuta",
+    "confirm": "Poista luonnokset ja vaihda"
+  },
+  "clearAllModal": {
+    "title": "Tyhjennä kaikki luonnokset?",
+    "messageSingle": "1 luonnos kielellä {{currentLanguage}} poistetaan.",
+    "messagePlural": "{{count}} luonnosta kielellä {{currentLanguage}} poistetaan.",
+    "cancel": "Peruuta",
+    "confirm": "Poista kaikki luonnokset"
   }
 }

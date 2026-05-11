@@ -1,6 +1,4 @@
-chrome.runtime.onInstalled.addListener((details) => {
-  console.log("Email Co-Composer installed:", details.reason);
-});
+chrome.runtime.onInstalled.addListener(() => {});
 
 // Open side panel when extension icon is clicked
 chrome.action.onClicked.addListener((tab) => {

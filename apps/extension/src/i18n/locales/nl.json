@@ -57,8 +57,7 @@
     },
     "urgency": {
       "label": "URGENTIE",
-      "description": "Markeer als onmiddellijke actie",
-      "enabled": "Gemarkeerd als dringend"
+      "description": "Markeer als onmiddellijke actie"
     },
     "extraNotes": {
       "label": "EXTRA OPMERKINGEN",
@@ -68,26 +67,33 @@
   "actions": {
     "generate": "Genereer Concept",
     "generating": "Genereren...",
-    "draftHint": "Klik op een concept om het in uw e-mail in te voegen:",
-    "draftLabel": "Concept {{number}}",
     "errorMessage": "Fout bij het genereren van e-mail. Draait de backend?",
     "clearAll": "Alle concepten verwijderen"
   },
   "drafts": {
-    "generatedContent": "Gegenereerde email",
     "session": "Chat-sessie {{number}}",
     "rootLabel": "Origineel",
     "refinementLabel": "Versie {{number}}",
     "refineSection": "Verfijnen & opnieuw genereren",
     "refineAndRegenerate": "Verfijnen & Opnieuw Genereren",
     "resetChanges": "Wijzigingen herstellen",
-    "saveEdits": "Wijzigingen opslaan",
-    "editFeedsRegen": "Uw wijzigingen zullen als basis voor regeneratie worden gebruikt",
-    "editHint": "Bewerk de e-mail rechtstreeks, of pas de parameters hieronder aan en genereer opnieuw",
     "empty": "Nog geen concepten",
     "emptyHint": "Genereer een e-mail via het Composer-tabblad om aan de slag te gaan",
-    "insert": "In Gmail invoegen",
     "copy": "Naar klembord kopiëren",
     "delete": "Concept verwijderen"
+  },
+  "languageChangeModal": {
+    "title": "Taal wijzigen?",
+    "messageSingle": "1 concept in {{currentLanguage}} wordt verwijderd als je overschakelt naar {{pendingLanguage}}.",
+    "messagePlural": "{{count}} concepten in {{currentLanguage}} worden verwijderd als je overschakelt naar {{pendingLanguage}}.",
+    "cancel": "Annuleren",
+    "confirm": "Concepten verwijderen en wisselen"
+  },
+  "clearAllModal": {
+    "title": "Alle concepten verwijderen?",
+    "messageSingle": "1 concept in {{currentLanguage}} wordt verwijderd.",
+    "messagePlural": "{{count}} concepten in {{currentLanguage}} worden verwijderd.",
+    "cancel": "Annuleren",
+    "confirm": "Alle concepten verwijderen"
   }
 }

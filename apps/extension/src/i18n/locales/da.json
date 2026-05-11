@@ -57,8 +57,7 @@
     },
     "urgency": {
       "label": "HASTIGHED",
-      "description": "Marker som øjeblikkelig handling",
-      "enabled": "Markeret som hastelig"
+      "description": "Marker som øjeblikkelig handling"
     },
     "extraNotes": {
       "label": "EKSTRA NOTER",
@@ -68,26 +67,33 @@
   "actions": {
     "generate": "Generer Udkast",
     "generating": "Genererer...",
-    "draftHint": "Klik på et udkast for at indsætte det i din e-mail:",
-    "draftLabel": "Udkast {{number}}",
     "errorMessage": "Fejl ved generering af e-mail. Kører backend?",
     "clearAll": "Ryd alle udkast"
   },
   "drafts": {
-    "generatedContent": "Genereret E-mail",
     "session": "Chat-Session {{number}}",
     "rootLabel": "Original",
     "refinementLabel": "Version {{number}}",
     "refineSection": "Forbedre & generer på nyt",
     "refineAndRegenerate": "Forbedre & Generer på Nyt",
     "resetChanges": "Nulstil ændringer",
-    "saveEdits": "Gem ændringer",
-    "editFeedsRegen": "Dine ændringer vil blive brugt som grundlag for regenerering",
-    "editHint": "Rediger e-mailen direkte, eller juster parametrene nedenfor og generer på nyt",
     "empty": "Ingen udkast endnu",
     "emptyHint": "Generer en e-mail fra Composer-fanen for at komme i gang",
-    "insert": "Indsæt i Gmail",
     "copy": "Kopier til udklipsholder",
     "delete": "Slet udkast"
+  },
+  "languageChangeModal": {
+    "title": "Skift sprog?",
+    "messageSingle": "1 udkast på {{currentLanguage}} vil blive slettet, hvis du skifter til {{pendingLanguage}}.",
+    "messagePlural": "{{count}} udkast på {{currentLanguage}} vil blive slettet, hvis du skifter til {{pendingLanguage}}.",
+    "cancel": "Annuller",
+    "confirm": "Slet udkast og skift"
+  },
+  "clearAllModal": {
+    "title": "Ryd alle udkast?",
+    "messageSingle": "1 udkast på {{currentLanguage}} vil blive slettet.",
+    "messagePlural": "{{count}} udkast på {{currentLanguage}} vil blive slettet.",
+    "cancel": "Annuller",
+    "confirm": "Slet alle udkast"
   }
 }

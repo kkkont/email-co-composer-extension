@@ -57,8 +57,7 @@
     },
     "urgency": {
       "label": "URGENCIA",
-      "description": "Marcar como acción inmediata",
-      "enabled": "Marcado como urgente"
+      "description": "Marcar como acción inmediata"
     },
     "extraNotes": {
       "label": "NOTAS ADICIONALES",
@@ -68,26 +67,33 @@
   "actions": {
     "generate": "Generar Borrador",
     "generating": "Generando...",
-    "draftHint": "Haz clic en un borrador para insertarlo en tu correo:",
-    "draftLabel": "Borrador {{number}}",
     "errorMessage": "Error al generar el correo. ¿Está funcionando el backend?",
     "clearAll": "Eliminar todos los borradores"
   },
   "drafts": {
-    "generatedContent": "Correo Generado",
     "session": "Sesión de Chat {{number}}",
     "rootLabel": "Original",
     "refinementLabel": "Versión {{number}}",
     "refineSection": "Refinar & regenerar",
     "refineAndRegenerate": "Refinar & Regenerar",
     "resetChanges": "Restablecer cambios",
-    "saveEdits": "Guardar cambios",
-    "editFeedsRegen": "Tus ediciones se utilizarán como base para la regeneración",
-    "editHint": "Edita el correo directamente, o ajusta los parámetros abajo y regenera",
     "empty": "Sin borradores aún",
     "emptyHint": "Genera un correo desde la pestaña Composer para empezar",
-    "insert": "Insertar en Gmail",
     "copy": "Copiar al portapapeles",
     "delete": "Eliminar borrador"
+  },
+  "languageChangeModal": {
+    "title": "¿Cambiar idioma?",
+    "messageSingle": "1 borrador en {{currentLanguage}} será eliminado si cambias a {{pendingLanguage}}.",
+    "messagePlural": "{{count}} borradores en {{currentLanguage}} serán eliminados si cambias a {{pendingLanguage}}.",
+    "cancel": "Cancelar",
+    "confirm": "Eliminar borradores y cambiar"
+  },
+  "clearAllModal": {
+    "title": "¿Eliminar todos los borradores?",
+    "messageSingle": "1 borrador en {{currentLanguage}} será eliminado.",
+    "messagePlural": "{{count}} borradores en {{currentLanguage}} serán eliminados.",
+    "cancel": "Cancelar",
+    "confirm": "Eliminar todos los borradores"
   }
 }

@@ -57,8 +57,7 @@
     },
     "urgency": {
       "label": "URGÊNCIA",
-      "description": "Marcar como ação imediata",
-      "enabled": "Marcado como urgente"
+      "description": "Marcar como ação imediata"
     },
     "extraNotes": {
       "label": "NOTAS EXTRAS",
@@ -68,12 +67,10 @@
   "actions": {
     "generate": "Gerar Rascunho",
     "generating": "Gerando...",
-    "draftHint": "Clique em um rascunho para inseri-lo no seu email:",
-    "draftLabel": "Rascunho {{number}}",
-    "errorMessage": "Erro ao gerar email. O backend está em execução?"
+    "errorMessage": "Erro ao gerar email. O backend está em execução?",
+    "clearAll": "Limpar todos os rascunhos"
   },
   "drafts": {
-    "generatedContent": "Email gerado",
     "session": "Sessão de chat {{number}}",
     "rootLabel": "Original",
     "refinementLabel": "Versão {{number}}",
@@ -81,18 +78,22 @@
     "emptyHint": "Use a aba Composer para descrever o que você quer escrever.",
     "copy": "Copiar para a área de transferência",
     "delete": "Deletar rascunho",
-    "insert": "Inserir no Gmail",
-    "refine": "Refinar rascunho",
-    "editing": "Refinando rascunho",
-    "original": "Original",
-    "refining": "Refinado",
-    "editContent": "Editar conteúdo do email",
-    "editHint": "Edite o email gerado diretamente, ou ajuste o prompt acima para regenerar",
-    "save": "Salvar alterações",
-    "cancel": "Cancelar",
-    "saveEdits": "Salvar & Refinar",
     "refineSection": "Refinar Este Rascunho",
     "refineAndRegenerate": "Refinar & Regenerar",
     "resetChanges": "Redefinir"
+  },
+  "languageChangeModal": {
+    "title": "Alterar idioma?",
+    "messageSingle": "1 rascunho em {{currentLanguage}} será excluído se você mudar para {{pendingLanguage}}.",
+    "messagePlural": "{{count}} rascunhos em {{currentLanguage}} serão excluídos se você mudar para {{pendingLanguage}}.",
+    "cancel": "Cancelar",
+    "confirm": "Excluir rascunhos e alterar"
+  },
+  "clearAllModal": {
+    "title": "Limpar todos os rascunhos?",
+    "messageSingle": "1 rascunho em {{currentLanguage}} será excluído.",
+    "messagePlural": "{{count}} rascunhos em {{currentLanguage}} serão excluídos.",
+    "cancel": "Cancelar",
+    "confirm": "Excluir todos os rascunhos"
   }
 }

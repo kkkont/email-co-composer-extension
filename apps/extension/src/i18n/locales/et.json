@@ -57,8 +57,7 @@
     },
     "urgency": {
       "label": "KIIRE",
-      "description": "Märgi kui kohene tegevus",
-      "enabled": "Märgitud kiireks"
+      "description": "Märgi kui kohene tegevus"
     },
     "extraNotes": {
       "label": "LISAMÄRKUSED",
@@ -68,12 +67,10 @@
   "actions": {
     "generate": "Loo Mustand",
     "generating": "Loomine...",
-    "draftHint": "Klõpsa mustandil, et see oma e-kirja lisada:",
-    "draftLabel": "Mustand {{number}}",
-    "errorMessage": "Viga e-kirja loomisel. Kas taustajärjestelm töötab?"
+    "errorMessage": "Viga e-kirja loomisel. Kas taustajärjestelm töötab?",
+    "clearAll": "Kustuta kõik mustandid"
   },
   "drafts": {
-    "generatedContent": "Loodud e-kiri",
     "session": "Vestluse seanss {{number}}",
     "rootLabel": "Algne",
     "refinementLabel": "Versioon {{number}}",
@@ -81,18 +78,22 @@
     "emptyHint": "Kasuta Composer vahekaarti oma kirjutamise sisu kirjeldamiseks.",
     "copy": "Kopeeri lõikepöörde",
     "delete": "Kustuta mustand",
-    "insert": "Sisesta Gmailisse",
-    "refine": "Täpsusta mustandit",
-    "editing": "Täpsustades mustandit",
-    "original": "Algne",
-    "refining": "Täpsustatud",
-    "editContent": "Muuda e-kirja sisu",
-    "editHint": "Muuda loodud e-kirja otse, või kohandage ülalolev viip uuesti loomiseks",
-    "save": "Salvesta muudatused",
-    "cancel": "Tühista",
-    "saveEdits": "Salvesta & Täpsusta",
     "refineSection": "Täpsusta Seda Mustandit",
     "refineAndRegenerate": "Täpsusta & Loo Uuesti",
     "resetChanges": "Lähtesta"
+  },
+  "languageChangeModal": {
+    "title": "Muuda keelt?",
+    "messageSingle": "1 mustand keeles {{currentLanguage}} kustutatakse, kui lülitud keelele {{pendingLanguage}}.",
+    "messagePlural": "{{count}} mustandit keeles {{currentLanguage}} kustutatakse, kui lülitud keelele {{pendingLanguage}}.",
+    "cancel": "Tühista",
+    "confirm": "Kustuta mustandid ja vaheta"
+  },
+  "clearAllModal": {
+    "title": "Kustuta kõik mustandid?",
+    "messageSingle": "1 mustand keeles {{currentLanguage}} kustutatakse.",
+    "messagePlural": "{{count}} mustandit keeles {{currentLanguage}} kustutatakse.",
+    "cancel": "Tühista",
+    "confirm": "Kustuta kõik mustandid"
   }
 }
